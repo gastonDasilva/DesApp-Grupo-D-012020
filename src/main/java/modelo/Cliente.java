@@ -30,8 +30,8 @@ public class Cliente extends Usuario {
          *       una vez registrado, y por último se agrega al cliente a la lista de clientes
          *       registrados a la aplicación pasada como parámetro.
          */
-         ListaDeCompras lista = new ListaDeCompras();
-         this.setListaDeCompras(lista);
-         app.agregarCliente(this);
+        ListaDeCompras lista = new ListaDeCompras();
+        this.setListaDeCompras(lista);
+        app.agregarCliente(this);
     }
 }
