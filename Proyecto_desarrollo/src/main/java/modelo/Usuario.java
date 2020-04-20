@@ -5,6 +5,8 @@ public abstract class Usuario {
     protected String nombreUsuario;
     protected String email;
     protected String password;
+    protected App app;
+
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -18,7 +20,7 @@ public abstract class Usuario {
         return password;
     }
 
-
+    public App getApp() { return app; }
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
@@ -32,4 +34,5 @@ public abstract class Usuario {
         this.password = password;
     }
 
+    public void setApp(App app) { this.app = app; }
 }
