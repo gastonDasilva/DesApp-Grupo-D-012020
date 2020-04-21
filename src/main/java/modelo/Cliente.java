@@ -4,6 +4,7 @@ public class Cliente extends Usuario {
 
     private String direccion;
     private ListaDeCompras listaDeCompras;
+    private int montoDeCompra;
 
     public String getDireccion() {
         return direccion;
@@ -17,11 +18,20 @@ public class Cliente extends Usuario {
 
     public void setListaDeCompras(ListaDeCompras listaDeCompras) { this.listaDeCompras = listaDeCompras; }
 
+    public int getMontoDeCompra() { return montoDeCompra; }
+
+    public void setMontoDeCompra(int montoDeCompra) { this.montoDeCompra = montoDeCompra; }
+
     public Cliente(){}
 
-    public Cliente(String direccion){
+    public Cliente(String nombre, String email, String password, App app, String direccion){
+        this.setNombreUsuario(nombre);
+        this.setEmail(email);
+        this.setPassword(password);
+        this.setApp(app);
         this.setDireccion(direccion);
         this.setListaDeCompras(null);
+        this.setMontoDeCompra(0);
     }
 
     public void registrarme(App app){
@@ -33,5 +43,23 @@ public class Cliente extends Usuario {
         ListaDeCompras lista = new ListaDeCompras();
         this.setListaDeCompras(lista);
         app.agregarCliente(this);
+    }
+
+    public void agregarProducto(Producto producto){
+    /* PROP: si el cliente no tiene asignado una lista de compras, es porque no está registrado y,
+             por ende, no puede adquirir determinado producto. Si tiene asignado una lista de compras,
+             entonces está registrado, y puede adquirir dicho producto.
+
+    */
+    if(this.getListaDeCompras() == null){
+        System.out.println("tenes que registrarte!");
+    }
+    else{
+        this.getListaDeCompras().agregarProducto(producto);
+     }
+    }
+
+    public void realizarCompra(){
+        this.montoDeCompra = this.getMontoDeCompra() + this.getListaDeCompras().getMontoAcumulado();
     }
 }

@@ -94,4 +94,8 @@ public class App {
         this.getClientes().add(cliente);
     }
 
+    public int cantidadDeClientes(){
+        return this.getClientes().size();
+    }
+
 }
