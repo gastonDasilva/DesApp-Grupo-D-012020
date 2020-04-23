@@ -4,6 +4,7 @@ public class Cliente extends Usuario {
 
     private String direccion;
     private ListaDeCompras listaDeCompras;
+    public int montoGastado;
     private int montoDeCompra;
 
     public String getDireccion() {
@@ -18,6 +19,10 @@ public class Cliente extends Usuario {
 
     public void setListaDeCompras(ListaDeCompras listaDeCompras) { this.listaDeCompras = listaDeCompras; }
 
+    public int getMontoGastado() { return montoGastado; }
+
+    public void setMontoGastado(int montoGastado) { this.montoGastado = montoGastado; }
+
     public int getMontoDeCompra() { return montoDeCompra; }
 
     public void setMontoDeCompra(int montoDeCompra) { this.montoDeCompra = montoDeCompra; }
@@ -31,6 +36,7 @@ public class Cliente extends Usuario {
         this.setApp(app);
         this.setDireccion(direccion);
         this.setListaDeCompras(null);
+        this.setMontoGastado(0);
         this.setMontoDeCompra(0);
     }
 
@@ -56,10 +62,11 @@ public class Cliente extends Usuario {
     }
     else{
         this.getListaDeCompras().agregarProducto(producto);
+        this.montoGastado = this.getMontoGastado() + producto.getPrecio();
      }
     }
 
     public void realizarCompra(){
-        this.montoDeCompra = this.getMontoDeCompra() + this.getListaDeCompras().getMontoAcumulado();
+        this.montoDeCompra = this.getMontoGastado();
     }
 }

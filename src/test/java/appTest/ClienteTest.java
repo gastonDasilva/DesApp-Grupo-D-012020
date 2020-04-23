@@ -12,6 +12,7 @@ public class ClienteTest extends TestCase {
      private Cliente cliente;
      private App app;
      private Producto fernet;
+     private Producto birra;
 
 
      @Before
@@ -20,6 +21,7 @@ public class ClienteTest extends TestCase {
          app = new App("alimentos/bebidas", "calle falsa 123", "lunes a sabados de 9 a 21 hs", "efectivo", 5, encargado);
          cliente = new Cliente("cacho","cacho@gmail.com","1234", app,"calle falsa 110");
          fernet = new Producto("fernet branca", "branca", 20, 250, "una imagen");
+         birra = new Producto("cerveza", "quilmes", 30, 65, "otra imagen");
      }
 
      @Test
@@ -38,5 +40,30 @@ public class ClienteTest extends TestCase {
          cliente.registrarme(app);
          cliente.agregarProducto(fernet);
          assertTrue(cliente.getListaDeCompras().cantidadDeProductosEnLista() == 1);
+     }
+
+     @Test
+     public void testRealizarCompra(){
+         cliente.registrarme(app);
+         cliente.realizarCompra();
+         assertTrue(cliente.getMontoDeCompra() == 0);
+         cliente.agregarProducto(fernet);
+         cliente.realizarCompra();
+         assertTrue(cliente.getMontoDeCompra() == 250);
+         cliente.agregarProducto(birra);
+         cliente.realizarCompra();
+         assertTrue(cliente.getMontoDeCompra() == 315);
+     }
+
+     @Test
+     public void testMontoGastado(){
+         /*
+         El sistema va calculando el monto gastado mientras el comprador ingresa productos en su lista de compra.
+         */
+         cliente.registrarme(app);
+         cliente.agregarProducto(fernet);
+         assertTrue(cliente.getMontoGastado() == 250);
+         cliente.agregarProducto(birra);
+         assertTrue(cliente.getMontoGastado() == 315);
      }
 }
