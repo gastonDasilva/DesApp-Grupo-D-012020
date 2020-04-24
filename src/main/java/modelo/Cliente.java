@@ -29,10 +29,9 @@ public class Cliente extends Usuario {
 
     public Cliente(){}
 
-    public Cliente(String nombre, String email, String password, App app, String direccion){
+    public Cliente(String nombre, String email, App app, String direccion){
         this.setNombreUsuario(nombre);
         this.setEmail(email);
-        this.setPassword(password);
         this.setApp(app);
         this.setDireccion(direccion);
         this.setListaDeCompras(null);

@@ -1,5 +1,8 @@
 package modelo;
 
+
+import org.uqbar.commons.model.UserException;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -97,5 +100,45 @@ public class App {
     public int cantidadDeClientes(){
         return this.getClientes().size();
     }
+
+    public Cliente comprar(Cliente cliente){
+        for (Producto p: cliente.getListaDeCompras().getProductosAcumulados()){
+            if (p.getStock() == 0){
+                throw new UserException("No hay Stock!");
+            }else{
+                p.setStock(p.getStock() - 1);
+            }
+        }
+        ListaDeCompras listaNueva = new ListaDeCompras();
+        cliente.setListaDeCompras(listaNueva);
+        return cliente;
+    }
+
+
+    public boolean disponibilidadDeProducto(Producto producto){
+        // Producto disponible o no en la lista de productos de la aplicación.
+        return this.getProductos().contains(producto);
+    }
+
+
+    public void agregarProducto(Producto producto){
+        this.getProductos().add(producto);
+    }
+
+
+    public void imprimirProductos() {
+        for(Producto p : productos) {
+            System.out.print("[");
+            System.out.print("Nombre del producto: "+ p.getNombreProducto());
+            System.out.print(" ,Marca: "+ p.getMarca());
+            System.out.print(" ,stock: "+p.getStock());
+            System.out.println(" ,precio:"+ p.getPrecio());
+            System.out.println("]");
+
+        }
+
+    }
+
+
 
 }
