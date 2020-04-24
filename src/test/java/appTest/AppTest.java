@@ -18,8 +18,10 @@ public class AppTest extends TestCase {
         oscar = new Encargado("oscar", "20-30656734-5", "oscar@gmail.com");
         app = new App("alimentos/bebidas", "alberdi 333", "lunes a viernes de 10 a 20 hs", "efectivo, debito", 3, oscar);
         gaston = new Cliente("gaston", "gaston@gmail.com", app, "alberdi 330");
-        polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen");
-        pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen");
+        polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento");
+        pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol");
+
+
     }
 
     @Test

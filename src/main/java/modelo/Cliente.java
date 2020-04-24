@@ -6,6 +6,7 @@ public class Cliente extends Usuario {
     private ListaDeCompras listaDeCompras;
     public int montoGastado;
     private int montoDeCompra;
+    private int montoAcumuladoEnAlimentos;
 
     public String getDireccion() {
         return direccion;
@@ -26,6 +27,10 @@ public class Cliente extends Usuario {
     public int getMontoDeCompra() { return montoDeCompra; }
 
     public void setMontoDeCompra(int montoDeCompra) { this.montoDeCompra = montoDeCompra; }
+
+    public int getMontoAcumuladoEnAlimentos() { return montoAcumuladoEnAlimentos; }
+
+    public void setMontoAcumuladoEnAlimentos(int montoAcumuladoEnAlimentos) { this.montoAcumuladoEnAlimentos = montoAcumuladoEnAlimentos; }
 
     public Cliente(){}
 
@@ -50,7 +55,15 @@ public class Cliente extends Usuario {
         app.agregarCliente(this);
     }
 
-    public void agregarProducto(Producto producto){
+
+    public void asignarMontoMaximoEnCategoriaAlimentos(App app, int monto){
+        // El cliente notifica al sistema el monto máximo a gastar en la categoria alimentos.
+        app.setMontoMaximoCategoriaAlimentos(monto);
+    }
+
+
+
+    public void agregarProducto(Producto producto, App app){
     /* PROP: si el cliente no tiene asignado una lista de compras, es porque no está registrado y,
              por ende, no puede adquirir determinado producto. Si tiene asignado una lista de compras,
              entonces está registrado, y puede adquirir dicho producto.
@@ -60,9 +73,23 @@ public class Cliente extends Usuario {
         System.out.println("tenes que registrarte!");
     }
     else{
-        this.getListaDeCompras().agregarProducto(producto);
-        this.montoGastado = this.getMontoGastado() + producto.getPrecio();
+        this.verificarUmbralDeProducto(producto, app);
      }
+    }
+
+    public void verificarUmbralDeProducto(Producto producto, App app){
+        if(producto.getCategoria() == "alimento"){
+            if(this.getMontoAcumuladoEnAlimentos() + producto.getPrecio() > app.getMontoMaximoCategoriaAlimentos()){
+                System.out.println("AVISO: superaste el monto maximo de compra en categorias de alimento");
+            }else{
+                this.getListaDeCompras().agregarProducto(producto);
+                this.montoGastado = this.getMontoGastado() + producto.getPrecio();
+                this.montoAcumuladoEnAlimentos = this.getMontoAcumuladoEnAlimentos() + producto.getPrecio();
+            }
+        }else{
+            this.getListaDeCompras().agregarProducto(producto);
+            this.montoGastado = this.getMontoGastado() + producto.getPrecio();
+        }
     }
 
     public void realizarCompra(){

@@ -8,16 +8,18 @@ public class Producto {
     private int stock;
     private int precio;
     private String imagen;
+    private String categoria;
 
     public Producto() {}
 
-    public Producto(String nombre, String marca, int stock, int precio, String imagen){
+    public Producto(String nombre, String marca, int stock, int precio, String imagen, String categoria){
 
         this.setNombreProducto(nombre);
         this.setMarca(marca);
         this.setStock(stock);
         this.setPrecio(precio);
         this.setImagen(imagen);
+        this.setCategoria(categoria);
     }
 
 
@@ -60,4 +62,8 @@ public class Producto {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+    public String getCategoria() { return categoria; }
+
+    public void setCategoria(String categoria) { this.categoria = categoria; }
 }
