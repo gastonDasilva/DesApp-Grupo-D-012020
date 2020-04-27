@@ -1,5 +1,7 @@
 package Modelo;
 
+import org.eclipse.xtext.xbase.lib.Pair;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -12,7 +14,8 @@ public class Encargado extends Usuario {
     private int telefono;
     private String domicilio;
     private ArrayList<MedioDePago> mediosDePago = new ArrayList<MedioDePago>();
-    private  ArrayList<Producto> productosAVender = new ArrayList<Producto>();
+    private ArrayList<Producto> productosAVender = new ArrayList<Producto>();
+    private ArrayList<Pair<Producto, Producto>> productosEnOfertaPor2 = new ArrayList<Pair<Producto,Producto>>();
 
     public Encargado(String nombre){
         this.setNombreUsuario(nombre);
@@ -71,6 +74,14 @@ public class Encargado extends Usuario {
         this.productosAVender = productosAVender;
     }
 
+    public ArrayList<Pair<Producto, Producto>> getProductosEnOfertaPor2() {
+        return productosEnOfertaPor2;
+    }
+
+    public void setProductosEnOfertaPor2(ArrayList<Pair<Producto, Producto>> productosEnOfertaPor2) {
+        this.productosEnOfertaPor2 = productosEnOfertaPor2;
+    }
+
     public void agregarMedioDePago(MedioDePago me){
         /*Agrego un nuevo  medio de pago*/
         getMediosDePago().add(me);
@@ -79,6 +90,52 @@ public class Encargado extends Usuario {
     public void darDeAltaUnProducto(Producto pr){
         /*Doy de alta un nuevo producto para un comercio*/
         getProductosAVender().add(pr);
+    }
+
+    public void darDeAltaDosProductosEnOferta(Producto p1, Producto p2){
+        /* Doy de alta una combinación de 2 productos en oferta para un comercio */
+        Pair<Producto, Producto> oferta = new Pair<Producto, Producto>(p1, p2);
+        getProductosEnOfertaPor2().add(oferta);
+    }
+
+    public int sumatoriaDeTodosLosPrecios(){
+        int result = 0;
+        for(Producto p: this.getProductosAVender()){
+            result +=  p.getPrecio();
+        }
+        return result;
+    }
+
+    public int sumatoriaDeTodosLosProductosEnOfertaPor2(){
+        int result = 0;
+        for(Pair <Producto, Producto> p : this.getProductosEnOfertaPor2()){
+            result = result + p.getKey().getPrecio() + p.getValue().getPrecio();
+        }
+        return result;
+    }
+
+    public int aplicarDescuento(int importe, int descuento){
+        int descuentoAplicado = (importe * descuento) / 100;
+        return (importe - descuentoAplicado);
+    }
+
+    public void crearOfertaPorCategoriaDeAlimentos(int descuento){
+        for(Producto p: this.getProductosAVender()){
+            if(p.getCategoria() == "alimento"){
+                p.setPrecio(this.aplicarDescuento(p.getPrecio(), descuento));
+            }
+        }
+    }
+
+    public void crearOfertaPorCombinacionDe2Productos(int descuento){
+        /*
+         Se aplica el descuento a cada producto de las tuplas de productos (oferta por combinación
+         de 2 productos).
+         */
+        for(Pair <Producto, Producto> p : this.getProductosEnOfertaPor2()){
+            p.getKey().setPrecio(this.aplicarDescuento(p.getKey().getPrecio(), descuento));
+            p.getValue().setPrecio(this.aplicarDescuento(p.getValue().getPrecio(), descuento));
+        }
     }
 
 }

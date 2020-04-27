@@ -1,5 +1,6 @@
 package AppTest;
 
+import Modelo.*;
 import Modelo.Encargado;
 import Modelo.MedioDePago;
 import Modelo.Producto;
@@ -54,6 +55,86 @@ public class EncargadoTest {
 
         encargado.darDeAltaUnProducto(newProducto);
         TestCase.assertEquals(encargado.getProductosAVender().size(), 1);
+    }
+
+
+    @Test
+    public void unEncargadoCreaOfertaParaCategoriaDeAlimentos(){
+        Producto arroz = ProductoBuilder.aProducto().withNombreProducto("Arroz pal guiso")
+                .withStock(7)
+                .withImagen("iamgen.laslgapsgsasaf")
+                .withMarca("ALA")
+                .withCategoria("alimento")
+                .withPrecio(80)
+                .build();
+
+        Producto fideos = ProductoBuilder.aProducto().withNombreProducto("Fideos Matarazzo")
+                .withStock(5)
+                .withImagen("iamgen.lasfasfpsg")
+                .withMarca("Matarazzo")
+                .withCategoria("alimento")
+                .withPrecio(90)
+                .build();
+
+        Producto chisitos = ProductoBuilder.aProducto().withNombreProducto("Chisitos pehuamar")
+                .withStock(2)
+                .withImagen("iamgen.fdsfgapsg")
+                .withMarca("Pehuamar")
+                .withCategoria("golosina")
+                .withPrecio(150)
+                .build();
+
+        encargado.darDeAltaUnProducto(arroz);
+        encargado.darDeAltaUnProducto(fideos);
+        encargado.darDeAltaUnProducto(chisitos);
+        TestCase.assertEquals(encargado.getProductosAVender().size(), 3);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 320);
+
+        encargado.crearOfertaPorCategoriaDeAlimentos(10);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 303);
+    }
+
+    @Test
+    public void unEncargadoCreaOfertasPorCombinacionDe2Productos(){
+        Producto fernet = ProductoBuilder.aProducto().withNombreProducto("fernet vittone")
+                .withStock(10)
+                .withImagen("iamgen.lagfhfdg")
+                .withMarca("Vittone")
+                .withCategoria("Bebida alcoholica")
+                .withPrecio(250)
+                .build();
+
+        Producto coca = ProductoBuilder.aProducto().withNombreProducto("Coca cola")
+                .withStock(10)
+                .withImagen("iamgen.lgghfsfasfpsg")
+                .withMarca("Coca cola")
+                .withCategoria("Bebida sin alcohol")
+                .withPrecio(120)
+                .build();
+
+        Producto detergente = ProductoBuilder.aProducto().withNombreProducto("Detergente magistral")
+                .withStock(5)
+                .withImagen("iamgen.fdsafsffg")
+                .withMarca("Magistral")
+                .withCategoria("Limpieza")
+                .withPrecio(160)
+                .build();
+
+        Producto esponja = ProductoBuilder.aProducto().withNombreProducto("esponja amarilla")
+                .withStock(30)
+                .withImagen("iamgen.ffdgtyasg")
+                .withMarca("Patitol")
+                .withCategoria("Limpieza")
+                .withPrecio(30)
+                .build();
+
+        encargado.darDeAltaDosProductosEnOferta(fernet, coca);
+        encargado.darDeAltaDosProductosEnOferta(detergente, esponja);
+        TestCase.assertEquals(encargado.getProductosEnOfertaPor2().size(), 2);
+
+        encargado.crearOfertaPorCombinacionDe2Productos(10);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosProductosEnOfertaPor2(), 504);
+
     }
 
 }
