@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e62ccf9-c88e-4628-adb8-f1ac59605103" name="Default Changelist" comment="" />
+    <list default="true" id="2e62ccf9-c88e-4628-adb8-f1ac59605103" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/ComprandoEnCasaBackEnd/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="135" column="89" lean-forward="true" selection-start-line="135" selection-start-column="89" selection-end-line="135" selection-end-column="89" />
+            <state relative-caret-position="92">
+              <caret line="183" column="73" selection-start-line="183" selection-start-column="73" selection-end-line="183" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -26,51 +30,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="137" column="9" lean-forward="true" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+            <state relative-caret-position="-8">
+              <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#240#254#0" expanded="true" />
-                <element signature="e#590#615#0" expanded="true" />
-                <element signature="e#613#614#0" expanded="true" />
-                <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#878#879#0" expanded="true" />
-                <element signature="e#914#915#0" expanded="true" />
-                <element signature="e#983#984#0" expanded="true" />
-                <element signature="e#1033#1034#0" expanded="true" />
-                <element signature="e#1063#1064#0" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1130#1131#0" expanded="true" />
-                <element signature="e#1162#1163#0" expanded="true" />
-                <element signature="e#1194#1195#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
-                <element signature="e#1270#1271#0" expanded="true" />
-                <element signature="e#1310#1311#0" expanded="true" />
-                <element signature="e#1346#1347#0" expanded="true" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1428#1429#0" expanded="true" />
-                <element signature="e#1470#1471#0" expanded="true" />
-                <element signature="e#1525#1526#0" expanded="true" />
-                <element signature="e#1560#1561#0" expanded="true" />
-                <element signature="e#1632#1633#0" expanded="true" />
-                <element signature="e#1680#1681#0" expanded="true" />
-                <element signature="e#1736#1737#0" expanded="true" />
-                <element signature="e#1775#1776#0" expanded="true" />
-                <element signature="e#1852#1853#0" expanded="true" />
-                <element signature="e#1908#1909#0" expanded="true" />
                 <element signature="e#2036#2037#0" expanded="true" />
                 <element signature="e#2080#2081#0" expanded="true" />
-                <element signature="e#2750#2770#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ClienteTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="391">
               <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,20 +77,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
+            <state relative-caret-position="17">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Producto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -129,9 +95,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/AppTest.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java" />
         <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java" />
         <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java" />
-        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java" />
       </list>
     </option>
   </component>
@@ -231,8 +197,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -244,7 +210,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588027303859" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588087524739" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../grupal--DaSilva-Diaz-Quinionez-Rodriguez-4" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15270936" />
@@ -263,7 +229,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest in ComprandoEnCasaBackEnd">
+  <component name="RunManager" selected="JUnit.EncargadoTest">
     <configuration name="AppTest in ComprandoEnCasaBackEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ComprandoEnCasaBackEnd" />
       <extension name="coverage">
@@ -332,8 +298,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest in ComprandoEnCasaBackEnd" />
         <item itemvalue="JUnit.EncargadoTest" />
+        <item itemvalue="JUnit.AppTest in ComprandoEnCasaBackEnd" />
         <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.ListaDeComprasTest" />
       </list>
@@ -365,26 +331,12 @@
       <workItem from="1587937174682" duration="2822000" />
       <workItem from="1587946005161" duration="6083000" />
       <workItem from="1587965153014" duration="804000" />
-      <workItem from="1588002383586" duration="13465000" />
+      <workItem from="1588002383586" duration="14046000" />
+      <workItem from="1588082115750" duration="3332000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EncargadoTest - 2020.04.27 at 16h 33m 15s.xml">
-      <configuration name="EncargadoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EncargadoTest - 2020.04.27 at 16h 34m 40s.xml">
-      <configuration name="EncargadoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EncargadoTest - 2020.04.27 at 16h 41m 32s.xml">
-      <configuration name="EncargadoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EncargadoTest - 2020.04.27 at 16h 44m 18s.xml">
-      <configuration name="EncargadoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EncargadoTest - 2020.04.27 at 17h 48m 18s.xml">
-      <configuration name="EncargadoTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EncargadoTest - 2020.04.27 at 17h 49m 07s.xml">
       <configuration name="EncargadoTest" configurationId="JUnit" />
     </history-entry>
@@ -400,15 +352,30 @@
     <history-entry file="AppTest_in_ComprandoEnCasaBackEnd - 2020.04.27 at 19h 22m 37s.xml">
       <configuration name="AppTest in ComprandoEnCasaBackEnd" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EncargadoTest - 2020.04.28 at 11h 17m 59s.xml">
+      <configuration name="EncargadoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EncargadoTest - 2020.04.28 at 11h 19m 08s.xml">
+      <configuration name="EncargadoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EncargadoTest - 2020.04.28 at 11h 33m 49s.xml">
+      <configuration name="EncargadoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EncargadoTest - 2020.04.28 at 11h 37m 17s.xml">
+      <configuration name="EncargadoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EncargadoTest - 2020.04.28 at 12h 25m 09s.xml">
+      <configuration name="EncargadoTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23216000" />
+    <option name="totallyTimeSpent" value="27129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -418,7 +385,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -430,7 +397,7 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3289689" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.492635" />
+      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.492635" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -522,16 +489,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/ListaDeCompras.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ClienteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="391">
           <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -539,10 +499,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/AppTest.java">
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/ListaDeCompras.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="340">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -551,66 +518,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Producto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="85">
+          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="137" column="9" lean-forward="true" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+        <state relative-caret-position="-8">
+          <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#240#254#0" expanded="true" />
-            <element signature="e#590#615#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#914#915#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1130#1131#0" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1194#1195#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1470#1471#0" expanded="true" />
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="e#1680#1681#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-            <element signature="e#1852#1853#0" expanded="true" />
-            <element signature="e#1908#1909#0" expanded="true" />
             <element signature="e#2036#2037#0" expanded="true" />
             <element signature="e#2080#2081#0" expanded="true" />
-            <element signature="e#2750#2770#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="135" column="89" lean-forward="true" selection-start-line="135" selection-start-column="89" selection-end-line="135" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="92">
+          <caret line="183" column="73" selection-start-line="183" selection-start-column="73" selection-end-line="183" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -134,7 +134,54 @@ public class EncargadoTest {
 
         encargado.crearOfertaPorCombinacionDe2Productos(10);
         TestCase.assertEquals(encargado.sumatoriaDeTodosLosProductosEnOfertaPor2(), 504);
+    }
 
+    @Test
+    public void unEncargadoCreaOfertaPorProducto(){
+        Producto aceitunas = ProductoBuilder.aProducto().withNombreProducto("aceitunas con carozo")
+                .withStock(25)
+                .withImagen("iamgen.jafdkjh")
+                .withMarca("Carozo")
+                .withCategoria("alimento")
+                .withPrecio(60)
+                .build();
+
+        Producto prepizza = ProductoBuilder.aProducto().withNombreProducto("Prepizza")
+                .withStock(30)
+                .withImagen("iamgen.uidfdf")
+                .withMarca("Pirulo")
+                .withCategoria("Alimento")
+                .withPrecio(120)
+                .build();
+
+        Producto salsaDeTomate = ProductoBuilder.aProducto().withNombreProducto("Salsa de tomate")
+                .withStock(30)
+                .withImagen("iamgen.askldjlsdf")
+                .withMarca("Molto")
+                .withCategoria("Alimento")
+                .withPrecio(80)
+                .build();
+
+
+        Producto detergente = ProductoBuilder.aProducto().withNombreProducto("Detergente magistral")
+                .withStock(5)
+                .withImagen("iamgen.fdsafsffg")
+                .withMarca("Magistral")
+                .withCategoria("Limpieza")
+                .withPrecio(160)
+                .build();
+
+        encargado.darDeAltaUnProducto(prepizza);
+        encargado.darDeAltaUnProducto(salsaDeTomate);
+        encargado.darDeAltaUnProducto(aceitunas);
+        TestCase.assertEquals(encargado.getProductosAVender().size(), 3);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 260);
+
+        encargado.crearOferetaPorProducto(detergente, 5);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 260);
+
+        encargado.crearOferetaPorProducto(aceitunas, 5);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 257);
     }
 
 }

@@ -138,4 +138,12 @@ public class Encargado extends Usuario {
         }
     }
 
+    public void crearOferetaPorProducto(Producto producto, int descuento){
+        for(Producto p: this.getProductosAVender()){
+            if(p.equals(producto)){
+                p.setPrecio(this.aplicarDescuento(p.getPrecio(), descuento));
+            }
+        }
+    }
+
 }
