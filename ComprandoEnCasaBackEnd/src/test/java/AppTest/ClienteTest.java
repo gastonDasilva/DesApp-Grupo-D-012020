@@ -1,6 +1,7 @@
 package AppTest;
 
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.TestCase;

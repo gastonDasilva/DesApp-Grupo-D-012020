@@ -1,9 +1,17 @@
-package Modelo;
+package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "BSProducto")
 public class Producto {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "nombre")
     private String nombreProducto;
+
     private String marca;
     private int stock;
     private int precio;

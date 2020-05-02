@@ -1,16 +1,13 @@
 package AppTest;
 
-import Modelo.*;
 import Modelo.Encargado;
 import Modelo.MedioDePago;
-import Modelo.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import Tools.EncargadoBuilder;
 import Tools.ProductoBuilder;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.TestCase;
-
-import java.util.ArrayList;
 
 
 public class EncargadoTest {

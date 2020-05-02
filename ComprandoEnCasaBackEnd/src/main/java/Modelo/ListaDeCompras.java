@@ -1,5 +1,7 @@
 package Modelo;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
+
 import java.util.ArrayList;
 
 

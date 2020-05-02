@@ -1,5 +1,6 @@
 package Modelo;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import org.eclipse.xtext.xbase.lib.Pair;
 
 import java.util.ArrayList;

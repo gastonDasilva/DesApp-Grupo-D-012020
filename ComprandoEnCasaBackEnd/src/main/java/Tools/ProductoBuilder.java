@@ -1,7 +1,6 @@
 package Tools;
 
-import Modelo.Encargado;
-import Modelo.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
 public class ProductoBuilder {
     private String nombreProducto;

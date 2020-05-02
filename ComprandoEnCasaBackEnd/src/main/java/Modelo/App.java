@@ -1,4 +1,5 @@
 package Modelo;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import org.uqbar.commons.model.UserException;
 
 import java.util.List;
