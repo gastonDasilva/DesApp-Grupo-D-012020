@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
+import { Producto } from './producto';
 
 @Component({
   selector: 'app-root',
@@ -9,35 +11,33 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'ComprandoEnCasaFrontend';
-  productos = [
-      {id: 1, name: "Contact 001", description: "Contact 001 des", email: "c001@email.com"},
-      {id: 2, name: "Contact 002", description: "Contact 002 des", email: "c002@email.com"},
-      {id: 3, name: "Contact 003", description: "Contact 003 des", email: "c003@email.com"},
-      {id: 4, name: "Contact 004", description: "Contact 004 des", email: "c004@email.com"}
-    ];
-constructor(private http: HttpClient) {}
+   products: Producto[] = [];
 
-    public getProductos():Array<{id, name, description, email}>{
-      return this.productos;
-    }
-    public createProducto(contact: {id, name, description, email}){
-      this.productos.push(contact);
+
+constructor(private http: HttpClient,private api: ApiService) {}
+
+    public getProductos():Array<{nombreProducto, marca, stock, precio, imagen, categoria}>{
+      return this.products;
     }
 
-    ping$($event) {
-        const httpOptions = { headers: new HttpHeaders()
-                                      .set('Access-Control-Allow-Origin', '*')
-                                      .set('Access-Control-Allow-Headers', 'Content-Type')
-                                      .set('Access-Control-Allow-Methods', 'OPTIONS,POST,GET')
-                               };
-        this.http.get('http://localhost:8585/api/private',httpOptions)
-        .subscribe(res => {
-                          console.log(res);
+    public createProducto(product: {id, name, description, email,urlImage}){
+    /*Por implementar*/
+      //this.productos.push(product);
+    }
+
+    getProductosAPI$() {
+    this.products = [];
+      this.api.getProductosAPI$()
+      .subscribe(resp => {
+                     console.log(resp);
+                     //
+                       for (const data of resp.body) {
+                             this.products.push(data);
+                           }
+                           console.log(this.products);
                            },
-                    err => console.log(err)
-                  );
-                  console.log("Save button is clicked!", $event);
-      }
 
+                         err => console.log(err));
+    }
 
 }

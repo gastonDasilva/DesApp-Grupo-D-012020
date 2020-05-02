@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ProductoCreateComponent } from './producto-create/producto-create.component';
-import { ProductoListComponent } from './producto-list/producto-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +17,6 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     ProductoCreateComponent,
-    ProductoListComponent,
     HeaderComponent,
     FooterComponent
   ],

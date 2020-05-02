@@ -7,7 +7,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./producto-create.component.css']
 })
 export class ProductoCreateComponent implements OnInit {
-  producto : {id, name, description, email} = {id: null, name: "", description: "", email: ""};
+  producto : {id, name, description, email, urlImage} = {id: null, name: "", description: "", email: "", urlImage: ""};
 
   constructor(public appcomp: AppComponent) { }
 
@@ -18,7 +18,7 @@ export class ProductoCreateComponent implements OnInit {
   createProducto(){
     console.log(this.producto);
     this.appcomp.createProducto(this.producto);
-    this.producto = {id: null, name: "", description: "", email: ""};
+    this.producto = {id: null, name: "", description: "", email: "", urlImage: ""};
 
   }
 }

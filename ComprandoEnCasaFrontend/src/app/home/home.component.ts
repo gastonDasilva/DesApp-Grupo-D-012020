@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -6,24 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  productos;
+  selectedproducto;
+  constructor(private http: HttpClient,public appcomp: AppComponent) { }
 
   ngOnInit() {
+  this.appcomp.getProductosAPI$();
+  this.productos = this.appcomp.getProductos();
+  console.log("Save button is clicked!", this.productos);
   }
 
-  ping$($event) {
-          /*const httpOptions = { headers: new HttpHeaders()
-                                        .set('Access-Control-Allow-Origin', '*')
-                                        .set('Access-Control-Allow-Headers', 'Content-Type')
-                                        .set('Access-Control-Allow-Methods', 'OPTIONS,POST,GET')
-                                 };
-          this.http.get('http://localhost:8585/api/private',httpOptions)
-          .subscribe(res => {
-                            console.log(res);
-                             },
-                      err => console.log(err)
-                    );*/
-                    console.log("Save button is clicked!", $event);
-        }
+ public selectProduct(producto){
+      this.selectedproducto = producto;
+    }
+
 }
