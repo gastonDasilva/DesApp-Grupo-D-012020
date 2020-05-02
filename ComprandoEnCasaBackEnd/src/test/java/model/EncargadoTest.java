@@ -1,4 +1,4 @@
-package AppTest;
+package model;
 
 import Modelo.Encargado;
 import Modelo.MedioDePago;

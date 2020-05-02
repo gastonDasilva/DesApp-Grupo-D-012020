@@ -1,4 +1,4 @@
-package AppTest;
+package model;
 
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
