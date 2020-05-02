@@ -3,4 +3,4 @@ sudo: required
 jdk:
   - oraclejdk11
 install:
-  - cd DesApp-Grupo-D-012020-ComprandoEnCasaBackEnd && mvn clean install -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8
+  -  cd ComprandoEnCasaBackEnd && mvn clean install
