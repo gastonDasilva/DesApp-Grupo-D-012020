@@ -1,5 +1,6 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import Service.Controller.ListadoController;
 import Service.ServiceRest.ProductoService;
 import org.springframework.boot.SpringApplication;

@@ -1,5 +1,7 @@
 package Modelo;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
+
 public class Cliente extends Usuario {
 
     private String direccion;

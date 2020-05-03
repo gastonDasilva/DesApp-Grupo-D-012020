@@ -39,7 +39,7 @@
       <div class="col-md-3" *ngFor="let producto of productos">
         <div class="card text-center " >
           <div class="card-header">
-            <img src="https://ugc.kn3.net/i/760x/http://ecx.images-amazon.com/images/I/417OGU3mpcL._SS500_.jpg" class="card-img-top" alt="...">
+            <img src={{producto.imagen}} class="card-img-top" alt="...">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{producto.nombreProducto}}</h5>
