@@ -45,6 +45,16 @@ public class Cliente extends Usuario {
         this.setMontoGastado(0);
         this.setMontoDeCompra(0);
     }
+    //duplico para no romper ningun test anterior
+    public Cliente(String nombre, String email, String direccion){
+        this.setNombreUsuario(nombre);
+        this.setEmail(email);
+        this.setApp(app);
+        this.setDireccion(direccion);
+        this.setListaDeCompras(null);
+        this.setMontoGastado(0);
+        this.setMontoDeCompra(0);
+    }
 
     public void registrarme(App app){
         /*
@@ -52,10 +62,13 @@ public class Cliente extends Usuario {
          *       una vez registrado, y por último se agrega al cliente a la lista de clientes
          *       registrados a la aplicación pasada como parámetro.
          */
+        this.setApp(app);
         ListaDeCompras lista = new ListaDeCompras();
         this.setListaDeCompras(lista);
         app.agregarCliente(this);
     }
+
+
 
 
     public void asignarMontoMaximoEnCategoriaAlimentos(App app, int monto){

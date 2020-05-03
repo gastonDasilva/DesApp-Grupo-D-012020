@@ -1,4 +1,4 @@
-package AppTest;
+package model;
 
 
 import Modelo.*;
@@ -51,7 +51,7 @@ public class ClienteTest2 extends TestCase {
       */
      @Test
      public void testDomicilio(){
-         Cliente cliente = ClienteFactory.createWithAppAndDireccion(app,"Calle falsa 110");
+         Cliente cliente = ClienteFactory.createWithDireccion("Calle falsa 110");
          assertEquals(cliente.getDireccion(),"Calle falsa 110");
      }
 
@@ -67,7 +67,7 @@ public class ClienteTest2 extends TestCase {
 
      @Test
      public void testRegistrarme(){
-         Cliente cliente = ClienteFactory.anyCliente(app);
+         Cliente cliente = ClienteFactory.anyCliente();
          cliente.registrarme(app);
          assertEquals(app.cantidadDeClientes(),1);
          assertEquals(cliente.getListaDeCompras().getMontoAcumulado(),0);
@@ -85,7 +85,7 @@ public class ClienteTest2 extends TestCase {
 
      @Test
      public void testAgregarProducto(){
-         Cliente cliente = ClienteFactory.anyCliente(app);
+         Cliente cliente = ClienteFactory.anyCliente();
          cliente.registrarme(app);
          cliente.agregarProducto(ProductoFactory.createWithNombre("Fernet"),app);
          assertTrue(cliente.getListaDeCompras().cantidadDeProductosEnLista()==1);
@@ -109,7 +109,7 @@ public class ClienteTest2 extends TestCase {
 
      @Test
      public void testRealizarCompra(){
-         Cliente cliente = ClienteFactory.anyCliente(app);
+         Cliente cliente = ClienteFactory.anyCliente();
          cliente.registrarme(app);
          Producto fernet = ProductoFactory.createWithPrecio(250);
          Producto birra = ProductoFactory.createWithPrecio(65);
@@ -142,7 +142,7 @@ public class ClienteTest2 extends TestCase {
     public void testMontoGastado(){
         Producto fernet = ProductoFactory.createWithPrecio(250);
         Producto birra = ProductoFactory.createWithPrecio(65);
-        Cliente cliente = ClienteFactory.anyCliente(app);
+        Cliente cliente = ClienteFactory.anyCliente();
         cliente.registrarme(app);
         cliente.agregarProducto(fernet,app);
         cliente.agregarProducto(birra,app);
