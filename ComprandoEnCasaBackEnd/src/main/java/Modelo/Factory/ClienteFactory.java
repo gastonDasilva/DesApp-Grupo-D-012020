@@ -5,6 +5,8 @@ import Modelo.Cliente;
 import Modelo.ListaDeCompras;
 import Modelo.Producto;
 
+import java.util.List;
+
 public class ClienteFactory {
 
     public static Cliente anyCliente(App any){
@@ -24,5 +26,17 @@ public class ClienteFactory {
     public static Cliente createWithNombreAndApp (String name, App app){
         return create (name,"Sin email",app,"Sin Direccion");
     }
+
+    public static Cliente createWithAppAndDireccion(App app, String address){
+        return create("Sin Nombre","Sin email",app,address);
+    }
+
+    public static Cliente createWithAppAndProductos(App app,ListaDeCompras chango) {
+        Cliente alguien = create("Sin Nombre","Sin email",app,"Sin Direccion");
+        alguien.registrarme(app);
+        alguien.setListaDeCompras(chango);
+        return alguien;
+    }
+
 
 }

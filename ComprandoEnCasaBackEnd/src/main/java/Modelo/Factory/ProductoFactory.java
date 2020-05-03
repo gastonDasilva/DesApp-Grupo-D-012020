@@ -7,7 +7,7 @@ public class ProductoFactory {
     public static Producto anyProducto(){
         String nombreProducto = "Sin Nombre";
         String marca = "Sin Marca";
-        int stock= 0;
+        int stock= 1;
         int precio= 0;
         String imagen ="URL no disponible";
         String categoria ="Sin Categoria";
@@ -19,11 +19,14 @@ public class ProductoFactory {
     }
 
     public static Producto createWithNombre (String name){
-        return create (name,"Sin Marca",0,0,"URL no disponible","Sin Categoria");
+        return create (name,"Sin Marca",1,0,"URL no disponible","Sin Categoria");
     }
 
     public static Producto createWithNombreAndMarca (String name, String mark){
-        return create(name,mark,0,0,"URL no disponible","Sin Categoria");
+        return create(name,mark,1,0,"URL no disponible","Sin Categoria");
     }
 
+    public static Producto createWithPrecio(int price) {
+        return create("Sin Nombre","Sin Marca",1,price,"URL no disponible","Sin Catedoria");
+    }
 }
