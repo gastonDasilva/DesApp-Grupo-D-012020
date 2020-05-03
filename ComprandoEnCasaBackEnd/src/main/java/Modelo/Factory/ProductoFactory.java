@@ -34,4 +34,7 @@ public class ProductoFactory {
     public static Producto createWithPrecioAndCategoria(int price, String categoria) {
         return create("Sin Nombre", "Sin Marca", 1,price,"URL no disponible",categoria);
     }
+
+    public static class Categoria {
+    }
 }

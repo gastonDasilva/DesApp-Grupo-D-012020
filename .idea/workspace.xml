@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e62ccf9-c88e-4628-adb8-f1ac59605103" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Bebida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaAlcoholica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Golosina.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Limpieza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ProductoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ProductoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/ServiceRest/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/ServiceRest/ProductoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Repository/ProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Repository/ProductoRepository.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/ComprandoEnCasaBackEnd/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +20,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/ServiceRest/ProductoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#443#444#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Repository/ProductoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="183" column="73" selection-start-line="183" selection-start-column="73" selection-end-line="183" selection-end-column="73" />
+            <state relative-caret-position="68">
+              <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,24 +47,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/ComprandoEnCasaBackEndApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2036#2037#0" expanded="true" />
-                <element signature="e#2080#2081#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="153">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,10 +59,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ClienteTest.java">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/Controller/ListadoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,27 +71,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/ListaDeCompras.java">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Alimento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            <state relative-caret-position="34">
+              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/AppTest.java">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Bebida.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaSinAlcohol.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaAlcoholica.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Golosina.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Limpieza.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,6 +143,15 @@
         <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java" />
         <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java" />
         <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Categoria.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Alimento.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Bebida.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaSinAlcohol.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaAlcoholica.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Golosina.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Limpieza.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/ServiceRest/ProductoService.java" />
+        <option value="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Repository/ProductoRepository.java" />
       </list>
     </option>
   </component>
@@ -127,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,6 +222,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesApp-Grupo-D-012020" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesApp-Grupo-D-012020" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Modelo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -174,6 +248,45 @@
               <item name="DesApp-Grupo-D-012020" type="462c0819:PsiDirectoryNode" />
               <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Modelo" type="462c0819:PsiDirectoryNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesApp-Grupo-D-012020" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesApp-Grupo-D-012020" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesApp-Grupo-D-012020" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="ServiceRest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesApp-Grupo-D-012020" type="462c0819:PsiDirectoryNode" />
+              <item name="ComprandoEnCasaBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -191,13 +304,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="AppTest" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -210,12 +322,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588087524739" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../grupal--DaSilva-Diaz-Quinionez-Rodriguez-4" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588480858897" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15270936" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexander87\Desktop\DesApp-Grupo-D-012020\ComprandoEnCasaBackEnd" />
+      <recent name="C:\Users\Alexander87\Desktop\DesApp-Grupo-D-012020\ComprandoEnCasaBackEnd\src" />
+      <recent name="C:\Users\Alexander87\Desktop\DesApp-Grupo-D-012020" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -333,6 +452,9 @@
       <workItem from="1587965153014" duration="804000" />
       <workItem from="1588002383586" duration="14046000" />
       <workItem from="1588082115750" duration="3332000" />
+      <workItem from="1588401228498" duration="511000" />
+      <workItem from="1588474671006" duration="593000" />
+      <workItem from="1588475427141" duration="3807000" />
     </task>
     <servers />
   </component>
@@ -369,13 +491,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27129000" />
+    <option name="totallyTimeSpent" value="32040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2806354" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -431,8 +553,52 @@
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/MedioDePago.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/ComprandoEnCasaBackEndApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Producto.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/ListaDeCompras.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ClienteTest.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/AppTest.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Entitys/Producto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/ClienteBuilder.java">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/ProductoBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/EncargadoBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -444,111 +610,188 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/ComprandoEnCasaBackEndApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/resources/data.sql">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/ComprandoEnCasaBackEndApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-862">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/Controller/ListadoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ClienteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/ListaDeCompras.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/ListaDeComprasTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Producto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/AppTest.java">
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Builder/AppBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/model/ClienteTest2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/model/ClienteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/model/AppTest2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/Categoria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Encargado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
+        <state relative-caret-position="-695">
           <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2036#2037#0" expanded="true" />
-            <element signature="e#2080#2081#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/AppTest/EncargadoTest.java">
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ClienteFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="183" column="73" selection-start-line="183" selection-start-column="73" selection-end-line="183" selection-end-column="73" />
+        <state relative-caret-position="-114">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ProductoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-947">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-743">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Categoria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Alimento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Bebida.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaSinAlcohol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaAlcoholica.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Golosina.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Limpieza.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.2.6.RELEASE/spring-data-jpa-2.2.6.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/Controller/ListadoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/ServiceRest/ProductoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/ComprandoEnCasaBackEndApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Repository/ProductoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
