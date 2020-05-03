@@ -7,7 +7,7 @@ import Modelo.Cliente;
 import Modelo.Encargado;
 import Modelo.Factory.ClienteFactory;
 import Modelo.Factory.ProductoFactory;
-import Modelo.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import junit.framework.TestCase;
 import org.junit.Test;
 

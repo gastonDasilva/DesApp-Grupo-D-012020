@@ -5,12 +5,11 @@ import Modelo.*;
 import Modelo.Builder.AppBuilder;
 import Modelo.Factory.ClienteFactory;
 import Modelo.Factory.ProductoFactory;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteTest2 extends TestCase {
 
@@ -117,8 +116,10 @@ public class ClienteTest2 extends TestCase {
          cliente.realizarCompra();
          assertEquals(cliente.getMontoDeCompra(),0);
          cliente.agregarProducto(fernet,app);
+         cliente.realizarCompra();
          assertEquals(cliente.getMontoDeCompra(),250);
          cliente.agregarProducto(birra,app);
+         cliente.realizarCompra();
          assertEquals(cliente.getMontoDeCompra(),315);
      }
 
@@ -139,12 +140,13 @@ public class ClienteTest2 extends TestCase {
 
     @Test
     public void testMontoGastado(){
-        ListaDeCompras chango = new ListaDeCompras();
         Producto fernet = ProductoFactory.createWithPrecio(250);
         Producto birra = ProductoFactory.createWithPrecio(65);
-        chango.agregarProducto(fernet); chango.agregarProducto(birra);
-        Cliente cliente = ClienteFactory.createWithAppAndProductos(app,chango);
-        assertTrue(cliente.getMontoGastado()==315);
+        Cliente cliente = ClienteFactory.anyCliente(app);
+        cliente.registrarme(app);
+        cliente.agregarProducto(fernet,app);
+        cliente.agregarProducto(birra,app);
+        assertEquals(cliente.getMontoGastado(),315);
     }
 
 
@@ -167,11 +169,22 @@ public class ClienteTest2 extends TestCase {
          assertTrue(cliente.getMontoGastado() == 140);
      }
      */
-    /*@Test
+    @Test
     public void testAgregarProductosYVerificarMontoMaximoPorCategoria(){
-
+        Producto fideos = ProductoFactory.createWithPrecioAndCategoria(80,"alimento");
+        Producto salsaDeTomate = ProductoFactory.createWithPrecioAndCategoria(60,"alimento");
+        Producto queso = ProductoFactory.createWithPrecioAndCategoria(90,"alimento");
+        app.setMontoMaximoCategoriaAlimentos(200);
+        Cliente cliente = ClienteFactory.anyCliente(app);
+        cliente.registrarme(app);
+        cliente.agregarProducto(fideos,app);
+        cliente.agregarProducto(salsaDeTomate,app);
+        cliente.agregarProducto(queso,app);
+        assertFalse(cliente.getMontoGastado()>200);
+        assertTrue(cliente.getMontoGastado()==140);
+        assertEquals(cliente.getListaDeCompras().cantidadDeProductosEnLista(),2);
     }
 
-     */
+
 
 }

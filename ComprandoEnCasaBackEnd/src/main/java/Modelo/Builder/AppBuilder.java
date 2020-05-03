@@ -3,7 +3,7 @@ package Modelo.Builder;
 import Modelo.App;
 import Modelo.Cliente;
 import Modelo.Encargado;
-import Modelo.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
 import java.util.ArrayList;
 import java.util.List;

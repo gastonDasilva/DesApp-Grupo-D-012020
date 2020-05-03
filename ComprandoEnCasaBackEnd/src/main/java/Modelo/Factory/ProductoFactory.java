@@ -1,6 +1,7 @@
 package Modelo.Factory;
 
-import Modelo.Producto;
+
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
 public class ProductoFactory {
 
@@ -28,5 +29,9 @@ public class ProductoFactory {
 
     public static Producto createWithPrecio(int price) {
         return create("Sin Nombre","Sin Marca",1,price,"URL no disponible","Sin Catedoria");
+    }
+
+    public static Producto createWithPrecioAndCategoria(int price, String categoria) {
+        return create("Sin Nombre", "Sin Marca", 1,price,"URL no disponible",categoria);
     }
 }
