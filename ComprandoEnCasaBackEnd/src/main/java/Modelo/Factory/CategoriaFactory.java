@@ -27,7 +27,7 @@ public class CategoriaFactory {
                 throw new IllegalStateException("No se encuentra categoria: " + unaCategoria);
 
         }
-        return producto;
-    }
-
+        return
+    producto;
+}
 }

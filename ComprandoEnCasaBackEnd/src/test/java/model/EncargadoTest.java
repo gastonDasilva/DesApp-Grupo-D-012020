@@ -56,12 +56,12 @@ public class EncargadoTest {
 
 
     @Test
-    public void unEncargadoCreaOfertaParaCategoriaDeAlimentos(){
+    public void unEncargadoCreaOfertaParaCategoria(){
         Producto arroz = ProductoBuilder.aProducto().withNombreProducto("Arroz pal guiso")
                 .withStock(7)
                 .withImagen("iamgen.laslgapsgsasaf")
                 .withMarca("ALA")
-                .withCategoria("alimento")
+                .withCategoria("Alimento")
                 .withPrecio(80)
                 .build();
 
@@ -69,7 +69,7 @@ public class EncargadoTest {
                 .withStock(5)
                 .withImagen("iamgen.lasfasfpsg")
                 .withMarca("Matarazzo")
-                .withCategoria("alimento")
+                .withCategoria("Alimento")
                 .withPrecio(90)
                 .build();
 
@@ -77,7 +77,7 @@ public class EncargadoTest {
                 .withStock(2)
                 .withImagen("iamgen.fdsfgapsg")
                 .withMarca("Pehuamar")
-                .withCategoria("golosina")
+                .withCategoria("Golosina")
                 .withPrecio(150)
                 .build();
 
@@ -87,7 +87,7 @@ public class EncargadoTest {
         TestCase.assertEquals(encargado.getProductosAVender().size(), 3);
         TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 320);
 
-        encargado.crearOfertaPorCategoriaDeAlimentos(10);
+        encargado.crearOfertaPorCategoria(10, "Alimento");
         TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 303);
     }
 
@@ -139,7 +139,7 @@ public class EncargadoTest {
                 .withStock(25)
                 .withImagen("iamgen.jafdkjh")
                 .withMarca("Carozo")
-                .withCategoria("alimento")
+                .withCategoria("Alimento")
                 .withPrecio(60)
                 .build();
 

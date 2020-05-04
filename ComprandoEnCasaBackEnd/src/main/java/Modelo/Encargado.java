@@ -120,9 +120,9 @@ public class Encargado extends Usuario {
         return (importe - descuentoAplicado);
     }
 
-    public void crearOfertaPorCategoriaDeAlimentos(int descuento){
+    public void crearOfertaPorCategoria(int descuento, String categoria){
         for(Producto p: this.getProductosAVender()){
-            if(p.getCategoria() == "alimento"){
+            if(p.getCategoria() == categoria){
                 p.setPrecio(this.aplicarDescuento(p.getPrecio(), descuento));
             }
         }

@@ -16,6 +16,7 @@ public class App {
     private Encargado encargado;
     private List<Producto> productos;
     private int montoMaximoCategoriaAlimentos;
+    private int montoMaximoCategoriaBebidasAlcoholicas;
 
 
     public String getRubro() {
@@ -86,6 +87,14 @@ public class App {
 
     public void setMontoMaximoCategoriaAlimentos(int montoMaximoCategoriaAlimentos) { this.montoMaximoCategoriaAlimentos = montoMaximoCategoriaAlimentos; }
 
+    public int getMontoMaximoCategoriaBebidasAlcoholicas() {
+        return montoMaximoCategoriaBebidasAlcoholicas;
+    }
+
+    public void setMontoMaximoCategoriaBebidasAlcoholicas(int montoMaximoCategoriaBebidasAlcoholicas) {
+        this.montoMaximoCategoriaBebidasAlcoholicas = montoMaximoCategoriaBebidasAlcoholicas;
+    }
+
     public App(String rubro, String domicilio, String diasYHorariosDeAtencion, String mediosDePago, float distancia, Encargado encargado){
 
         this.setRubro(rubro);
@@ -97,6 +106,7 @@ public class App {
         this.setEncargado(encargado);
         this.setProductos(new ArrayList<Producto>());
         this.setMontoMaximoCategoriaAlimentos(0); // Este valor lo setea e cliente
+        this.setMontoMaximoCategoriaBebidasAlcoholicas(0);
     }
 
     public void agregarCliente(Cliente cliente){

@@ -15,6 +15,7 @@ public class ClienteFactory {
         int montoGastado = 0;
         int montoDeCompra = 0;
         int montoAcumuladoEnAlimentos= 0;
+        int montoAcumuladoEnBebidasAlcoholicas = 0;
 
         return new Cliente("Sin Nombre","Sin email",any,"Sin Direccion");
     }
@@ -25,6 +26,7 @@ public class ClienteFactory {
         int montoGastado = 0;
         int montoDeCompra = 0;
         int montoAcumuladoEnAlimentos= 0;
+        int montoAcumuladoEnBebidasAlcoholicas = 0;
 
         return new Cliente("Sin Nombre","Sin email","Sin Direccion");
     }

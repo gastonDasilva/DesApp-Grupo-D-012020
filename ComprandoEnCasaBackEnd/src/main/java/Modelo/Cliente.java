@@ -2,6 +2,9 @@ package Modelo;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente extends Usuario {
 
     private String direccion;
@@ -9,6 +12,8 @@ public class Cliente extends Usuario {
     public int montoGastado;
     private int montoDeCompra;
     private int montoAcumuladoEnAlimentos;
+    private int montoAcumuladoEnBebidasAlcoholicas;
+    private List<ListaDeCompras> historialDeCompras;
 
     public String getDireccion() {
         return direccion;
@@ -34,6 +39,14 @@ public class Cliente extends Usuario {
 
     public void setMontoAcumuladoEnAlimentos(int montoAcumuladoEnAlimentos) { this.montoAcumuladoEnAlimentos = montoAcumuladoEnAlimentos; }
 
+    public int getMontoAcumuladoEnBebidasAlcoholicas() { return montoAcumuladoEnBebidasAlcoholicas; }
+
+    public void setMontoAcumuladoEnBebidasAlcoholicas(int montoAcumuladoEnBebidasAlcoholicas) { this.montoAcumuladoEnBebidasAlcoholicas = montoAcumuladoEnBebidasAlcoholicas; }
+
+    public List<ListaDeCompras> getHistorialDeCompras() { return historialDeCompras; }
+
+    public void setHistorialDeCompras(List<ListaDeCompras> historialDeCompras) { this.historialDeCompras = historialDeCompras; }
+
     public Cliente(){}
 
     public Cliente(String nombre, String email, App app, String direccion){
@@ -44,6 +57,7 @@ public class Cliente extends Usuario {
         this.setListaDeCompras(null);
         this.setMontoGastado(0);
         this.setMontoDeCompra(0);
+        this.setHistorialDeCompras(new ArrayList<ListaDeCompras>());
     }
     //duplico para no romper ningun test anterior
     public Cliente(String nombre, String email, String direccion){
@@ -54,6 +68,7 @@ public class Cliente extends Usuario {
         this.setListaDeCompras(null);
         this.setMontoGastado(0);
         this.setMontoDeCompra(0);
+        this.setHistorialDeCompras(new ArrayList<ListaDeCompras>());
     }
 
     public void registrarme(App app){
@@ -92,22 +107,42 @@ public class Cliente extends Usuario {
      }
     }
 
-    public void verificarUmbralDeProducto(Producto producto, App app){
-        if(producto.getCategoria() == "alimento"){
-            if(this.getMontoAcumuladoEnAlimentos() + producto.getPrecio() > app.getMontoMaximoCategoriaAlimentos()){
-                System.out.println("AVISO: superaste el monto maximo de compra en categorias de alimento");
-            }else{
+    public void verificarUmbralDeProducto(Producto producto, App app) {
+
+        switch (producto.getCategoria()) {
+            case "Alimento":
+                if (this.getMontoAcumuladoEnAlimentos() + producto.getPrecio() > app.getMontoMaximoCategoriaAlimentos()) {
+                    System.out.println("AVISO: superaste el monto maximo de compra en categorias de alimento");
+                } else {
+                    this.getListaDeCompras().agregarProducto(producto);
+                    this.montoGastado = this.getMontoGastado() + producto.getPrecio();
+                    this.montoAcumuladoEnAlimentos = this.getMontoAcumuladoEnAlimentos() + producto.getPrecio();
+
+                }
+                break;
+            case "Bebida alcoholica":
+                if (this.getMontoAcumuladoEnBebidasAlcoholicas() + producto.getPrecio() > app.getMontoMaximoCategoriaBebidasAlcoholicas()) {
+                    System.out.println("AVISO: superaste el monto maximo de compra en categorias de bebidas alcoholicas");
+                } else {
+                    this.getListaDeCompras().agregarProducto(producto);
+                    this.montoGastado = this.getMontoGastado() + producto.getPrecio();
+                    this.montoAcumuladoEnBebidasAlcoholicas = this.getMontoAcumuladoEnBebidasAlcoholicas() + producto.getPrecio();
+
+                }
+                break;
+            default:
                 this.getListaDeCompras().agregarProducto(producto);
                 this.montoGastado = this.getMontoGastado() + producto.getPrecio();
-                this.montoAcumuladoEnAlimentos = this.getMontoAcumuladoEnAlimentos() + producto.getPrecio();
-            }
-        }else{
-            this.getListaDeCompras().agregarProducto(producto);
-            this.montoGastado = this.getMontoGastado() + producto.getPrecio();
         }
     }
 
-    public void realizarCompra(){
-        this.montoDeCompra = this.getMontoGastado();
+    public void realizarCompra() {
+        if (this.getListaDeCompras().cantidadDeProductosEnLista() == 0) {
+            this.montoDeCompra = this.getMontoGastado();
+        } else {
+            this.getHistorialDeCompras().add(this.getListaDeCompras());
+            this.montoDeCompra = this.getMontoGastado();
+            this.setListaDeCompras(new ListaDeCompras());
+        }
     }
 }

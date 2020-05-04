@@ -108,7 +108,7 @@ public class ClienteTest extends TestCase {
       */
 
      @Test
-     public void testRealizarCompra(){
+     public void testRealizarCompraYVerificarHistorialDeCompras(){
          Cliente cliente = ClienteFactory.anyCliente();
          cliente.registrarme(app);
          Producto fernet = ProductoFactory.createWithPrecio(250);
@@ -121,6 +121,10 @@ public class ClienteTest extends TestCase {
          cliente.agregarProducto(birra,app);
          cliente.realizarCompra();
          assertEquals(cliente.getMontoDeCompra(),315);
+         assertEquals(cliente.getHistorialDeCompras().size(), 2);
+         for(ListaDeCompras l: cliente.getHistorialDeCompras()){
+             System.out.println("el historial es: " + l.cantidadDeProductosEnLista()) ;
+         }
      }
 
 
@@ -147,6 +151,7 @@ public class ClienteTest extends TestCase {
         cliente.agregarProducto(fernet,app);
         cliente.agregarProducto(birra,app);
         assertEquals(cliente.getMontoGastado(),315);
+
     }
 
 
@@ -171,18 +176,23 @@ public class ClienteTest extends TestCase {
      */
     @Test
     public void testAgregarProductosYVerificarMontoMaximoPorCategoria(){
-        Producto fideos = ProductoFactory.createWithPrecioAndCategoria(80,"alimento");
-        Producto salsaDeTomate = ProductoFactory.createWithPrecioAndCategoria(60,"alimento");
-        Producto queso = ProductoFactory.createWithPrecioAndCategoria(90,"alimento");
+        Producto fideos = ProductoFactory.createWithPrecioAndCategoria(80,"Alimento");
+        Producto salsaDeTomate = ProductoFactory.createWithPrecioAndCategoria(60,"Alimento");
+        Producto queso = ProductoFactory.createWithPrecioAndCategoria(90,"Alimento");
+        Producto birra = ProductoFactory.createWithPrecioAndCategoria(120, "Bebida alcoholica");
+        Producto fernet = ProductoFactory.createWithPrecioAndCategoria(290, "Bebida alcoholica");
         app.setMontoMaximoCategoriaAlimentos(200);
+        app.setMontoMaximoCategoriaBebidasAlcoholicas(400);
         Cliente cliente = ClienteFactory.anyCliente(app);
         cliente.registrarme(app);
         cliente.agregarProducto(fideos,app);
         cliente.agregarProducto(salsaDeTomate,app);
         cliente.agregarProducto(queso,app);
-        assertFalse(cliente.getMontoGastado()>200);
-        assertTrue(cliente.getMontoGastado()==140);
-        assertEquals(cliente.getListaDeCompras().cantidadDeProductosEnLista(),2);
+        cliente.agregarProducto(fernet, app);
+        cliente.agregarProducto(birra, app);
+        assertFalse(cliente.getMontoGastado()>500);
+        assertTrue(cliente.getMontoGastado()==430);
+        assertEquals(cliente.getListaDeCompras().cantidadDeProductosEnLista(),3);
     }
 
 
