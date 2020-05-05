@@ -1,5 +1,7 @@
 package Modelo;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
+
 import java.util.ArrayList;
 
 
@@ -41,8 +43,4 @@ public class ListaDeCompras {
     }
 
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
-    }
 }

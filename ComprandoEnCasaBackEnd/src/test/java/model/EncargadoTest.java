@@ -1,16 +1,13 @@
-package AppTest;
+package model;
 
-import Modelo.*;
 import Modelo.Encargado;
 import Modelo.MedioDePago;
-import Modelo.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import Tools.EncargadoBuilder;
 import Tools.ProductoBuilder;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.TestCase;
-
-import java.util.ArrayList;
 
 
 public class EncargadoTest {
@@ -59,12 +56,12 @@ public class EncargadoTest {
 
 
     @Test
-    public void unEncargadoCreaOfertaParaCategoriaDeAlimentos(){
+    public void unEncargadoCreaOfertaParaCategoria(){
         Producto arroz = ProductoBuilder.aProducto().withNombreProducto("Arroz pal guiso")
                 .withStock(7)
                 .withImagen("iamgen.laslgapsgsasaf")
                 .withMarca("ALA")
-                .withCategoria("alimento")
+                .withCategoria("Alimento")
                 .withPrecio(80)
                 .build();
 
@@ -72,7 +69,7 @@ public class EncargadoTest {
                 .withStock(5)
                 .withImagen("iamgen.lasfasfpsg")
                 .withMarca("Matarazzo")
-                .withCategoria("alimento")
+                .withCategoria("Alimento")
                 .withPrecio(90)
                 .build();
 
@@ -80,7 +77,7 @@ public class EncargadoTest {
                 .withStock(2)
                 .withImagen("iamgen.fdsfgapsg")
                 .withMarca("Pehuamar")
-                .withCategoria("golosina")
+                .withCategoria("Golosina")
                 .withPrecio(150)
                 .build();
 
@@ -90,7 +87,7 @@ public class EncargadoTest {
         TestCase.assertEquals(encargado.getProductosAVender().size(), 3);
         TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 320);
 
-        encargado.crearOfertaPorCategoriaDeAlimentos(10);
+        encargado.crearOfertaPorCategoria(10, "Alimento");
         TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 303);
     }
 
@@ -134,7 +131,54 @@ public class EncargadoTest {
 
         encargado.crearOfertaPorCombinacionDe2Productos(10);
         TestCase.assertEquals(encargado.sumatoriaDeTodosLosProductosEnOfertaPor2(), 504);
+    }
 
+    @Test
+    public void unEncargadoCreaOfertaPorProducto(){
+        Producto aceitunas = ProductoBuilder.aProducto().withNombreProducto("aceitunas con carozo")
+                .withStock(25)
+                .withImagen("iamgen.jafdkjh")
+                .withMarca("Carozo")
+                .withCategoria("Alimento")
+                .withPrecio(60)
+                .build();
+
+        Producto prepizza = ProductoBuilder.aProducto().withNombreProducto("Prepizza")
+                .withStock(30)
+                .withImagen("iamgen.uidfdf")
+                .withMarca("Pirulo")
+                .withCategoria("Alimento")
+                .withPrecio(120)
+                .build();
+
+        Producto salsaDeTomate = ProductoBuilder.aProducto().withNombreProducto("Salsa de tomate")
+                .withStock(30)
+                .withImagen("iamgen.askldjlsdf")
+                .withMarca("Molto")
+                .withCategoria("Alimento")
+                .withPrecio(80)
+                .build();
+
+
+        Producto detergente = ProductoBuilder.aProducto().withNombreProducto("Detergente magistral")
+                .withStock(5)
+                .withImagen("iamgen.fdsafsffg")
+                .withMarca("Magistral")
+                .withCategoria("Limpieza")
+                .withPrecio(160)
+                .build();
+
+        encargado.darDeAltaUnProducto(prepizza);
+        encargado.darDeAltaUnProducto(salsaDeTomate);
+        encargado.darDeAltaUnProducto(aceitunas);
+        TestCase.assertEquals(encargado.getProductosAVender().size(), 3);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 260);
+
+        encargado.crearOferetaPorProducto(detergente, 5);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 260);
+
+        encargado.crearOferetaPorProducto(aceitunas, 5);
+        TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 257);
     }
 
 }

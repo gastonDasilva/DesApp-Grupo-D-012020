@@ -1,5 +1,6 @@
 package Modelo;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import org.eclipse.xtext.xbase.lib.Pair;
 
 import java.util.ArrayList;
@@ -119,9 +120,9 @@ public class Encargado extends Usuario {
         return (importe - descuentoAplicado);
     }
 
-    public void crearOfertaPorCategoriaDeAlimentos(int descuento){
+    public void crearOfertaPorCategoria(int descuento, String categoria){
         for(Producto p: this.getProductosAVender()){
-            if(p.getCategoria() == "alimento"){
+            if(p.getCategoria() == categoria){
                 p.setPrecio(this.aplicarDescuento(p.getPrecio(), descuento));
             }
         }
@@ -135,6 +136,14 @@ public class Encargado extends Usuario {
         for(Pair <Producto, Producto> p : this.getProductosEnOfertaPor2()){
             p.getKey().setPrecio(this.aplicarDescuento(p.getKey().getPrecio(), descuento));
             p.getValue().setPrecio(this.aplicarDescuento(p.getValue().getPrecio(), descuento));
+        }
+    }
+
+    public void crearOferetaPorProducto(Producto producto, int descuento){
+        for(Producto p: this.getProductosAVender()){
+            if(p.equals(producto)){
+                p.setPrecio(this.aplicarDescuento(p.getPrecio(), descuento));
+            }
         }
     }
 
