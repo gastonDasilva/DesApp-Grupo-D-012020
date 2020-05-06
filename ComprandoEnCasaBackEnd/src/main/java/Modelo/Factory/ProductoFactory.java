@@ -35,6 +35,8 @@ public class ProductoFactory {
         return create("Sin Nombre", "Sin Marca", 1,price,"URL no disponible",categoria);
     }
 
-    public static class Categoria {
+
+    public static Producto createWithMarca(String marca) {
+        return create("Sin Nombre",marca,1,0,"URL no disponible","Sin Categoria");
     }
 }

@@ -78,4 +78,13 @@ public class Producto {
     public String getCategoria() { return categoria; }
 
     public void setCategoria(String categoria) { this.categoria = categoria; }
+
+    public void imprimirEnPantalla() {
+        System.out.print("[");
+        System.out.print("Nombre del producto: "+ this.getNombreProducto());
+        System.out.print(" ,Marca: "+ this.getMarca());
+        System.out.print(" ,stock: "+this.getStock());
+        System.out.println(" ,precio:"+ this.getPrecio());
+        System.out.println("]");
+    }
 }
