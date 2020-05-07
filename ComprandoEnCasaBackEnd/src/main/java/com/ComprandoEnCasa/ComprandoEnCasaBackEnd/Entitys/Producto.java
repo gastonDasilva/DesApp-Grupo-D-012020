@@ -1,6 +1,10 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys;
 
+import Modelo.Categoria;
+import Modelo.Factory.CategoriaFactory;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "BSProducto")
@@ -17,6 +21,16 @@ public class Producto {
     private int precio;
     private String imagen;
     private String categoria;
+
+    private Categoria clasificacion;
+
+    // campos de oferta
+    public String tipoDeDescuento;
+    public int cantidadLlevada;
+    public int porcentaje;
+    public LocalDate desde;
+    public LocalDate hasta;
+
 
     public Producto() {}
 
@@ -48,7 +62,7 @@ public class Producto {
     }
 
     public int getPrecio() {
-        return precio;
+        return precio - this.aplicarDescuento();
     }
 
     public String getImagen() {
@@ -77,7 +91,10 @@ public class Producto {
 
     public String getCategoria() { return categoria; }
 
-    public void setCategoria(String categoria) { this.categoria = categoria; }
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+        this.clasificacion = CategoriaFactory.getCategoria(categoria);
+    }
 
     public void imprimirEnPantalla() {
         System.out.print("[");
@@ -87,4 +104,38 @@ public class Producto {
         System.out.println(" ,precio:"+ this.getPrecio());
         System.out.println("]");
     }
+
+
+    public void establecerOferta(String tipoDescuento, LocalDate aPartir, LocalDate finaliza){
+        desde = aPartir;
+        hasta = finaliza;
+        tipoDeDescuento = tipoDescuento;
+    }
+
+    public boolean ofertaVigente(){
+        return LocalDate.now().isAfter(this.desde) && LocalDate.now().isBefore(hasta);
+    }
+
+    private int aplicarDescuento() {
+        int monto = 0;
+        int precioAnterior = this.precio;
+        if (ofertaVigente()){
+            switch (tipoDeDescuento){
+                case "Descuento por Unidad":
+                    monto = precioAnterior * this.porcentaje /100;
+                    break;
+                case "2x1":
+                    if ((cantidadLlevada % 2 )== 0){
+                        monto = precioAnterior * 50 / 100;
+                    }
+                    break;
+                default:
+                    throw new IllegalStateException("No se encuentra oferta");
+
+            }
+        }
+        return monto;
+    }
+
+
 }

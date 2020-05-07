@@ -82,8 +82,13 @@ public class AppTest extends TestCase {
 
     @Test
     public void testDisponibilidadDeUnProducto(){
-        Producto polenta = ProductoFactory.createWithNombre("polenta");
-        Producto pepsi = ProductoFactory.createWithNombreAndMarca("Gaseosa","Pepsi");
+        //no uso todos los campos del producto, los creo con el factory con los campos que necesito
+        /*
+        Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento");
+        Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol");
+         */
+        Producto polenta = ProductoFactory.createWithNombreMarcaStockAndPrecio("polenta", "Presto Pronta", 15, 80);
+        Producto pepsi = ProductoFactory.createWithNombreMarcaStockAndPrecio("Gaseosa","Pepsi",30,120);
         App app = appBuilder.build();
         assertFalse(app.disponibilidadDeProducto(pepsi));
         app.agregarProducto(polenta);
@@ -140,16 +145,5 @@ public class AppTest extends TestCase {
         List <Producto> shingle = maxiconsumo.filtrarProductosConMarca("Maroleo");
         assertEquals(shingle.size(),8);
     }
-
-    /**
-     *
-     *
-     *     public void imprimirProductos()
-     *     //polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento");
-     *     //pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol");
-     *
-     *
-     */
-
 
 }
