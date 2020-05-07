@@ -24,7 +24,7 @@ public class Producto {
         this.setNombreProducto(nombre);
     }
 
-    public Producto(String nombre, String marca, int stock, int precio, String imagen, String categoria){
+    public Producto(String nombre, String marca, int stock, int precio, String imagen, String categoria, Long id){
 
         this.setNombreProducto(nombre);
         this.setMarca(marca);
@@ -32,6 +32,7 @@ public class Producto {
         this.setPrecio(precio);
         this.setImagen(imagen);
         this.setCategoria(categoria);
+        this.setId(id);
     }
 
 
@@ -78,4 +79,8 @@ public class Producto {
     public String getCategoria() { return categoria; }
 
     public void setCategoria(String categoria) { this.categoria = categoria; }
+
+    public long getId() { return id; }
+
+    public void setId(long id) { this.id = id; }
 }

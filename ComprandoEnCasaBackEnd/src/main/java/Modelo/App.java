@@ -142,6 +142,34 @@ public class App {
     }
 
 
+    public Producto buscarProductoPorCodigo(Long cod){
+        Producto prod = null;
+        for(Producto p: this.productos){
+            if(p.getId() == cod){
+                prod = p;
+            }
+        }
+        if(prod == null){
+            System.out.println("No se encontro el producto con id: " + cod);
+            return prod;
+        }
+        return prod;
+    }
+
+    public List<Producto> buscarProductosPorTextoIngresado(String txt){
+
+        List<Producto> result = new ArrayList<Producto>();
+        for(Producto p: this.productos){
+            if(p.getNombreProducto().contains(txt)){
+                result.add(p);
+            }
+        }
+        if(txt.equals("")){
+            result = this.productos;
+        }
+        return result;
+    }
+
     public void imprimirProductos() {
         for(Producto p : productos) {
             System.out.print("[");

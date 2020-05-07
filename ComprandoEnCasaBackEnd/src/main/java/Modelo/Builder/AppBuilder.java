@@ -20,11 +20,13 @@ public class AppBuilder {
     private Encargado encargado;
     private List<Producto> productos = new ArrayList<Producto>();
     private int montoMaximoCategoriaAlimentos=0;
+    private long id0 = 0;
+    private long id1 = 1;
 
     private Encargado oscar = new Encargado("oscar", "20-30656734-5", "oscar@gmail.com");
     //private Cliente gaston = new Cliente("gaston", "gaston@gmail.com", app, "alberdi 330");
-    private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento");
-    private  Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol");
+    private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento", id0);
+    private  Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol", id1);
 
     public App build(){
         App app = new App(rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio,oscar);

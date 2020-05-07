@@ -48,4 +48,30 @@ public class AppTest extends TestCase {
         app.imprimirProductos();
     }
 
+    @Test
+    public void testBuscarProductoPorCodigo(){
+        long idFind = 1;
+        Producto arroz = ProductoFactory.createWithId(0);
+        Producto vino = ProductoFactory.createWithId(1);
+        App app = appBuilder.build();
+        app.agregarProducto(arroz);
+        app.agregarProducto(vino);
+        assertEquals(app.buscarProductoPorCodigo(idFind), vino);
+    }
+
+    @Test
+    public void testBuscarProductosPorTextoIngresado(){
+        Producto birra = ProductoFactory.createWithNombre("cerveza");
+        Producto fideos = ProductoFactory.createWithNombre("fideos");
+        Producto yerba = ProductoFactory.createWithNombre("yerba");
+        App app = appBuilder.build();
+        app.agregarProducto(birra);
+        app.agregarProducto(fideos);
+        app.agregarProducto(yerba);
+        List<Producto> result = app.buscarProductosPorTextoIngresado("a");
+        assertEquals(result.size(), 2);
+        List<Producto> result2 = app.buscarProductosPorTextoIngresado("fid");
+        assertEquals(result2.size(), 1);
+    }
+
 }
