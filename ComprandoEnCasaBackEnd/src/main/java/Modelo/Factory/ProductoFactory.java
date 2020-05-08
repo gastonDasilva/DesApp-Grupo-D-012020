@@ -42,14 +42,14 @@ public class ProductoFactory {
 
 
     public static Producto createWithMarca(String marca) {
-        return create("Sin Nombre",marca,1,0,"URL no disponible","Sin Categoria");
+        return create("Sin Nombre",marca,1,0,"URL no disponible","Sin Categoria",1);
     }
 
     public static Producto createWithNombreMarcaStockAndPrecio(String name, String mark, int stock, int price) {
-        return create(name,mark,stock,price,"URL no disponible","Sin Categoria");
+        return create(name,mark,stock,price,"URL no disponible","Sin Categoria",1);
     }
 
     public static Producto createWithCategoria(String categoria) {
-        return create("Sin Nombre", "Sin Marca", 1,0,"URL no disponible",categoria);
+        return create("Sin Nombre", "Sin Marca", 1,0,"URL no disponible",categoria,1);
     }
 }

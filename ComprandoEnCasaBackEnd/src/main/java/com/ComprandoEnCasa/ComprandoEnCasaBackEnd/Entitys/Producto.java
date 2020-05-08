@@ -25,11 +25,11 @@ public class Producto {
     private Categoria clasificacion;
 
     // campos de oferta
-    public String tipoDeDescuento;
+    public String tipoDeDescuento="sin descuento";
     public int cantidadLlevada;
-    public int porcentaje;
-    public LocalDate desde;
-    public LocalDate hasta;
+    public int porcentaje=0;
+    //public LocalDate desde;
+    //public LocalDate hasta;
 
 
     public Producto() {}
@@ -94,7 +94,7 @@ public class Producto {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-        this.clasificacion = CategoriaFactory.getCategoria(categoria);
+        //this.clasificacion = CategoriaFactory.getCategoria(categoria);
     }
 
     public void imprimirEnPantalla() {
@@ -108,19 +108,19 @@ public class Producto {
 
 
     public void establecerOferta(String tipoDescuento, LocalDate aPartir, LocalDate finaliza){
-        desde = aPartir;
-        hasta = finaliza;
+        //desde = aPartir;
+        //hasta = finaliza;
         tipoDeDescuento = tipoDescuento;
     }
 
-    public boolean ofertaVigente(){
-        return LocalDate.now().isAfter(this.desde) && LocalDate.now().isBefore(hasta);
-    }
+    //public boolean ofertaVigente(){
+    //    return LocalDate.now().isAfter(this.desde) && LocalDate.now().isBefore(hasta);
+   // }
 
     private int aplicarDescuento() {
         int monto = 0;
         int precioAnterior = this.precio;
-        if (ofertaVigente()){
+        //if (ofertaVigente()){
             switch (tipoDeDescuento){
                 case "Descuento por Unidad":
                     monto = precioAnterior * this.porcentaje /100;
@@ -131,10 +131,10 @@ public class Producto {
                     }
                     break;
                 default:
-                    throw new IllegalStateException("No se encuentra oferta");
+                    monto = 0;
 
             }
-        }
+        //}
         return monto;
     }
 
