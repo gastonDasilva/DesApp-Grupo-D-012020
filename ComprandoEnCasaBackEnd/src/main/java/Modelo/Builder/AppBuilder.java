@@ -3,6 +3,7 @@ package Modelo.Builder;
 import Modelo.App;
 import Modelo.Cliente;
 import Modelo.Encargado;
+import Modelo.Geo;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class AppBuilder {
     private long id1 = 1;
 
     private Encargado oscar = new Encargado("oscar", "20-30656734-5", "oscar@gmail.com");
+    private Geo coord = new Geo(-33.562397, -52.873047, "Quilmes");
     //private Cliente gaston = new Cliente("gaston", "gaston@gmail.com", app, "alberdi 330");
 
     // private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento", id0);
@@ -35,7 +37,7 @@ public class AppBuilder {
     /*mismo caso que la polenta*/
 
     public App build(){
-        App app = new App(rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio,oscar);
+        App app = new App(rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio,oscar, coord);
         app.setClientes(clientes);//en principio una lista vacia
         app.setProductos(productos); //en principio una lista vacia
         app.setMontoMaximoCategoriaAlimentos(montoMaximoCategoriaAlimentos);

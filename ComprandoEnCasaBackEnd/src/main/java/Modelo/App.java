@@ -17,6 +17,7 @@ public class App {
     private List<Producto> productos;
     private int montoMaximoCategoriaAlimentos;
     private int montoMaximoCategoriaBebidasAlcoholicas;
+    private Geo coordenadas;
 
 
     public String getRubro() {
@@ -95,7 +96,11 @@ public class App {
         this.montoMaximoCategoriaBebidasAlcoholicas = montoMaximoCategoriaBebidasAlcoholicas;
     }
 
-    public App(String rubro, String domicilio, String diasYHorariosDeAtencion, String mediosDePago, float distancia, Encargado encargado){
+    public Geo getCoordenadas() { return coordenadas; }
+
+    public void setCoordenadas(Geo coordenadas) { this.coordenadas = coordenadas; }
+
+    public App(String rubro, String domicilio, String diasYHorariosDeAtencion, String mediosDePago, float distancia, Encargado encargado, Geo coordenadas){
 
         this.setRubro(rubro);
         this.setDomicilio(domicilio);
@@ -107,6 +112,7 @@ public class App {
         this.setProductos(new ArrayList<Producto>());
         this.setMontoMaximoCategoriaAlimentos(0); // Este valor lo setea e cliente
         this.setMontoMaximoCategoriaBebidasAlcoholicas(0);
+        this.setCoordenadas(coordenadas);
     }
 
     public void agregarCliente(Cliente cliente){

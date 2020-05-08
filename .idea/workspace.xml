@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e62ccf9-c88e-4628-adb8-f1ac59605103" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Builder/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Builder/AppBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ProductoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ProductoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Entitys/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Entitys/Producto.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/ComprandoEnCasaBackEnd/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,6 +90,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -105,8 +103,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -119,7 +115,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588633089329" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ComprandoEnCasaBackEnd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15270936" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -276,6 +272,7 @@
       <workItem from="1588803411167" duration="120000" />
       <workItem from="1588826023287" duration="13000" />
       <workItem from="1588865910534" duration="27000" />
+      <workItem from="1588913404794" duration="5000" />
     </task>
     <servers />
   </component>
@@ -312,12 +309,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52873000" />
+    <option name="totallyTimeSpent" value="52878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.22995462" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.23373677" />
       <window_info id="Structure" order="1" sideWeight="0.502439" side_tool="true" weight="0.21482602" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />

@@ -14,6 +14,7 @@ public class Cliente extends Usuario {
     private int montoAcumuladoEnAlimentos;
     private int montoAcumuladoEnBebidasAlcoholicas;
     private List<ListaDeCompras> historialDeCompras;
+    private Geo coordenadas;
 
     public String getDireccion() {
         return direccion;
@@ -47,9 +48,13 @@ public class Cliente extends Usuario {
 
     public void setHistorialDeCompras(List<ListaDeCompras> historialDeCompras) { this.historialDeCompras = historialDeCompras; }
 
+    public Geo getCoordenadas() { return coordenadas; }
+
+    public void setCoordenadas(Geo coordenadas) { this.coordenadas = coordenadas; }
+
     public Cliente(){}
 
-    public Cliente(String nombre, String email, App app, String direccion){
+    public Cliente(String nombre, String email, App app, String direccion, Geo coordenadas){
         this.setNombreUsuario(nombre);
         this.setEmail(email);
         this.setApp(app);
@@ -58,9 +63,10 @@ public class Cliente extends Usuario {
         this.setMontoGastado(0);
         this.setMontoDeCompra(0);
         this.setHistorialDeCompras(new ArrayList<ListaDeCompras>());
+        this.setCoordenadas(coordenadas);
     }
     //duplico para no romper ningun test anterior
-    public Cliente(String nombre, String email, String direccion){
+    public Cliente(String nombre, String email, String direccion, Geo coordenadas){
         this.setNombreUsuario(nombre);
         this.setEmail(email);
         this.setApp(app);
@@ -69,6 +75,7 @@ public class Cliente extends Usuario {
         this.setMontoGastado(0);
         this.setMontoDeCompra(0);
         this.setHistorialDeCompras(new ArrayList<ListaDeCompras>());
+        this.setCoordenadas(coordenadas);
     }
 
     public void registrarme(App app){

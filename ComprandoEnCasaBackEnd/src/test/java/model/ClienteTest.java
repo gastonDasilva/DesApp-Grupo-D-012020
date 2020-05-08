@@ -196,5 +196,13 @@ public class ClienteTest extends TestCase {
     }
 
 
+    @Test
+    public void testDistanciaHastaDireccionDelComercio(){
+        Geo geo1 = new Geo(-33.58542, -52.832423, "Bernal");
+        Cliente cliente = ClienteFactory.createWithCoord(geo1);
+        GeoCalculator geoCalculator = new GeoCalculator();
+        assertTrue(geoCalculator.distance(cliente.getCoordenadas(), app.getCoordenadas()) < 5.0);
+        //La distancia entre el cliente y el comercio es menor a 5 kilometros.
+    }
 
 }
