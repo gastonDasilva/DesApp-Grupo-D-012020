@@ -38,7 +38,7 @@ public class AppTest extends TestCase {
         assertTrue(app.dentroDelAreaDeEnvio(27));
         assertFalse(app.dentroDelAreaDeEnvio(100));
     }
-/*
+    /*
     @Test
     public void testDebeHaberAlgunEncargado(){
         Encargado oscar = new Encargado("Oscar");
@@ -47,7 +47,7 @@ public class AppTest extends TestCase {
         assertTrue(app1.debeHaberAlgunEncargado());
         assertFalse(app2.debeHaberAlgunEncargado());
     }
-*/
+    */
 
     @Test
     public void testAgregarCliente() {
@@ -125,25 +125,58 @@ public class AppTest extends TestCase {
         assertEquals(busquedaDelCliente.size(),3);
     }
 
-    public void testFiltrarProductosConMarca(){
+    public void testFiltrarProductosConMarca() {
         //esto es saberse la cancion de maroleo de memoria..
         Producto mate = ProductoFactory.createWithMarca("Maroleo");
         Producto cafe = ProductoFactory.createWithMarca("Maroleo");
         Producto harina = ProductoFactory.createWithMarca("Maroleo");
         Producto palmitos = ProductoFactory.createWithMarca("Maroleo");
-        Producto yerba =ProductoFactory.createWithMarca("Maroleo");
+        Producto yerba = ProductoFactory.createWithMarca("Maroleo");
         Producto mermelada = ProductoFactory.createWithMarca("Maroleo");
         Producto cacao = ProductoFactory.createWithMarca("Maroleo");
         Producto picadillo = ProductoFactory.createWithMarca("Maroleo");
         Producto unoCualquiera = ProductoFactory.anyProducto();
         Producto otroCualquiera = ProductoFactory.anyProducto();
-        List <Producto> mercaderia = new ArrayList<Producto>();
-        mercaderia.add(mate);mercaderia.add(cafe);mercaderia.add(harina);mercaderia.add(palmitos);
-        mercaderia.add(yerba);mercaderia.add(mermelada);mercaderia.add(cacao); mercaderia.add(picadillo);
-        mercaderia.add(unoCualquiera);mercaderia.add(otroCualquiera);
+        List<Producto> mercaderia = new ArrayList<Producto>();
+        mercaderia.add(mate);
+        mercaderia.add(cafe);
+        mercaderia.add(harina);
+        mercaderia.add(palmitos);
+        mercaderia.add(yerba);
+        mercaderia.add(mermelada);
+        mercaderia.add(cacao);
+        mercaderia.add(picadillo);
+        mercaderia.add(unoCualquiera);
+        mercaderia.add(otroCualquiera);
         App maxiconsumo = appBuilder.withProductos(mercaderia).build();
-        List <Producto> shingle = maxiconsumo.filtrarProductosConMarca("Maroleo");
-        assertEquals(shingle.size(),8);
+        List<Producto> shingle = maxiconsumo.filtrarProductosConMarca("Maroleo");
+        assertEquals(shingle.size(), 8);
+    }
+
+        @Test
+    public void testBuscarProductoPorCodigo(){
+        long idFind = 1;
+        Producto arroz = ProductoFactory.createWithId(0);
+        Producto vino = ProductoFactory.createWithId(1);
+        App app = appBuilder.build();
+        app.agregarProducto(arroz);
+        app.agregarProducto(vino);
+        assertEquals(app.buscarProductoPorCodigo(idFind), vino);
+    }
+
+    @Test
+    public void testBuscarProductosPorTextoIngresado(){
+        Producto birra = ProductoFactory.createWithNombre("cerveza");
+        Producto fideos = ProductoFactory.createWithNombre("fideos");
+        Producto yerba = ProductoFactory.createWithNombre("yerba");
+        App app = appBuilder.build();
+        app.agregarProducto(birra);
+        app.agregarProducto(fideos);
+        app.agregarProducto(yerba);
+        List<Producto> result = app.buscarProductosPorTextoIngresado("a");
+        assertEquals(result.size(), 2);
+        List<Producto> result2 = app.buscarProductosPorTextoIngresado("fid");
+        assertEquals(result2.size(), 1);
     }
 
 }
