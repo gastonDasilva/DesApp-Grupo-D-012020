@@ -3,6 +3,7 @@ package Modelo.Builder;
 import Modelo.App;
 import Modelo.Cliente;
 import Modelo.Encargado;
+import Modelo.Geo;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
 import java.util.ArrayList;
@@ -20,14 +21,23 @@ public class AppBuilder {
     private Encargado encargado;
     private List<Producto> productos = new ArrayList<Producto>();
     private int montoMaximoCategoriaAlimentos=0;
+    private long id0 = 0;
+    private long id1 = 1;
 
     private Encargado oscar = new Encargado("oscar", "20-30656734-5", "oscar@gmail.com");
+    private Geo coord = new Geo(-33.562397, -52.873047, "Quilmes");
     //private Cliente gaston = new Cliente("gaston", "gaston@gmail.com", app, "alberdi 330");
-    private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento");
-    private  Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol");
+
+    // private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento", id0);
+    /*no es necesario, se puede crear la polenta como:
+    * Producto polenta = ProductoFactory.withNombreMarcaStockAndPrecio("polenta","presto pronta",15,80);
+    * ademas no se usa la variable polenta en este builder
+    */
+    //private  Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol", id1);
+    /*mismo caso que la polenta*/
 
     public App build(){
-        App app = new App(rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio,oscar);
+        App app = new App(rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio,oscar, coord);
         app.setClientes(clientes);//en principio una lista vacia
         app.setProductos(productos); //en principio una lista vacia
         app.setMontoMaximoCategoriaAlimentos(montoMaximoCategoriaAlimentos);
