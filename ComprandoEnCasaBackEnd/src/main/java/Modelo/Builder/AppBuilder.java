@@ -25,8 +25,14 @@ public class AppBuilder {
 
     private Encargado oscar = new Encargado("oscar", "20-30656734-5", "oscar@gmail.com");
     //private Cliente gaston = new Cliente("gaston", "gaston@gmail.com", app, "alberdi 330");
-    private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento", id0);
-    private  Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol", id1);
+
+    // private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento", id0);
+    /*no es necesario, se puede crear la polenta como:
+    * Producto polenta = ProductoFactory.withNombreMarcaStockAndPrecio("polenta","presto pronta",15,80);
+    * ademas no se usa la variable polenta en este builder
+    */
+    //private  Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol", id1);
+    /*mismo caso que la polenta*/
 
     public App build(){
         App app = new App(rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio,oscar);
