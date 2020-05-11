@@ -1,11 +1,11 @@
 package model;
 
-import Modelo.Builder.AppBuilder;
+import Tools.Builder.AppBuilder;
 import Modelo.App;
-import Modelo.Builder.ComercioBuilder;
+import Tools.Builder.ComercioBuilder;
 import Modelo.Cliente;
 import Modelo.Comercio;
-import Modelo.Factory.ClienteFactory;
+import Tools.Factory.ClienteFactory;
 import junit.framework.TestCase;
 import org.junit.Test;
 import java.util.List;

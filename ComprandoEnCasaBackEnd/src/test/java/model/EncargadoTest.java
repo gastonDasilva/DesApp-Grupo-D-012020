@@ -3,14 +3,13 @@ package model;
 import Modelo.Encargado;
 import Modelo.MedioDePago;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
-import Tools.EncargadoBuilder;
-import Tools.ProductoBuilder;
+import Tools.Builder.EncargadoBuilder;
+import Tools.Builder.ProductoBuilder;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class EncargadoTest {
@@ -44,7 +43,7 @@ public class EncargadoTest {
     }
      */
     @Test
-    public void emailValidoDelEncargadoTest(){
+    public void testEmailValidoDelEncargado(){
         encargado = aEncargadoBuilder.withEmail("ELEncargadoCOmecioTEST@gmail.com.ar").build();
         TestCase.assertTrue(encargado.getEmail().contains("@"));
         TestCase.assertTrue(encargado.getEmail().contains("."));
@@ -52,7 +51,7 @@ public class EncargadoTest {
     }
 
     @Test
-    public void nombreDeUsuarioValidoTest(){
+    public void testNombreDeUsuarioValido(){
         encargado = aEncargadoBuilder.withName("EncargadoComerceTest").build();
         TestCase.assertFalse(encargado.getNombreUsuario().isEmpty());
     }
@@ -61,7 +60,7 @@ public class EncargadoTest {
 
 
     @Test
-    public void darDeAltaUnEncargadoCon2MediosDePagoTest(){
+    public void testDarDeAltaUnEncargadoCon2MediosDePago(){
         Encargado encargadoSinMediosDePago = aEncargadoBuilder.build();
         MedioDePago medioDePago = new MedioDePago("PagoFacil","imagentest");
         MedioDePago otroMedioDePago = new MedioDePago("Mercado Pago","codoacodo.jpg");
@@ -77,7 +76,7 @@ public class EncargadoTest {
     }
 
     @Test
-    public  void unEncargadoAgregaUnNuevoProductoAVenderTest(){
+    public  void testUnEncargadoAgregaUnNuevoProductoAVender(){
         encargado = aEncargadoBuilder.build();//un encargado cualquiera
         // no es necesario tantas especificaciones del producto, solo testeamos que haya uno mas agregado
         /*
@@ -99,7 +98,7 @@ public class EncargadoTest {
 
 
     @Test
-    public void unEncargadoCreaOfertaParaCategoria(){
+    public void testUnEncargadoCreaOfertaParaCategoria(){
         encargado = aEncargadoBuilder.build();//un encargado con valores por defecto
         // el builder no necesita todos los with__ , se usan los que necesitamos.
         // en este caso no necesitamos la imagen ni el stock, no es indiferente para lo que queremos testear
@@ -138,7 +137,7 @@ public class EncargadoTest {
     }
 
     @Test
-    public void unEncargadoCreaOfertasPorCombinacionDe2Productos(){
+    public void testUnEncargadoCreaOfertasPorCombinacionDe2Productos(){
         encargado = aEncargadoBuilder.build();
         Producto fernet = productoBuilder.withNombreProducto("fernet vittone")
                 //.withStock(10)
@@ -181,7 +180,7 @@ public class EncargadoTest {
     }
 
     @Test
-    public void unEncargadoCreaOfertaPorProducto(){
+    public void testUnEncargadoCreaOfertaPorProducto(){
         encargado = aEncargadoBuilder.build();
         Producto aceitunas = productoBuilder.withNombreProducto("aceitunas con carozo")
                 //.withStock(25)

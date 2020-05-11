@@ -2,10 +2,8 @@ package model;
 
 
 import Modelo.Comercio;
-import Modelo.Builder.ComercioBuilder;
-import Modelo.Cliente;
-import Modelo.Factory.ClienteFactory;
-import Modelo.Factory.ProductoFactory;
+import Tools.Builder.ComercioBuilder;
+import Tools.Factory.ProductoFactory;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import junit.framework.TestCase;
 import org.junit.Test;

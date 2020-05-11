@@ -1,11 +1,9 @@
-package Modelo.Builder;
+package Tools.Builder;
 
 import Modelo.Comercio;
 import Modelo.Cliente;
 import Modelo.Encargado;
 import Modelo.App;
-import Modelo.Geo;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
 import java.util.ArrayList;
 import java.util.List;

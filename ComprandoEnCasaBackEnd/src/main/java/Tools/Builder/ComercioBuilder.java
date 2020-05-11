@@ -1,8 +1,6 @@
-package Modelo.Builder;
+package Tools.Builder;
 
 import Modelo.Comercio;
-import Modelo.Cliente;
-import Modelo.Encargado;
 import Modelo.Geo;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 

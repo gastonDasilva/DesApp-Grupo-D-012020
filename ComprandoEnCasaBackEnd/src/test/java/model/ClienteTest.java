@@ -2,10 +2,10 @@ package model;
 
 
 import Modelo.*;
-import Modelo.Builder.AppBuilder;
-import Modelo.Builder.ComercioBuilder;
-import Modelo.Factory.ClienteFactory;
-import Modelo.Factory.ProductoFactory;
+import Tools.Builder.AppBuilder;
+import Tools.Builder.ComercioBuilder;
+import Tools.Factory.ClienteFactory;
+import Tools.Factory.ProductoFactory;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import junit.framework.TestCase;
 import org.junit.Test;

@@ -1,6 +1,5 @@
-package Modelo.Factory;
+package Tools.Factory;
 
-import Modelo.Comercio;
 import Modelo.Cliente;
 import Modelo.Geo;
 import Modelo.ListaDeCompras;
