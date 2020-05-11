@@ -20,35 +20,6 @@ public class ClienteTest extends TestCase {
 
 
      /*
-     private Encargado encargado;
-     private Cliente cliente;
-
-     private Producto fernet;
-     private Producto birra;
-     private Producto fideos;
-     private Producto salsaDeTomate;
-     private Producto queso;
-
-      */
-
-
-
-     /*
-     @Before
-     public void setUp() throws Exception {
-         encargado = new Encargado("pedro", "20-32546894-6", "pedro@gmail.com");
-         comercio = new Comercio("alimentos/bebidas", "calle falsa 123", "lunes a sabados de 9 a 21 hs", "efectivo", 5, encargado);
-         cliente = new Cliente("cacho","cacho@gmail.com", comercio,"calle falsa 110");
-         fernet = new Producto("fernet branca", "branca", 20, 250, "una imagen", "bebida alcoholica");
-         birra = new Producto("cerveza", "quilmes", 30, 65, "otra imagen", "bebida alcoholica");
-         fideos = new Producto("fideo en tallarin","matarazzo", 20, 80, "imagen3", "alimento");
-         salsaDeTomate = new Producto("salsa pal fideo", "molto", 25, 60, "imagen4", "alimento");
-         queso = new Producto("queso cremoso", "sancor", 30, 90, "imagen5", "alimento");
-     }
-      */
-
-
-     /*
      @Test
      public void testDomicilio(){ assertTrue(cliente.getDireccion() == "calle falsa 110");}
       */

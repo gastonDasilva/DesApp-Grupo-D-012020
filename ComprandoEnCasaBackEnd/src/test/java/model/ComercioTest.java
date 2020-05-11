@@ -60,11 +60,6 @@ public class ComercioTest extends TestCase {
 
     @Test
     public void testDisponibilidadDeUnProducto(){
-        //no uso todos los campos del producto, los creo con el factory con los campos que necesito
-        /*
-        Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento");
-        Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol");
-         */
         Producto polenta = ProductoFactory.createWithNombreMarcaStockAndPrecio("polenta", "Presto Pronta", 15, 80);
         Producto pepsi = ProductoFactory.createWithNombreMarcaStockAndPrecio("Gaseosa","Pepsi",30,120);
         Comercio comercio = comercioBuilder.build();

@@ -20,11 +20,15 @@ public class EncargadoBuilder {
     private ArrayList<MedioDePago> mediosDePago = new ArrayList<MedioDePago>();
 
 
-    public static EncargadoBuilder aEncargado() {
+    //no es necesario
+    /*public static EncargadoBuilder aEncargado() {
 
         return new EncargadoBuilder();
 
     }
+     */
+
+
     public Encargado build() {
 
         Encargado encargado = new Encargado(nameCLiente);
@@ -59,8 +63,14 @@ public class EncargadoBuilder {
         this.domicilio = aValue;
         return this;
     }
-    public EncargadoBuilder withMedioDePago(final ArrayList<MedioDePago> aValue) {
+    public EncargadoBuilder withMediosDePago(final ArrayList<MedioDePago> aValue) {
         this.mediosDePago = aValue;
         return this;
     }
+
+    public EncargadoBuilder withMedioDePago(MedioDePago aValue){
+        this.mediosDePago.add(aValue);
+        return this;
+    }
+
 }

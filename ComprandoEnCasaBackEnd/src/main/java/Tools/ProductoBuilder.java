@@ -3,25 +3,30 @@ package Tools;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
 public class ProductoBuilder {
-    private String nombreProducto;
-    private String marca;
-    private int stock;
-    private int precio;
-    private String imagen;
-    private String categoria;
+    private String nombreProducto = "sin nombre";
+    private String marca = "sin marca";
+    private int stock = 1;
+    private int precio = 1;
+    private String imagen = "url no asignada";
+    private String categoria = "sin categoria";
 
-    public static ProductoBuilder aProducto() {
+    //no es necesario
+   /* public static ProductoBuilder aProducto() {
         return new ProductoBuilder();
-    }
+    }*/
 
     public Producto build() {
 
-        Producto producto = new Producto(nombreProducto);
+        /*Producto producto = new Producto(nombreProducto);
         producto.setStock(stock);
         producto.setCategoria(categoria);
         producto.setImagen(imagen);
         producto.setMarca(marca);
-        producto.setPrecio(precio);
+        producto.setPrecio(precio);*/
+        //es lo mismo que hacer
+        // Producto(String nombre, String marca, int stock, int precio, String imagen, String categoria, Long id)
+        Long identificador = new Long(1);
+        Producto producto = new Producto(nombreProducto,marca,stock,precio,imagen,categoria,identificador);
         return producto;
     }
     public ProductoBuilder withNombreProducto(String aValue){
@@ -52,8 +57,5 @@ public class ProductoBuilder {
         categoria = aValue;
         return this;
     }
-
-
-
 
 }
