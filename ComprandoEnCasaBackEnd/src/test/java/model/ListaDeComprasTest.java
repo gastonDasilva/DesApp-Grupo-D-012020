@@ -1,6 +1,6 @@
 package model;
 
-import Modelo.Factory.ProductoFactory;
+import Tools.Factory.ProductoFactory;
 import Modelo.ListaDeCompras;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import junit.framework.TestCase;
@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class ListaDeComprasTest extends TestCase {

@@ -1,7 +1,6 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys;
 
 import Modelo.Categoria;
-import Modelo.Factory.CategoriaFactory;
 
 import javax.persistence.*;
 import java.time.LocalDate;

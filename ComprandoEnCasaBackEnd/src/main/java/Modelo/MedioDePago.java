@@ -24,4 +24,9 @@ public class MedioDePago {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public boolean esElMismoMedioDePago(MedioDePago otro){
+
+        return this.getNombre().contains(otro.getNombre());
+    }
 }

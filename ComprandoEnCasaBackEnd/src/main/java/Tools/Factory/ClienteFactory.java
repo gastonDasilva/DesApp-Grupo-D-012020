@@ -1,12 +1,9 @@
-package Modelo.Factory;
+package Tools.Factory;
 
-import Modelo.App;
 import Modelo.Cliente;
 import Modelo.Geo;
 import Modelo.ListaDeCompras;
-
-
-import java.util.List;
+import Modelo.App;
 
 public class ClienteFactory {
 

@@ -93,14 +93,14 @@ public class Cliente extends Usuario {
 
 
 
-    public void asignarMontoMaximoEnCategoriaAlimentos(App app, int monto){
+    public void asignarMontoMaximoEnCategoriaAlimentos(Comercio comercio, int monto){
         // El cliente notifica al sistema el monto máximo a gastar en la categoria alimentos.
-        app.setMontoMaximoCategoriaAlimentos(monto);
+        comercio.setMontoMaximoCategoriaAlimentos(monto);
     }
 
 
 
-    public void agregarProducto(Producto producto, App app){
+    public void agregarProducto(Producto producto, Comercio comercio){
     /* PROP: si el cliente no tiene asignado una lista de compras, es porque no está registrado y,
              por ende, no puede adquirir determinado producto. Si tiene asignado una lista de compras,
              entonces está registrado, y puede adquirir dicho producto.
@@ -110,15 +110,15 @@ public class Cliente extends Usuario {
         System.out.println("tenes que registrarte!");
     }
     else{
-        this.verificarUmbralDeProducto(producto, app);
+        this.verificarUmbralDeProducto(producto, comercio);
      }
     }
 
-    public void verificarUmbralDeProducto(Producto producto, App app) {
+    public void verificarUmbralDeProducto(Producto producto, Comercio comercio) {
 
         switch (producto.getCategoria()) {
             case "Alimento":
-                if (this.getMontoAcumuladoEnAlimentos() + producto.getPrecio() > app.getMontoMaximoCategoriaAlimentos()) {
+                if (this.getMontoAcumuladoEnAlimentos() + producto.getPrecio() > comercio.getMontoMaximoCategoriaAlimentos()) {
                     System.out.println("AVISO: superaste el monto maximo de compra en categorias de alimento");
                 } else {
                     this.getListaDeCompras().agregarProducto(producto);
@@ -128,7 +128,7 @@ public class Cliente extends Usuario {
                 }
                 break;
             case "Bebida alcoholica":
-                if (this.getMontoAcumuladoEnBebidasAlcoholicas() + producto.getPrecio() > app.getMontoMaximoCategoriaBebidasAlcoholicas()) {
+                if (this.getMontoAcumuladoEnBebidasAlcoholicas() + producto.getPrecio() > comercio.getMontoMaximoCategoriaBebidasAlcoholicas()) {
                     System.out.println("AVISO: superaste el monto maximo de compra en categorias de bebidas alcoholicas");
                 } else {
                     this.getListaDeCompras().agregarProducto(producto);
@@ -151,5 +151,21 @@ public class Cliente extends Usuario {
             this.montoDeCompra = this.getMontoGastado();
             this.setListaDeCompras(new ListaDeCompras());
         }
+    }
+
+    public Double distanciaEntreUnaCoordenadaYOtra(Geo geo1, Geo geo2){
+        GeoCalculator geoCalculator = new GeoCalculator();
+        return geoCalculator.distance(geo1, geo2);
+    }
+
+    public Comercio verificarComercioMasCercano(List<Comercio> comercios){
+        Comercio comercioRes = comercios.get(0);
+        for(Comercio c: comercios){
+            if(distanciaEntreUnaCoordenadaYOtra(this.getCoordenadas(), c.getCoordenadas())
+                    < distanciaEntreUnaCoordenadaYOtra(this.getCoordenadas(), comercioRes.getCoordenadas())){
+                comercioRes = c;
+            }
+        }
+        return comercioRes;
     }
 }
