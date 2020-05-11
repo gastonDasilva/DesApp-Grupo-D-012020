@@ -152,4 +152,20 @@ public class Cliente extends Usuario {
             this.setListaDeCompras(new ListaDeCompras());
         }
     }
+
+    public Double distanciaEntreUnaCoordenadaYOtra(Geo geo1, Geo geo2){
+        GeoCalculator geoCalculator = new GeoCalculator();
+        return geoCalculator.distance(geo1, geo2);
+    }
+
+    public Comercio verificarComercioMasCercano(List<Comercio> comercios){
+        Comercio comercioRes = comercios.get(0);
+        for(Comercio c: comercios){
+            if(distanciaEntreUnaCoordenadaYOtra(this.getCoordenadas(), c.getCoordenadas())
+                    < distanciaEntreUnaCoordenadaYOtra(this.getCoordenadas(), comercioRes.getCoordenadas())){
+                comercioRes = c;
+            }
+        }
+        return comercioRes;
+    }
 }

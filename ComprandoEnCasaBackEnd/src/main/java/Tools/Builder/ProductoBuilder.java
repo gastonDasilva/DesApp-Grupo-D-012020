@@ -25,7 +25,7 @@ public class ProductoBuilder {
         producto.setPrecio(precio);*/
         //es lo mismo que hacer
         // Producto(String nombre, String marca, int stock, int precio, String imagen, String categoria, Long id)
-        Long identificador = new Long(1);
+        long identificador = new Long(1);
         Producto producto = new Producto(nombreProducto,marca,stock,precio,imagen,categoria,identificador);
         return producto;
     }

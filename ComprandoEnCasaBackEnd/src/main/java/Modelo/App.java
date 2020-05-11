@@ -9,7 +9,6 @@ public class App {
 
     private List<Comercio> comercios;
     private List<Cliente> clientes;
-    private Encargado encargado;
 
     public List<Comercio> getComercios() { return comercios; }
 
@@ -19,14 +18,10 @@ public class App {
 
     public void setClientes(List<Cliente> clientes) { this.clientes = clientes; }
 
-    public Encargado getEncargado() { return encargado; }
 
-    public void setEncargado(Encargado encargado) { this.encargado = encargado; }
-
-    public App(List<Comercio> comercios, List<Cliente> clientes, Encargado encargado){
+    public App(List<Comercio> comercios, List<Cliente> clientes){
         this.setComercios(comercios);
         this.setClientes(clientes);
-        this.setEncargado(encargado);
     }
 
     public void agregarCliente(Cliente cliente){

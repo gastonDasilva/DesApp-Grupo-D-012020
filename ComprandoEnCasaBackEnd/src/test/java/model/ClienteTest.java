@@ -179,4 +179,20 @@ public class ClienteTest extends TestCase {
         //La distancia entre el cliente y el comercio es menor a 5 kilometros.
     }
 
+    @Test
+    public void testVerificarComercioMasCercano(){
+        Geo geoCliente = new Geo(-33.558356, -52.864750, "Quilmes");
+        Geo geoComercio1 = new Geo(-32.56764, -50.384827, "La Plata");
+        Cliente cliente = ClienteFactory.createWithCoord(geoCliente);
+        Comercio comercio1 = comercioBuilder.build();
+        Comercio comercio2 = comercioBuilder.build();
+        comercio1.setCoordenadas(geoComercio1);
+        comercio2.setNombreComercio("Chino de la esquina");
+        app.agregarComercio(comercio1);
+        app.agregarComercio(comercio2);
+        cliente.registrarme(app);
+        Comercio comercioRes = cliente.verificarComercioMasCercano(app.getComercios());
+        assertEquals(comercioRes.getNombreComercio(), "Chino de la esquina");
+    }
+
 }

@@ -228,4 +228,21 @@ public class EncargadoTest {
         TestCase.assertEquals(encargado.sumatoriaDeTodosLosPrecios(), 257);
     }
 
+    @Test
+    public void testEncargadoModificaProducto(){
+        Producto coca = productoBuilder.withNombreProducto("Coca cola")
+                .withStock(10)
+                .withImagen("iamgen.lgghfsfasfpsg")
+                .withMarca("Coca cola")
+                .withCategoria("Bebida sin alcohol")
+                .withPrecio(120)
+                .build();
+
+        encargado = aEncargadoBuilder.build();
+        encargado.modificarDatosDeProducto(coca, 1, "Coca zero", "Coca cola", 30, 110, "una imagen", "Bebida sin alcohol");
+        TestCase.assertEquals(coca.getNombreProducto(), "Coca zero");
+        TestCase.assertEquals(coca.getPrecio(), 110);
+
+    }
+
 }

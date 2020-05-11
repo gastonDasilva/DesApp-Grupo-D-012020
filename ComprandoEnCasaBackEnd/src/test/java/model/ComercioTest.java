@@ -150,4 +150,21 @@ public class ComercioTest extends TestCase {
         assertEquals(result2.size(), 1);
         }
 
+    @Test
+    public void testEncargadoModificaDatosDeUnProducto(){
+        Producto birra = ProductoFactory.createWithNombre("cerveza");
+        Producto fernet = ProductoFactory.createWithNombre("fernet");
+        Producto arroz = ProductoFactory.createWithNombre("arroz");
+        Comercio comercio = comercioBuilder.build();
+        comercio.agregarProducto(birra);
+        comercio.agregarProducto(fernet);
+        comercio.agregarProducto(arroz);
+        comercio.modificarDatosDelProducto(1, "cerveza", "Quilmes", 40, 130, "imagen de birra", "Bebida con alcohol", 5);
+        Producto prod = comercio.buscarProductoPorCodigo(5);
+        assertEquals(prod.getNombreProducto(), "cerveza");
+        assertFalse(prod.getMarca() == "Sin Marca");
+        assertTrue(prod.getPrecio() == 130);
+        assertTrue(prod.getStock() == 40);
+    }
+
 }

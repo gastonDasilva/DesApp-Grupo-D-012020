@@ -1,6 +1,7 @@
 package Tools.Builder;
 
 import Modelo.Comercio;
+import Modelo.Encargado;
 import Modelo.Geo;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 
@@ -22,6 +23,7 @@ public class ComercioBuilder {
     private long id1 = 1;
 
     private Geo coord = new Geo(-33.562397, -52.873047, "Quilmes");
+    private Encargado oscar = new Encargado("oscar", "20-30656734-5", "oscar@gmail.com");
     //private Cliente gaston = new Cliente("gaston", "gaston@gmail.com", comercio, "alberdi 330");
 
     // private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento", id0);
@@ -33,7 +35,7 @@ public class ComercioBuilder {
     /*mismo caso que la polenta*/
 
     public Comercio build(){
-        Comercio comercio = new Comercio(nombre,rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio, coord);
+        Comercio comercio = new Comercio(nombre,rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio, coord, oscar);
         comercio.setProductos(productos); //en principio una lista vacia
         comercio.setMontoMaximoCategoriaAlimentos(montoMaximoCategoriaAlimentos);
         return comercio;

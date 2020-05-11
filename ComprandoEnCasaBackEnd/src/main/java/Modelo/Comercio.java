@@ -17,6 +17,7 @@ public class Comercio {
     private int montoMaximoCategoriaAlimentos;
     private int montoMaximoCategoriaBebidasAlcoholicas;
     private Geo coordenadas;
+    private Encargado encargado;
 
     public String getNombreComercio() { return nombreComercio; }
 
@@ -87,7 +88,11 @@ public class Comercio {
 
     public void setCoordenadas(Geo coordenadas) { this.coordenadas = coordenadas; }
 
-    public Comercio(String nombre, String rubro, String domicilio, String diasYHorariosDeAtencion, String mediosDePago, float distancia, Geo coordenadas){
+    public Encargado getEncargado() { return encargado; }
+
+    public void setEncargado(Encargado encargado) { this.encargado = encargado; }
+
+    public Comercio(String nombre, String rubro, String domicilio, String diasYHorariosDeAtencion, String mediosDePago, float distancia, Geo coordenadas, Encargado encargado){
 
         this.setNombreComercio(nombre);
         this.setRubro(rubro);
@@ -99,6 +104,7 @@ public class Comercio {
         this.setMontoMaximoCategoriaAlimentos(0); // Este valor lo setea e cliente
         this.setMontoMaximoCategoriaBebidasAlcoholicas(0);
         this.setCoordenadas(coordenadas);
+        this.setEncargado(encargado);
     }
 
 
@@ -128,7 +134,7 @@ public class Comercio {
 
 
 
-    public Producto buscarProductoPorCodigo(Long cod){
+    public Producto buscarProductoPorCodigo(long cod){
         Producto prod = null;
         for(Producto p: this.productos){
             if(p.getId() == cod){
@@ -232,6 +238,14 @@ public class Comercio {
             }
         }
         return filtro;
+    }
+
+    public void modificarDatosDelProducto(long id, String name, String marca, int stock, int price, String image, String categoria, long newId){
+        for(Producto p: this.getProductos()){
+            if(p.getId() == id){
+                this.getEncargado().modificarDatosDeProducto(p, newId, name, marca, stock, price, image, categoria);
+            }
+        }
     }
 
 

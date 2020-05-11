@@ -147,4 +147,14 @@ public class Encargado extends Usuario {
         }
     }
 
+    public void modificarDatosDeProducto(Producto product,long id, String name, String marca, int stock, int price, String image, String categoria){
+        product.setId(id);
+        product.setNombreProducto(name);
+        product.setMarca(marca);
+        product.setStock(stock);
+        product.setPrecio(price);
+        product.setImagen(image);
+        product.setCategoria(categoria);
+    }
+
 }
