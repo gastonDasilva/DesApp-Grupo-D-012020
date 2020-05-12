@@ -71,7 +71,7 @@ public class App {
         return productos;
     }
 
-    public List<Producto> buscarProductosPorTextoIngresado(String nombreComercio, String txt){
+    public List<Producto> buscarProductosEnComercioPorTextoIngresado(String nombreComercio, String txt){
         List<Producto> productos = this.buscarProductosComercio(nombreComercio);
         if(txt == ""){
            return productos;

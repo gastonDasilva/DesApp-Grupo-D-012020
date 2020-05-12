@@ -6,6 +6,8 @@ import Tools.Builder.ComercioBuilder;
 import Modelo.Cliente;
 import Modelo.Comercio;
 import Tools.Factory.ClienteFactory;
+import Tools.Factory.ProductoFactory;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
 import junit.framework.TestCase;
 import org.junit.Test;
 import java.util.List;
@@ -49,4 +51,22 @@ public class AppTest extends TestCase {
     }
 
 
+    @Test
+    public void testBuscarProductosEnComercioPorTextoIngresado(){
+        ComercioBuilder comercioBuilder = new ComercioBuilder();
+        Comercio comercio1 = comercioBuilder.build();
+        Comercio comercio2 = comercioBuilder.build();
+        Producto birra = ProductoFactory.createWithNombre("cerveza");
+        Producto fernet = ProductoFactory.createWithNombre("fernet");
+        Producto arroz = ProductoFactory.createWithNombre("arroz");
+        comercio1.agregarProducto(birra);
+        comercio1.agregarProducto(fernet);
+        comercio1.agregarProducto(arroz);
+        comercio2.setNombreComercio("gulp");
+        App app = appBuilder.build();
+        app.agregarComercio(comercio1);
+        app.agregarComercio(comercio2);
+        List<Producto> result = app.buscarProductosEnComercioPorTextoIngresado("oktubre", "er");
+        assertEquals(result.size(), 2);
+    }
 }
