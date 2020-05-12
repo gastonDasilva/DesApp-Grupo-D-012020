@@ -1,6 +1,4 @@
-package Modelo;
-
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
+package Modelo.Categorias;
 
 public abstract class Categoria {
     String denominacion;

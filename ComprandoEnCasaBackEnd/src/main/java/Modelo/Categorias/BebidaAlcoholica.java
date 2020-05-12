@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.Categorias;
 
 public class BebidaAlcoholica extends Bebida {
     @Override

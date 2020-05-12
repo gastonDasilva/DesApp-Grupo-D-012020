@@ -1,6 +1,6 @@
 package Tools.Factory;
 
-import Modelo.*;
+import Modelo.Categorias.*;
 
 public class CategoriaFactory {
 

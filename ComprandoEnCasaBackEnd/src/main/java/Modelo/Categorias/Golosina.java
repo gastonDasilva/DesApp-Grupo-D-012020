@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.Categorias;
 
 public class Golosina extends Categoria {
     @Override
