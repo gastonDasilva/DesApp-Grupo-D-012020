@@ -14,12 +14,12 @@ import java.util.List;
 
 public class ProductoService {
 
-    @Autowired
+    //@Autowired
     private ProductoRepository productoRepository;
 
-    public ProductoService(ProductoRepository productoRepository) {
-        this.productoRepository = productoRepository;
-    }
+    //public ProductoService(ProductoRepository productoRepository) {
+    //    this.productoRepository = productoRepository;
+    //}
 
     @Transactional
     public Producto save(Producto model) { return this.productoRepository.save(model);}
