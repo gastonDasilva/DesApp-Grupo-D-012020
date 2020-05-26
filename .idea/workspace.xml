@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e62ccf9-c88e-4628-adb8-f1ac59605103" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2e62ccf9-c88e-4628-adb8-f1ac59605103" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/ComprandoEnCasaBackEnd/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +113,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588633089329" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ComprandoEnCasaBackEnd" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15270936" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -273,6 +271,7 @@
       <workItem from="1588826023287" duration="13000" />
       <workItem from="1588865910534" duration="27000" />
       <workItem from="1588913404794" duration="5000" />
+      <workItem from="1590100461301" duration="82000" />
     </task>
     <servers />
   </component>
@@ -309,12 +308,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52878000" />
+    <option name="totallyTimeSpent" value="52960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.23373677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.2375189" />
       <window_info id="Structure" order="1" sideWeight="0.502439" side_tool="true" weight="0.21482602" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -382,16 +381,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/EncargadoBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-491">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/EncargadoBuilder.java" />
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/resources/data.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -415,41 +405,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Bebida.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaAlcoholica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Limpieza.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Alimento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Categoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Bebida.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaAlcoholica.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Limpieza.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Alimento.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Categoria.java" />
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/com/ComprandoEnCasa/ComprandoEnCasaBackEnd/Repository/ProductoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -460,13 +420,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaSinAlcohol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/BebidaSinAlcohol.java" />
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/Controller/ListadoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -484,13 +438,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Golosina.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Golosina.java" />
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Service/ServiceRest/ProductoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -518,20 +466,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ProductoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/ProductoBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ProductoFactory.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/ProductoBuilder.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/junit/framework/TestCase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -543,13 +479,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/CategoriaFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/CategoriaFactory.java" />
     <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-734">
@@ -557,20 +487,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Builder/AppBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ClienteFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Builder/AppBuilder.java" />
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Factory/ClienteFactory.java" />
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/test/java/model/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -581,13 +499,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/ClienteBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Tools/ClienteBuilder.java" />
     <entry file="file://$PROJECT_DIR$/ComprandoEnCasaBackEnd/src/main/java/Modelo/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2329">
