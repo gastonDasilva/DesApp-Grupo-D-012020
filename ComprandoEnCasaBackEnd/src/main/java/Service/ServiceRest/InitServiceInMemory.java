@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class InitServiceInMemory {
 
-    /*
+
 
     protected final Log logger = LogFactory.getLog(getClass());
 
@@ -38,5 +38,4 @@ public class InitServiceInMemory {
         Producto producto = new Producto("fernet", "branca", 20, 290, "img_0001", "Bebida con alcohol", lon);
         productoService.save(producto);
     }
-*/
 }

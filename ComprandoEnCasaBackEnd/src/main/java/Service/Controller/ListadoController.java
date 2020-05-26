@@ -21,7 +21,7 @@ public class ListadoController {
     @GetMapping("/api/productos")
     public List<Producto> listarProductos(){
         //Busqueda de  productos para comprar como cliente.
-        return productoService.buscarProductos();
+        return productoService.findAll();
     }
 
     @GetMapping("/api")
