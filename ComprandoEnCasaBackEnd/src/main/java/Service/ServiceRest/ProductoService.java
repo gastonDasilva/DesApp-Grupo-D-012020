@@ -13,13 +13,13 @@ import java.util.List;
 @Service
 
 public class ProductoService {
-
-    //@Autowired
+/*
+    @Autowired
     private ProductoRepository productoRepository;
 
-    //public ProductoService(ProductoRepository productoRepository) {
-    //    this.productoRepository = productoRepository;
-    //}
+    public ProductoService(ProductoRepository productoRepository) {
+       this.productoRepository = productoRepository;
+    }
 
     @Transactional
     public Producto save(Producto model) { return this.productoRepository.save(model);}
@@ -27,4 +27,5 @@ public class ProductoService {
     public Producto findById(Integer id) { return this.productoRepository.findById(id).get();}
 
     public List<Producto> findAll(){ return productoRepository.findAll(); }
+*/
 }
