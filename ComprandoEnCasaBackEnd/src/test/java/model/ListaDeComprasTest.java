@@ -1,8 +1,8 @@
 package model;
 
-import Tools.Factory.ProductoFactory;
-import Modelo.ListaDeCompras;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Factory.ProductoFactory;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.ListaDeCompras;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;

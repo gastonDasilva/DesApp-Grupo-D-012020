@@ -1,13 +1,13 @@
 package model;
 
-import Tools.Builder.AppBuilder;
-import Modelo.App;
-import Tools.Builder.ComercioBuilder;
-import Modelo.Cliente;
-import Modelo.Comercio;
-import Tools.Factory.ClienteFactory;
-import Tools.Factory.ProductoFactory;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Builder.AppBuilder;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.App;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Builder.ComercioBuilder;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Cliente;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Comercio;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Factory.ClienteFactory;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Factory.ProductoFactory;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
 import junit.framework.TestCase;
 import org.junit.Test;
 import java.util.List;

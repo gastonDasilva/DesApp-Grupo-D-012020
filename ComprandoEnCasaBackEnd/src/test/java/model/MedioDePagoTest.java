@@ -1,9 +1,7 @@
 package model;
 
-import Modelo.Geo;
-import Modelo.MedioDePago;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.MedioDePago;
 import junit.framework.TestCase;
-import org.junit.Before;
 import org.junit.Test;
 
 public class MedioDePagoTest extends TestCase {

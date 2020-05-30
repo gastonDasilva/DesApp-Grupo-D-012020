@@ -1,10 +1,10 @@
 package model;
 
-import Modelo.Encargado;
-import Modelo.MedioDePago;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Entitys.Producto;
-import Tools.Builder.EncargadoBuilder;
-import Tools.Builder.ProductoBuilder;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Encargado;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.MedioDePago;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Builder.EncargadoBuilder;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Builder.ProductoBuilder;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.TestCase;
