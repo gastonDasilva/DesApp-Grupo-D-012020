@@ -34,16 +34,18 @@
   </div>
 </div>-->
 
-  <div class="container  p-destacados" style="margin-top: 70px;">
+  <div class="container  p-destacados" style="margin-top: 40px;">
     <div class="row">
-      <div class="col-md-3" *ngFor="let producto of productos">
-        <div class="card text-center " >
+      <div class="col-md-3 mt-4" *ngFor="let producto of productos">
+        <div class="card text-center border-dark " >
           <div class="card-header">
             <img src={{producto.imagen}} class="card-img-top" alt="...">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{producto.nombreProducto}}</h5>
-            <p class="card-text">{{producto.marca}}</p>
+            <p>
+              <a  class="badge badge-pill badge-warning">{{producto.marca}}</a>
+            </p>
 
           </div>
           <div class="card-footer text-muted">

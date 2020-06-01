@@ -40,4 +40,20 @@ constructor(private http: HttpClient,private api: ApiService) {}
                          err => console.log(err));
     }
 
+    public getProductosByConsulta(consulta:string){
+      this.products = [];
+      this.api.getProductosByConsultaAPI$(consulta)
+           .subscribe(resp => {
+                          console.log(resp);
+                          //
+                            for (const data of resp.body) {
+                                  this.products.push(data);
+                                }
+                                console.log(this.products);
+                                },
+
+                       err => console.log(err));
+      }
+
+
 }

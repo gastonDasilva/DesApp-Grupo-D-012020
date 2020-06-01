@@ -13,13 +13,21 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient,public appcomp: AppComponent) { }
 
   ngOnInit() {
-  this.appcomp.getProductosAPI$();
-  this.productos = this.appcomp.getProductos();
-  console.log("Save button is clicked!", this.productos);
+    this.appcomp.getProductosAPI$();
+    this.productos = this.appcomp.getProductos();
+    console.log("Save button is clicked!", this.productos);
+
+
   }
 
  public selectProduct(producto){
       this.selectedproducto = producto;
     }
+
+ public buscarProductos(consulta:string){
+  this.appcomp.getProductosByConsulta(consulta);
+  this.productos = this.appcomp.getProductos();
+  console.log(this.productos);
+ }
 
 }

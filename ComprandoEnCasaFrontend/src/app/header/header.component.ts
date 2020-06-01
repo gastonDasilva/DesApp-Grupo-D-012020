@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  consulta:string = "";
+  constructor(public appcomp: AppComponent) { }
 
   ngOnInit() {
   }
 
+  callProductosByConsulting(){
+  console.log(this.consulta);
+  if(this.consulta != ""){
+   this.appcomp.getProductosByConsulta(this.consulta);
+  }
+
+  }
 }

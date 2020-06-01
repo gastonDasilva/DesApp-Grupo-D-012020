@@ -14,8 +14,17 @@ export class ApiService {
 
 
   getProductosAPI$(): Observable<HttpResponse<Producto[]>> {
+  /*Busco todo los productos.*/
    return this.http.get<Producto[]>(
       this.urlLOcal+'productos', { observe: 'response' });
   }
+
+  getProductosByConsultaAPI$(consulta:string): Observable<HttpResponse<Producto[]>> {
+  /*Busco los productos a partir de una consulta, por ahora busca por nonbre y marca.*/
+    let paramsConsulta = new HttpParams().set('q',consulta);
+    return this.http.get<Producto[]>(
+     this.urlLOcal+'buscarProductos', { params:paramsConsulta, observe: 'response' });
+  }
+
 
 }
