@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,6 +24,12 @@ public class ListadoController {
     public List<Producto> listarProductos(){
         //Busqueda de  productos para comprar como cliente.
         return productoService.findAll();
+    }
+
+    @CrossOrigin
+    @GetMapping("/api/buscarProductos")
+    public  List<Producto> buscarProductos(@RequestParam("q") String consulta){
+        return productoService.buscarProductoPorConsulta(consulta);
     }
 
     @GetMapping("/api")

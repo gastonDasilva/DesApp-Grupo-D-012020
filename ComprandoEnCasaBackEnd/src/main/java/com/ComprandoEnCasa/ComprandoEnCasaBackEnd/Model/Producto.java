@@ -21,7 +21,7 @@ public class Producto {
     private String imagen;
     private String categoria;
 
-    //@OneToOne(targetEntity = Categoria.class)
+    //@ManyToOne(targetEntity = Categoria.class)
     //private Categoria clasificacion;
 
     // campos de oferta

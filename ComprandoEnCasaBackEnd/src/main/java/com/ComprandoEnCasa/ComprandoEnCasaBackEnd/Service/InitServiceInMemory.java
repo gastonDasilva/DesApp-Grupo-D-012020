@@ -42,5 +42,16 @@ public class InitServiceInMemory {
         productoService.save(producto);
         producto = new Producto("Fideos Mostacholes", "Matarazzo", 12, 50, "https://i3-unileverar.a8e.net.br/gg/fideos-mostachol-matarazzo-500g_172827245_7790070318596.jpg", "Comida");
         productoService.save(producto);
+
+        producto = new Producto("Fernet Branca", "Branca", 20, 200, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDqKz5TenqnxQU6HoIy3uYgifJeoqutH5Xfyy0WtBxwrnlm0Po&usqp=CAU", "Comida");
+        productoService.save(producto);
+        producto = new Producto("Alfajor Oreo", "Oreo Milk", 51, 87, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdD8r5tbcIp-_03h4xCMzMV-G9CTcJALyN1cpCO-8Ruru400dR&usqp=CAU", "Comida");
+        productoService.save(producto);
+        producto = new Producto("Harina 0000", "Pureza", 14, 52, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTvrqMNHeCSbHTrtHf5xkZEDLw3JXEZUUVRDpr2huqRSrdBtPhY&usqp=CAU", "Comida");
+        productoService.save(producto);
+        producto = new Producto("Coca Cola en Lata 500 mLt", "Colca cola", 12, 65, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9JZuIjzpIEe0LOajQmW5vQ5Nosn23CurhJQzYGhESF3GJMFUM&usqp=CAU", "Bebida");
+        productoService.save(producto);
+
+
     }
 }

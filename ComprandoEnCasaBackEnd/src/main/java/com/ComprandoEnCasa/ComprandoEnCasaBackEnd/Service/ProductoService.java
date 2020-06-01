@@ -4,21 +4,14 @@ import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Repositories.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Service
-
 public class ProductoService {
 
     @Autowired
     private ProductoRepository productoRepository;
-
-    //public ProductoService(ProductoRepository productoRepository) {
-    //   this.productoRepository = productoRepository;
-    //}
 
     @Transactional
     public Producto save(Producto model) {
@@ -30,7 +23,11 @@ public class ProductoService {
     }
 
     public List<Producto> findAll(){
-        return productoRepository.findAll();
+        return productoRepository.buscarTodos();//findAll();
+    }
+
+    public List<Producto> buscarProductoPorConsulta(String consulta){
+       return productoRepository.findBynombreProductoContaining(consulta);
     }
 
 }
