@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 import { Producto } from './producto';
+import { DataService } from './data.service'
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,10 @@ export class AppComponent {
   title = 'ComprandoEnCasaFrontend';
    products: Producto[] = [];
 
-
-constructor(private http: HttpClient,private api: ApiService) {}
+constructor(private http: HttpClient,private api: ApiService, public data: DataService) {}
 
     public getProductos():Array<{nombreProducto, marca, stock, precio, imagen, categoria}>{
-      return this.products;
+      return this.data.products
     }
 
     public createProducto(product: {id, name, description, email,urlImage}){
@@ -38,6 +38,7 @@ constructor(private http: HttpClient,private api: ApiService) {}
                            },
 
                          err => console.log(err));
+      this.data.products = this.products;
     }
 
     public getProductosByConsulta(consulta:string){
@@ -53,6 +54,7 @@ constructor(private http: HttpClient,private api: ApiService) {}
                                 },
 
                        err => console.log(err));
+      this.data.products = this.products;
       }
 
 

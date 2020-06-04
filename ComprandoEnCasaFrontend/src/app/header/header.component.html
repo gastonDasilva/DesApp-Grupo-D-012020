@@ -33,10 +33,10 @@
       <div class="input-group active-green-4">
         <input class="form-control" type="text" [(ngModel)]="consulta" [ngModelOptions]="{standalone: true}" placeholder="Buscar Producto" aria-label="Search">
         <div class="input-group-append">
-          <a routerLink="/home" >
+
             <button class="btn btn-outline-success my-2 my-sm-0" (click)="callProductosByConsulting()" type="submit"><i class="fa fa-search"></i>
             </button>
-          </a>
+
 
         </div>
       </div>
@@ -47,7 +47,7 @@
 
       <li class="nav-item">
         <button type="button" class="btn btn-outline-success" data-toggle="dropdown">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">3</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{data.productosEnCarrito.length}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
         </button> <!-- glyphicon glyphicon-shopping-cart -->
       </li>
 
