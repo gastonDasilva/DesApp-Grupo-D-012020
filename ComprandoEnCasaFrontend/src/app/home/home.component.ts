@@ -16,14 +16,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
        this.appcomp.getProductosAPI$();
         console.log("Save button is clicked!", this.data.getProductos());
-
+        //llamo y traigo los datos de usuario, por ahora va aca. despues se creara una component LOgin para esto.
+        if(this.data.userData == null){
+         this.appcomp.getUserData();
+        }
 
   }
 
  public agregarProducto(producto){
       this.selectedproducto = producto;
-      console.log("Producto Seleccionado en carrito", this.selectedproducto);
+      //this.data.agregarProductoAlCarrito(producto);
+      this.appcomp.agregarProductoACarrito(producto)
+      /*console.log("Producto Seleccionado en carrito", this.selectedproducto);
       this.data.productosEnCarrito.push(producto)
-      console.log("Cant Productos en carrito:", this.data.productosEnCarrito.length);
+      console.log("Cant Productos en carrito:", this.data.productosEnCarrito.length);*/
     }
 }

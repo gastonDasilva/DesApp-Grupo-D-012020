@@ -18,7 +18,7 @@ public class ProductoService {
         return this.productoRepository.save(model);
     }
 
-    public Producto findById(Integer id) {
+    public Producto findById(Long id) {
         return this.productoRepository.findById(id).get();
     }
 

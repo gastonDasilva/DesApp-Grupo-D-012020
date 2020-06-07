@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Producto } from './producto';
-
+import { UsuarioData } from './usuarioData';
+import { ListaDeCompras } from './listaDeCompras';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,17 @@ export class ApiService {
      this.urlLOcal+'buscarProductos', { params:paramsConsulta, observe: 'response' });
   }
 
+ getUserData$(): Observable<HttpResponse<UsuarioData>> {
+  /*Busco los datos de usuario.*/
+   return this.http.get<UsuarioData>(
+      this.urlLOcal+'usuario/1', { observe: 'response' });
+      /* por ahora pongo /1 para obtener los datos del usuario con id 1, pero esto no va a quedar asi, hay que cambiarlo en el futuro y
+       agarrar los datos del usuario con el cual se logea el cliente. */
+  }
 
+ agregarProductoACarritoAPI$(id: any, idProducto: any,listaDeCompras: ListaDeCompras): Observable<HttpResponse<ListaDeCompras>> {
+    let paramsIDProducto = new HttpParams().set('idProducto',idProducto);
+    return this.http.put<ListaDeCompras>(this.urlLOcal + "listadecomprasAdd/"+id, listaDeCompras, { params:paramsIDProducto,observe: 'response' });
+
+ }
 }

@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public interface ProductoRepository extends CrudRepository<Producto, Integer> {
 
-    Optional<Producto> findById(Integer id);
+    Optional<Producto> findById(Long id);
 
     List<Producto> findAll();
 
