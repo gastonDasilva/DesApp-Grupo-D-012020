@@ -1,18 +1,29 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*@Entity
+@Table(name = "BSUsuarioCliente")*/
 public class Cliente extends Usuario {
-
+    /*@Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)*/
+    private long ClienteID;
     private String direccion;
-    private ListaDeCompras listaDeCompras;
+    //@OneToOne
+    //private ListaDeCompras listaDeCompras;
     public int montoGastado;
     private int montoDeCompra;
     private int montoAcumuladoEnAlimentos;
     private int montoAcumuladoEnBebidasAlcoholicas;
-    private List<ListaDeCompras> historialDeCompras;
-    private Geo coordenadas;
+
+    /*@OneToMany(targetEntity = ListaDeCompras.class,cascade = CascadeType.ALL)
+    @JoinColumn(name="cp_fk",referencedColumnName = "ClienteID")*/
+    //private List<ListaDeCompras> historialDeCompras;
+
+    //@OneToOne
+    //private Geo coordenadas;
 
     public String getDireccion() {
         return direccion;
@@ -55,7 +66,7 @@ public class Cliente extends Usuario {
     public Cliente(String nombre, String email, App app, String direccion, Geo coordenadas){
         this.setNombreUsuario(nombre);
         this.setEmail(email);
-        this.setApp(app);
+        //this.setApp(app);
         this.setDireccion(direccion);
         this.setListaDeCompras(null);
         this.setMontoGastado(0);
@@ -67,7 +78,7 @@ public class Cliente extends Usuario {
     public Cliente(String nombre, String email, String direccion, Geo coordenadas){
         this.setNombreUsuario(nombre);
         this.setEmail(email);
-        this.setApp(app);
+        //this.setApp(app);
         this.setDireccion(direccion);
         this.setListaDeCompras(null);
         this.setMontoGastado(0);
@@ -82,7 +93,7 @@ public class Cliente extends Usuario {
          *       una vez registrado, y por último se agrega al cliente a la lista de clientes
          *       registrados a la aplicación pasada como parámetro.
          */
-        this.setApp(app);
+       // this.setApp(app);
         ListaDeCompras lista = new ListaDeCompras();
         this.setListaDeCompras(lista);
         app.agregarCliente(this);

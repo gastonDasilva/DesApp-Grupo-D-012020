@@ -2,16 +2,73 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.App;
 
-public abstract class Usuario {
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "BSUsuario")
+public  class Usuario {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
 
     protected String nombreUsuario;
     protected String email;
     protected String password;
     protected String imagenPerfil;
-    protected App app;
+   // protected App app;
+    @OneToOne
+    public ListaDeCompras listaDeCompras; /*Vendria a hacer la tarea de carrito de compras.*/
+
+    @OneToMany(targetEntity = ListaDeCompras.class)
+    @JoinColumn(name="ldc_fk",referencedColumnName = "id")
+    public List<ListaDeCompras> historialDeCompras;
+
+    @OneToOne
+    public Geo coordenadas;
 
 
+    public Usuario(){};
 
+    public Usuario(String name,String email, String pas, String image ){
+        setNombreUsuario(name);
+        setEmail(email);
+        setPassword(pas);
+        setImagenPerfil(image);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<ListaDeCompras> getHistorialDeCompras() {
+        return historialDeCompras;
+    }
+
+    public void setHistorialDeCompras(List<ListaDeCompras> historialDeCompras) {
+        this.historialDeCompras = historialDeCompras;
+    }
+
+    public ListaDeCompras getListaDeCompras() {
+        return listaDeCompras;
+    }
+
+    public void setListaDeCompras(ListaDeCompras listaDeCompras) {
+        this.listaDeCompras = listaDeCompras;
+    }
+
+    public Geo getCoordenadas() {
+        return coordenadas;
+    }
+
+    public void setCoordenadas(Geo coordenadas) {
+        this.coordenadas = coordenadas;
+    }
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -25,7 +82,7 @@ public abstract class Usuario {
         return password;
     }
 
-    public App getApp() { return app; }
+   // public App getApp() { return app; }
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
@@ -39,7 +96,7 @@ public abstract class Usuario {
         this.password = password;
     }
 
-    public void setApp(App app) { this.app = app; }
+   // public void setApp(App app) { this.app = app; }
 
     public String getImagenPerfil() {
         return imagenPerfil;

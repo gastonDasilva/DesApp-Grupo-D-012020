@@ -1,6 +1,14 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "BSGeo")
 public class Geo {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long  geoID;
 
     private Double latitude;
     private Double longitude;
