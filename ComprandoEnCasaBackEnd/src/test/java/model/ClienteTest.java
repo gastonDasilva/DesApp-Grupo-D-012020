@@ -40,10 +40,13 @@ public class ClienteTest extends TestCase {
          assertTrue(cliente.getListaDeCompras().cantidadDeProductosEnLista()==1);
      }
 
-     /*
+
      @Test
      public void testRealizarCompra(){
-         cliente.registrarme(comercio);
+         Cliente cliente = ClienteFactory.anyCliente();
+         cliente.registrarme(app);
+         Producto fernet = ProductoFactory.createWithPrecio(250);
+         Producto birra = ProductoFactory.createWithPrecio(65);
          cliente.realizarCompra();
          assertTrue(cliente.getMontoDeCompra() == 0);
          cliente.agregarProducto(fernet, comercio);
@@ -54,22 +57,19 @@ public class ClienteTest extends TestCase {
          assertTrue(cliente.getMontoDeCompra() == 315);
      }
 
-      */
+
 
      @Test
-     public void testRealizarCompraYVerificarHistorialDeCompras(){
+     public void testVerificarHistorialDeCompras(){
          Cliente cliente = ClienteFactory.anyCliente();
          cliente.registrarme(app);
          Producto fernet = ProductoFactory.createWithPrecio(250);
          Producto birra = ProductoFactory.createWithPrecio(65);
          cliente.realizarCompra();
-         assertEquals(cliente.getMontoDeCompra(),0);
          cliente.agregarProducto(fernet, comercio);
          cliente.realizarCompra();
-         assertEquals(cliente.getMontoDeCompra(),250);
          cliente.agregarProducto(birra, comercio);
          cliente.realizarCompra();
-         assertEquals(cliente.getMontoDeCompra(),315);
          assertEquals(cliente.getHistorialDeCompras().size(), 2);
          for(ListaDeCompras l: cliente.getHistorialDeCompras()){
              System.out.println("el historial es: " + l.cantidadDeProductosEnLista()) ;
@@ -112,7 +112,7 @@ public class ClienteTest extends TestCase {
      }
      */
     @Test
-    public void testAgregarProductosYVerificarMontoMaximoPorCategoria(){
+    public void testVerificarMontoMaximoPorCategoria(){
         Producto fideos = ProductoFactory.createWithPrecioAndCategoria(80,"Alimento");
         Producto salsaDeTomate = ProductoFactory.createWithPrecioAndCategoria(60,"Alimento");
         Producto queso = ProductoFactory.createWithPrecioAndCategoria(90,"Alimento");
