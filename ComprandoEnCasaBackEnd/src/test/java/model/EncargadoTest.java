@@ -17,31 +17,14 @@ public class EncargadoTest {
     private Encargado encargado;
     private ProductoBuilder productoBuilder;
 
-    //si usamos un builder, no es necesario setup del encargado; ya que creamos la instancia con las cosas que nos interesa
 
     @Before
     public void setUp()  {
         productoBuilder = new ProductoBuilder();
         aEncargadoBuilder = new EncargadoBuilder();
-        /*
-        aEncargadoBuilder =  EncargadoBuilder.aEncargado().withName("EncargadoComerceTest")
-                .withEmail("ELEncargadoCOmecioTEST@gmail.com.ar")
-                .withTelefono(43555676)
-                .withDomicilio("Calchaqui 465");
-        encargado = aEncargadoBuilder.build();
-         */
     }
 
 
-    //test independientes! un test para cada cosa
-    /*@Test
-    public void darDeAltaUnNUevoEncargadoTest(){
-        TestCase.assertEquals(encargado.getDomicilio(), "Calchaqui 465");
-        TestCase.assertEquals(encargado.getEmail(), "ELEncargadoCOmecioTEST@gmail.com.ar");
-        TestCase.assertEquals(encargado.getTelefono(), 43555676);
-        TestCase.assertEquals(encargado.getNombreUsuario(), "EncargadoComerceTest");
-    }
-     */
     @Test
     public void testEmailValidoDelEncargado(){
         encargado = aEncargadoBuilder.withEmail("ELEncargadoCOmecioTEST@gmail.com.ar").build();
@@ -78,17 +61,6 @@ public class EncargadoTest {
     @Test
     public  void testUnEncargadoAgregaUnNuevoProductoAVender(){
         encargado = aEncargadoBuilder.build();//un encargado cualquiera
-        // no es necesario tantas especificaciones del producto, solo testeamos que haya uno mas agregado
-        /*
-        Producto newProducto = productoBuilder.withNombreProducto("AXE Africa 2.0")
-                                .withStock(2)
-                                .withImagen("iamgen.laslgapsg")
-                                .withMarca("AXE")
-                                .withCategoria("Limpieza")
-                                .withPrecio(200)
-                                .build();
-
-         */
         Producto newProducto = productoBuilder.build();
         TestCase.assertEquals(encargado.getProductosAVender().size(), 0);
 
@@ -100,27 +72,19 @@ public class EncargadoTest {
     @Test
     public void testUnEncargadoCreaOfertaParaCategoria(){
         encargado = aEncargadoBuilder.build();//un encargado con valores por defecto
-        // el builder no necesita todos los with__ , se usan los que necesitamos.
-        // en este caso no necesitamos la imagen ni el stock, no es indiferente para lo que queremos testear
         Producto arroz = productoBuilder.withNombreProducto("Arroz pal guiso")
-                //.withStock(7)
-                //.withImagen("iamgen.laslgapsgsasaf")
                 .withMarca("ALA")
                 .withCategoria("Alimento")
                 .withPrecio(80)
                 .build();
 
         Producto fideos = productoBuilder.withNombreProducto("Fideos Matarazzo")
-                //.withStock(5)
-                //.withImagen("iamgen.lasfasfpsg")
                 .withMarca("Matarazzo")
                 .withCategoria("Alimento")
                 .withPrecio(90)
                 .build();
 
         Producto chisitos = productoBuilder.withNombreProducto("Chisitos pehuamar")
-                //.withStock(2)
-                //.withImagen("iamgen.fdsfgapsg")
                 .withMarca("Pehuamar")
                 .withCategoria("Golosina")
                 .withPrecio(150)
@@ -140,34 +104,22 @@ public class EncargadoTest {
     public void testUnEncargadoCreaOfertasPorCombinacionDe2Productos(){
         encargado = aEncargadoBuilder.build();
         Producto fernet = productoBuilder.withNombreProducto("fernet vittone")
-                //.withStock(10)
-                //.withImagen("iamgen.lagfhfdg")
                 .withMarca("Vittone")
-                //.withCategoria("Bebida alcoholica")
                 .withPrecio(250)
                 .build();
 
         Producto coca = productoBuilder.withNombreProducto("Coca cola")
-                //.withStock(10)
-                //.withImagen("iamgen.lgghfsfasfpsg")
                 .withMarca("Coca cola")
-                //.withCategoria("Bebida sin alcohol")
                 .withPrecio(120)
                 .build();
 
         Producto detergente = productoBuilder.withNombreProducto("Detergente magistral")
-                //.withStock(5)
-                //.withImagen("iamgen.fdsafsffg")
                 .withMarca("Magistral")
-                //.withCategoria("Limpieza")
                 .withPrecio(160)
                 .build();
 
         Producto esponja = productoBuilder.withNombreProducto("esponja amarilla")
-                //.withStock(30)
-                //.withImagen("iamgen.ffdgtyasg")
                 .withMarca("Patitol")
-                //.withCategoria("Limpieza")
                 .withPrecio(30)
                 .build();
 
@@ -183,35 +135,19 @@ public class EncargadoTest {
     public void testUnEncargadoCreaOfertaPorProducto(){
         encargado = aEncargadoBuilder.build();
         Producto aceitunas = productoBuilder.withNombreProducto("aceitunas con carozo")
-                //.withStock(25)
-                //.withImagen("iamgen.jafdkjh")
-                //.withMarca("Carozo")
-                //.withCategoria("Alimento")
                 .withPrecio(60)
                 .build();
 
         Producto prepizza = productoBuilder.withNombreProducto("Prepizza")
-                //.withStock(30)
-                //.withImagen("iamgen.uidfdf")
-                //.withMarca("Pirulo")
-                //.withCategoria("Alimento")
                 .withPrecio(120)
                 .build();
 
         Producto salsaDeTomate = productoBuilder.withNombreProducto("Salsa de tomate")
-                //.withStock(30)
-                //.withImagen("iamgen.askldjlsdf")
-                //.withMarca("Molto")
-                //.withCategoria("Alimento")
                 .withPrecio(80)
                 .build();
 
 
         Producto detergente = productoBuilder.withNombreProducto("Detergente magistral")
-                //.withStock(5)
-                //.withImagen("iamgen.fdsafsffg")
-                //.withMarca("Magistral")
-                //.withCategoria("Limpieza")
                 .withPrecio(160)
                 .build();
 

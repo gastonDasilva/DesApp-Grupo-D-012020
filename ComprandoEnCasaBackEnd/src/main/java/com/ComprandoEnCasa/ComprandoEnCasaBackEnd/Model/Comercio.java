@@ -162,7 +162,6 @@ public class Comercio {
     }
 
 
-    // este metodo es responsabilidad de la clase Producto, traslado alli la implementacion del metodo
     public void imprimirProductos() {
         int contador= 0;
         String palabraProducto = "Producto nro ";
@@ -172,14 +171,6 @@ public class Comercio {
             palabraImpresa = palabraProducto.concat(Integer.toString(contador));
             System.out.println(palabraImpresa);
             p.imprimirEnPantalla();
-            /*
-            System.out.print("[");
-            System.out.print("Nombre del producto: "+ p.getNombreProducto());
-            System.out.print(" ,Marca: "+ p.getMarca());
-            System.out.print(" ,stock: "+p.getStock());
-            System.out.println(" ,precio:"+ p.getPrecio());
-            System.out.println("]");
-             */
         }
         System.out.println("Cantidad de productos listados: "+ Integer.toString(contador));
     }
@@ -191,12 +182,6 @@ public class Comercio {
     public boolean dentroDelAreaDeEnvio (float distanciaEntreElDomicilioYElLocal){
         return distanciaEntreElDomicilioYElLocal<= distanciaMaximaEnvio;
     }
-
-    /*
-    public boolean debeHaberAlgunEncargado(){
-        return !this.encargado.nombreUsuario.isBlank();
-    }
-     */
 
 
     public boolean vendeProductoConNombre (String nombre){

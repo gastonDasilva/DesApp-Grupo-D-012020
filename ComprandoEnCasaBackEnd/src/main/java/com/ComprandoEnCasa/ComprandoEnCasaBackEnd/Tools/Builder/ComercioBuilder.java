@@ -24,15 +24,6 @@ public class ComercioBuilder {
 
     private Geo coord = new Geo(-33.562397, -52.873047, "Quilmes");
     private Encargado oscar = new Encargado("oscar", "20-30656734-5", "oscar@gmail.com");
-    //private Cliente gaston = new Cliente("gaston", "gaston@gmail.com", comercio, "alberdi 330");
-
-    // private  Producto polenta = new Producto("polenta", "presto pronta", 15, 80, "alguna imagen", "alimento", id0);
-    /*no es necesario, se puede crear la polenta como:
-    * Producto polenta = ProductoFactory.withNombreMarcaStockAndPrecio("polenta","presto pronta",15,80);
-    * ademas no se usa la variable polenta en este builder
-    */
-    //private  Producto pepsi = new Producto("gaseosa pepsi", "pepsi", 30, 120, "otra imagen", "bebida sin alcohol", id1);
-    /*mismo caso que la polenta*/
 
     public Comercio build(){
         Comercio comercio = new Comercio(nombre,rubro,domicilio,diasYHorariosDeAtencion,mediosDePago,distanciaMaximaEnvio, coord, oscar);

@@ -20,15 +20,6 @@ public class EncargadoBuilder {
     private ArrayList<MedioDePago> mediosDePago = new ArrayList<MedioDePago>();
 
 
-    //no es necesario
-    /*public static EncargadoBuilder aEncargado() {
-
-        return new EncargadoBuilder();
-
-    }
-     */
-
-
     public Encargado build() {
 
         Encargado encargado = new Encargado(nameCLiente);

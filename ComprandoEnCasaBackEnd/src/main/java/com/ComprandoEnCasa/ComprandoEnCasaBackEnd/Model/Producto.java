@@ -1,9 +1,7 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
-//import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Categorias.Categoria;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "BSProducto")
@@ -22,14 +20,7 @@ public class Producto {
     private String categoria;
 
     //@ManyToOne(targetEntity = Categoria.class)
-    //private Categoria clasificacion;
 
-    // campos de oferta
-    public String tipoDeDescuento="sin descuento";
-    public int cantidadLlevada;
-    public int porcentaje=0;
-    //public LocalDate desde;
-    //public LocalDate hasta;
 
 
     public Producto() {}
@@ -72,7 +63,7 @@ public class Producto {
     }
 
     public int getPrecio() {
-        return precio - this.aplicarDescuento();
+        return precio;
     }
 
     public String getImagen() {
@@ -103,7 +94,6 @@ public class Producto {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-        //this.clasificacion = CategoriaFactory.getCategoria(categoria);
     }
 
     public void imprimirEnPantalla() {
@@ -114,39 +104,6 @@ public class Producto {
         System.out.println(" ,precio:"+ this.getPrecio());
         System.out.println("]");
     }
-
-
-    public void establecerOferta(String tipoDescuento, LocalDate aPartir, LocalDate finaliza){
-        //desde = aPartir;
-        //hasta = finaliza;
-        tipoDeDescuento = tipoDescuento;
-    }
-
-    //public boolean ofertaVigente(){
-    //    return LocalDate.now().isAfter(this.desde) && LocalDate.now().isBefore(hasta);
-   // }
-
-    private int aplicarDescuento() {
-        int monto = 0;
-        int precioAnterior = this.precio;
-        //if (ofertaVigente()){
-            switch (tipoDeDescuento){
-                case "Descuento por Unidad":
-                    monto = precioAnterior * this.porcentaje /100;
-                    break;
-                case "2x1":
-                    if ((cantidadLlevada % 2 )== 0){
-                        monto = precioAnterior * 50 / 100;
-                    }
-                    break;
-                default:
-                    monto = 0;
-
-            }
-        //}
-        return monto;
-    }
-
 
 
     public long getId() { return id; }

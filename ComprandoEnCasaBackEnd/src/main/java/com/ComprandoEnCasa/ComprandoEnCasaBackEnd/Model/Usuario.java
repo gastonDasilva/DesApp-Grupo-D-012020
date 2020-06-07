@@ -1,6 +1,5 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.App;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,7 +16,6 @@ public  class Usuario {
     protected String email;
     protected String password;
     protected String imagenPerfil;
-   // protected App app;
     @OneToOne
     public ListaDeCompras listaDeCompras; /*Vendria a hacer la tarea de carrito de compras.*/
 
@@ -82,8 +80,6 @@ public  class Usuario {
         return password;
     }
 
-   // public App getApp() { return app; }
-
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
@@ -95,8 +91,6 @@ public  class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
-
-   // public void setApp(App app) { this.app = app; }
 
     public String getImagenPerfil() {
         return imagenPerfil;

@@ -35,16 +35,6 @@ public class ComercioTest extends TestCase {
         assertTrue(comercio.dentroDelAreaDeEnvio(27));
         assertFalse(comercio.dentroDelAreaDeEnvio(100));
     }
-    /*
-    @Test
-    public void testDebeHaberAlgunEncargado(){
-        Encargado oscar = new Encargado("Oscar");
-        Comercio app1 = comercioBuilder.withEncargado(oscar).build();
-        Comercio app2 = comercioBuilder.build();
-        assertTrue(app1.debeHaberAlgunEncargado());
-        assertFalse(app2.debeHaberAlgunEncargado());
-    }
-    */
 
 
     @Test
