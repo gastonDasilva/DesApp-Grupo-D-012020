@@ -18,25 +18,11 @@ public class ClienteTest extends TestCase {
      private App app = appBuilder.build();
 
 
-     /*
-     @Test
-     public void testDomicilio(){ assertTrue(cliente.getDireccion() == "calle falsa 110");}
-      */
      @Test
      public void testDomicilio(){
          Cliente cliente = ClienteFactory.createWithDireccion("Calle falsa 110");
          assertEquals(cliente.getDireccion(),"Calle falsa 110");
      }
-
-
-     /*
-     @Test
-     public void testRegistrarme(){
-         cliente.registrarme(comercio);
-         assertTrue(comercio.cantidadDeClientes() == 1);
-         assertTrue(cliente.getListaDeCompras().getMontoAcumulado() == 0);
-     }
-      */
 
      @Test
      public void testRegistrarme(){
@@ -45,16 +31,6 @@ public class ClienteTest extends TestCase {
          assertEquals(app.cantidadDeClientes(),1);
          assertEquals(cliente.getListaDeCompras().getMontoAcumulado(),0);
      }
-
-
-     /*
-     @Test
-     public void testAgregarProducto(){
-         //cliente.agregarProducto(fernet);    --> Primero debe registrarse!
-         cliente.registrarme(comercio);
-         cliente.agregarProducto(fernet, comercio);
-         assertTrue(cliente.getListaDeCompras().cantidadDeProductosEnLista() == 1);
-     }*/
 
      @Test
      public void testAgregarProducto(){
@@ -102,18 +78,6 @@ public class ClienteTest extends TestCase {
 
 
 
-     /*
-     @Test
-     public void testMontoGastado(){
-         /*
-         El sistema va calculando el monto gastado mientras el comprador ingresa productos en su lista de compra.
-         *//*
-         cliente.registrarme(comercio);
-         cliente.agregarProducto(fernet, comercio);
-         assertTrue(cliente.getMontoGastado() == 250);
-         cliente.agregarProducto(birra, comercio);
-         assertTrue(cliente.getMontoGastado() == 315);
-     }*/
 
     @Test
     public void testMontoGastado(){

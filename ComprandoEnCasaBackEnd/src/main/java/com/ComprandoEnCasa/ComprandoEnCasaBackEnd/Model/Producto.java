@@ -1,6 +1,6 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Categorias.Categoria;
+//import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Categorias.Categoria;
 
 import javax.persistence.*;
 import java.time.LocalDate;
