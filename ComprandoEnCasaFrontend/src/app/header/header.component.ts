@@ -9,6 +9,7 @@ import { DataService } from '../data.service';
 })
 export class HeaderComponent implements OnInit {
   consulta:string = "";
+  usuarioname: String = "";
   constructor(public appcomp: AppComponent,private route: Router, public data: DataService) { }
 
   ngOnInit() {

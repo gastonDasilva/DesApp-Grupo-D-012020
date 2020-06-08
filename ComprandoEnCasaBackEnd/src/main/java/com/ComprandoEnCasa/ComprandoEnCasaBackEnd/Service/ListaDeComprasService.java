@@ -18,17 +18,27 @@ public class ListaDeComprasService {
     @Autowired
     private ListaDeComprasRepository listaDeComprasRepository;
 
+    @Autowired
+    private ProductoService productoService;
+
     @Transactional
     public ListaDeCompras save(ListaDeCompras model) {
 
         return this.listaDeComprasRepository.save(model);
     }
 
-    public ListaDeCompras findById(Integer id) {
+    public ListaDeCompras findById(Long id) {
         return this.listaDeComprasRepository.findById(id).get();
     }
 
     public List<ListaDeCompras> findAll(){
         return listaDeComprasRepository.findAll();
+    }
+
+    public ListaDeCompras agregarProductoALCarrito(Long idListaCompras, Long productoID){
+        /*a partir de los ids de la lista de compras y del productos, agrego el podructo a la lista de compras correspondiente.*/
+        ListaDeCompras listaCompras = findById(idListaCompras);
+        listaCompras.agregarProducto(productoService.findById(productoID));
+        return save(listaCompras);
     }
 }

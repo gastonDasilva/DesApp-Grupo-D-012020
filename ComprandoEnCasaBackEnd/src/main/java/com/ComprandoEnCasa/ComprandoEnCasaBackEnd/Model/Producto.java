@@ -18,6 +18,7 @@ public class Producto {
     private int precio;
     private String imagen;
     private String categoria;
+    private int cantidadAComprar = 1; /*Atributo que permite elegir al cliente cuanta cantidad de este producto quiere.*/
 
     //@ManyToOne(targetEntity = Categoria.class)
 
@@ -47,6 +48,14 @@ public class Producto {
         this.setImagen(imagen);
         this.setCategoria(categoria);
         this.setId(id);
+    }
+
+    public int getCantidadAComprar() {
+        return cantidadAComprar;
+    }
+
+    public void setCantidadAComprar(int cantidadAComprar) {
+        this.cantidadAComprar = cantidadAComprar;
     }
 
 

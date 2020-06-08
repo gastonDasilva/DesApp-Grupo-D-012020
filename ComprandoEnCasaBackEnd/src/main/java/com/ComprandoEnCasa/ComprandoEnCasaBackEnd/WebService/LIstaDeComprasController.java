@@ -1,14 +1,10 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.WebService;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.ListaDeCompras;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ListaDeComprasService;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +21,14 @@ public class LIstaDeComprasController {
     public List<ListaDeCompras> listarlistadecompras(){
         //Busqueda de  productos para comprar como cliente.
         return listaDeComprasService.findAll();
+    }
+
+
+    @CrossOrigin
+    @PutMapping("/api/listadecomprasAdd/{id}")
+    public ListaDeCompras agregarProductoALCarrito(@RequestBody ListaDeCompras listaDeCompras,@PathVariable Long id, @RequestParam("idProducto") Long idProducto) {
+        System.out.println(listaDeCompras);
+        return listaDeComprasService.agregarProductoALCarrito(id,idProducto);
     }
 
 }

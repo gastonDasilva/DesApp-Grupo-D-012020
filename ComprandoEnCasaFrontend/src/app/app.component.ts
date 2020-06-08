@@ -45,8 +45,6 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
       this.products = [];
       this.api.getProductosByConsultaAPI$(consulta)
            .subscribe(resp => {
-                          console.log(resp);
-                          //
                             for (const data of resp.body) {
                                   this.products.push(data);
                                 }
@@ -55,6 +53,37 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
 
                        err => console.log(err));
       this.data.products = this.products;
+      }
+
+
+      public getUserData(){
+      /*Consulto a la API y obtengo los datos del usuario*/
+        this.api.getUserData$()
+           .subscribe(resp => {
+                          const data = resp.body
+                          this.data.userData = data;
+                          this.data.nombreUsuario = this.data.userData.nombreUsuario
+                          if(this.data.userData.listaDeCompras != undefined){
+                              this.data.productosEnCarrito = this.data.userData.listaDeCompras.productosAcumulados;
+                          }
+
+                               },
+
+                       err => console.log(err));
+      }
+
+      public agregarProductoACarrito(producto:Producto){
+      //this.data.agregarProductoAlCarrito(producto);
+      this.api.agregarProductoACarritoAPI$(this.data.getListaCompras().id, producto.id,this.data.getListaCompras())
+          .subscribe(resp => {  const data = resp.body
+                                console.log("Producto Seleccionado en carrito", producto);
+                                this.data.userData.listaDeCompras = data;
+                                this.data.actualizarProductosEnCarrito();
+                                console.log("Lista de compras ",this.data.getListaCompras());
+                             },
+
+                     err => console.log(err));
+      ;
       }
 
 

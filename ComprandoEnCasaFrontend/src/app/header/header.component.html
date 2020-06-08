@@ -29,7 +29,7 @@
       </li>
     </ul>
 
-    <form class="form-inline  col-lg-7 ">
+    <form class="form-inline  col-lg-5 ">
       <div class="input-group active-green-4">
         <input class="form-control" type="text" [(ngModel)]="consulta" [ngModelOptions]="{standalone: true}" placeholder="Buscar Producto" aria-label="Search">
         <div class="input-group-append">
@@ -46,11 +46,19 @@
     <ul class="navbar-nav ml-auto ">
 
       <li class="nav-item">
-        <button type="button" class="btn btn-outline-success" data-toggle="dropdown">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{data.productosEnCarrito.length}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
-        </button> <!-- glyphicon glyphicon-shopping-cart -->
-      </li>
+        <div class="btn-group" role="group" aria-label="Basic example">
 
+          <button type="button" class="btn btn-outline-success" data-toggle="dropdown">
+            <i class="fa fa-user"></i> <span class="badge badge-pill"  >{{data.nombreUsuario}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
+          </button>
+
+
+            <button type="button" class="btn btn-outline-success" data-toggle="dropdown">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{data.productosEnCarrito.length}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
+            </button> <!-- glyphicon glyphicon-shopping-cart -->
+         
+        </div>
+      </li>
     </ul>
 
   </div>
