@@ -30,4 +30,13 @@ public class ProductoService {
        return productoRepository.findBynombreProductoContaining(consulta);
     }
 
+    public List<Producto> buscarProductosPorCategoria(String categoria){
+        return productoRepository.findByCategoriaProductoContaining(categoria);
+    }
+
+    @Transactional
+    public void buscarProductosPorCategoriaYAplicarOferta(String categoria, int descuento){
+        productoRepository.findByCategoriaProductoContainingWithOferta(descuento, categoria);
+    }
+
 }

@@ -4,10 +4,7 @@ import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,4 +33,17 @@ public class ListadoController {
     public String ping(){
         return "PING";
     }
+
+    @CrossOrigin
+    @GetMapping("/api/buscarPorCategoria")
+    public List<Producto> buscarPorCategoria(@RequestParam("q") String categoria){
+        return productoService.buscarProductosPorCategoria(categoria);
+    }
+
+    @CrossOrigin
+    @PutMapping("/api/buscarPorCategoriaYAplicarOferta")
+    public void buscarPorCategoriaYAplicarOferta(@RequestParam("q") String categoria, @RequestParam("d") int descuento){
+        productoService.buscarProductosPorCategoriaYAplicarOferta(categoria, descuento);
+    }
+
 }
