@@ -70,6 +70,7 @@ public class InitServiceInMemory {
                                                 .withEmail("UsuarioPrueba@gmail.com")
                                                 .withPassword("1234")
                                                 .withListaDeCompras(listaCompras)
+                                                .withDireccionCalle("calle falsa 1234")
                                                 .build();
         usuarioService.save(usuario1);
 

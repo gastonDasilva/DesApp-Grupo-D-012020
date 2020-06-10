@@ -16,12 +16,22 @@ public class UsuarioBuilder {
     private ListaDeCompras listaDeCompras = null; /*Vendria a hacer la tarea de carrito de compras.*/
     private List<ListaDeCompras> historialDeCompras = new ArrayList<ListaDeCompras>();
     private Geo coordenadas = null;
+    private String direccionCalle = "";
+    private String localidad = "";
+    private String pais = "";
+    private String provincia = "";
+    private  int codigoPostal = 0;
 
     public Usuario build() {
         Usuario user = new Usuario(nombreUsuario,email,password,imagenPerfil);
         user.setCoordenadas(coordenadas);
         user.setHistorialDeCompras(historialDeCompras);
         user.setListaDeCompras(listaDeCompras);
+        user.setCalle(direccionCalle);
+        user.setCodigoPostal(codigoPostal);
+        user.setLocalidad(localidad);
+        user.setPais(pais);
+        user.setProvincia(provincia);
         return user;
     }
 
@@ -53,6 +63,11 @@ public class UsuarioBuilder {
 
     public UsuarioBuilder withCoordenadas(Geo coordenadas){
         this.coordenadas = coordenadas;
+        return this;
+    }
+
+    public UsuarioBuilder withDireccionCalle(String calle){
+        this.direccionCalle = calle;
         return this;
     }
 }

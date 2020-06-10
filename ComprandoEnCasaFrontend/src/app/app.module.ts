@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { CarritoComponent } from './carrito/carrito.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -20,7 +21,8 @@ import { CarritoComponent } from './carrito/carrito.component';
     ProductoCreateComponent,
     HeaderComponent,
     FooterComponent,
-    CarritoComponent
+    CarritoComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

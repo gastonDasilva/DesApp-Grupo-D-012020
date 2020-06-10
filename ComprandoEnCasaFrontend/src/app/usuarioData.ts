@@ -5,6 +5,7 @@ export interface UsuarioData {
   email: string,
   id: number,
   password: string,
-  imagenPerfil:string
+  imagenPerfil:string,
+  calle:string,
   listaDeCompras:ListaDeCompras
 }
