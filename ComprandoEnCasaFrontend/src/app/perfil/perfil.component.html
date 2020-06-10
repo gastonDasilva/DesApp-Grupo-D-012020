@@ -1,0 +1,28 @@
+<div class="container " style="margin-top: 140px;">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="name">Nombre de Usuario</label>
+            <input [(ngModel)]="data.userData.nombreUsuario" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name">
+            <small id="nameHelp" class="form-text text-muted">Enter your user’s name</small>
+
+            <label for="email">Email</label>
+            <input [(ngModel)]="data.userData.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                   placeholder="Enter your email">
+            <small id="emailHelp" class="form-text text-muted">Enter your  email</small>
+
+            <label for="Calle">Direccion calle</label>
+            <textarea [(ngModel)]="data.userData.calle" name="Calle" class="form-control" id="Calle" aria-describedby="descHelp">
+                      </textarea>
+            <small id="descHelp" class="form-text text-muted">Enter your street direction</small>
+
+          </div>
+        </form>
+        <button class="btn btn-primary" (click)="actualizarPerfilUsuario()">Actualizar Perfil</button>
+      </div>
+    </div>
+  </div>
+</div>

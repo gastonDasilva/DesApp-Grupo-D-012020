@@ -29,10 +29,6 @@ public class ListadoController {
         return productoService.buscarProductoPorConsulta(consulta);
     }
 
-    @GetMapping("/api")
-    public String ping(){
-        return "PING";
-    }
 
     @CrossOrigin
     @GetMapping("/api/buscarPorCategoria")

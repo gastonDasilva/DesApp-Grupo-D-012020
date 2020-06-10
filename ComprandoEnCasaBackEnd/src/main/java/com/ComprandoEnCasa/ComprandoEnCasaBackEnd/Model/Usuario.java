@@ -12,19 +12,30 @@ public  class Usuario {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
-    protected String nombreUsuario;
-    protected String email;
-    protected String password;
-    protected String imagenPerfil;
+    private String nombreUsuario;
+    private String email;
+    private String password;
+    private String imagenPerfil;
+
+    protected String Calle ;
+    protected String localidad ;
+    protected String provincia ;
+    protected String pais ;
+    protected int codigoPostal;
+
+    private int montoGastado;
+    private int montoDeCompra;
+    private int montoAcumuladoEnAlimentos;
+    private int montoAcumuladoEnBebidasAlcoholicas;
     @OneToOne
-    public ListaDeCompras listaDeCompras; /*Vendria a hacer la tarea de carrito de compras.*/
+    private ListaDeCompras listaDeCompras; /*Vendria a hacer la tarea de carrito de compras.*/
 
     @OneToMany(targetEntity = ListaDeCompras.class)
     @JoinColumn(name="ldc_fk",referencedColumnName = "id")
-    public List<ListaDeCompras> historialDeCompras;
+    private List<ListaDeCompras> historialDeCompras;
 
     @OneToOne
-    public Geo coordenadas;
+    private Geo coordenadas;
 
 
     public Usuario(){};
@@ -42,6 +53,78 @@ public  class Usuario {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
+    public String getCalle() {
+        return Calle;
+    }
+
+    public void setCodigoPostal(int codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+
+    public int getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    public void setCalle(String calle) {
+        Calle = calle;
+    }
+
+    public int getMontoAcumuladoEnAlimentos() {
+        return montoAcumuladoEnAlimentos;
+    }
+
+    public void setMontoAcumuladoEnAlimentos(int montoAcumuladoEnAlimentos) {
+        this.montoAcumuladoEnAlimentos = montoAcumuladoEnAlimentos;
+    }
+
+    public int getMontoAcumuladoEnBebidasAlcoholicas() {
+        return montoAcumuladoEnBebidasAlcoholicas;
+    }
+
+    public void setMontoAcumuladoEnBebidasAlcoholicas(int montoAcumuladoEnBebidasAlcoholicas) {
+        this.montoAcumuladoEnBebidasAlcoholicas = montoAcumuladoEnBebidasAlcoholicas;
+    }
+
+    public int getMontoDeCompra() {
+        return montoDeCompra;
+    }
+
+    public void setMontoDeCompra(int montoDeCompra) {
+        this.montoDeCompra = montoDeCompra;
+    }
+
+    public int getMontoGastado() {
+        return montoGastado;
+    }
+
+    public void setMontoGastado(int montoGastado) {
+        this.montoGastado = montoGastado;
     }
 
     public List<ListaDeCompras> getHistorialDeCompras() {

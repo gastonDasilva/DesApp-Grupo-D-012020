@@ -21,7 +21,7 @@ public class ClienteTest extends TestCase {
      @Test
      public void testDomicilio(){
          Cliente cliente = ClienteFactory.createWithDireccion("Calle falsa 110");
-         assertEquals(cliente.getDireccion(),"Calle falsa 110");
+         assertEquals(cliente.getCalle(),"Calle falsa 110");
      }
 
      @Test

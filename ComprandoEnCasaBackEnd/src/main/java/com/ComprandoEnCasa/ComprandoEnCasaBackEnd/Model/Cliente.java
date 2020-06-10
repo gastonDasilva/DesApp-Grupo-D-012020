@@ -10,64 +10,15 @@ public class Cliente extends Usuario {
     /*@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)*/
     private long ClienteID;
-    private String direccion;
-    //@OneToOne
-    //private ListaDeCompras listaDeCompras;
-    public int montoGastado;
-    private int montoDeCompra;
-    private int montoAcumuladoEnAlimentos;
-    private int montoAcumuladoEnBebidasAlcoholicas;
 
-    /*@OneToMany(targetEntity = ListaDeCompras.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="cp_fk",referencedColumnName = "ClienteID")*/
-    //private List<ListaDeCompras> historialDeCompras;
-
-    //@OneToOne
-    //private Geo coordenadas;
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public ListaDeCompras getListaDeCompras() { return listaDeCompras; }
-
-    public void setListaDeCompras(ListaDeCompras listaDeCompras) { this.listaDeCompras = listaDeCompras; }
-
-    public int getMontoGastado() { return montoGastado; }
-
-    public void setMontoGastado(int montoGastado) { this.montoGastado = montoGastado; }
-
-    public int getMontoDeCompra() { return montoDeCompra; }
-
-    public void setMontoDeCompra(int montoDeCompra) { this.montoDeCompra = montoDeCompra; }
-
-    public int getMontoAcumuladoEnAlimentos() { return montoAcumuladoEnAlimentos; }
-
-    public void setMontoAcumuladoEnAlimentos(int montoAcumuladoEnAlimentos) { this.montoAcumuladoEnAlimentos = montoAcumuladoEnAlimentos; }
-
-    public int getMontoAcumuladoEnBebidasAlcoholicas() { return montoAcumuladoEnBebidasAlcoholicas; }
-
-    public void setMontoAcumuladoEnBebidasAlcoholicas(int montoAcumuladoEnBebidasAlcoholicas) { this.montoAcumuladoEnBebidasAlcoholicas = montoAcumuladoEnBebidasAlcoholicas; }
-
-    public List<ListaDeCompras> getHistorialDeCompras() { return historialDeCompras; }
-
-    public void setHistorialDeCompras(List<ListaDeCompras> historialDeCompras) { this.historialDeCompras = historialDeCompras; }
-
-    public Geo getCoordenadas() { return coordenadas; }
-
-    public void setCoordenadas(Geo coordenadas) { this.coordenadas = coordenadas; }
 
     public Cliente(){}
 
-    public Cliente(String nombre, String email, App app, String direccion, Geo coordenadas){
+    public Cliente(String nombre, String email, App app, String calle, Geo coordenadas){
         this.setNombreUsuario(nombre);
         this.setEmail(email);
         //this.setApp(app);
-        this.setDireccion(direccion);
+        setCalle(calle);
         this.setListaDeCompras(null);
         this.setMontoGastado(0);
         this.setMontoDeCompra(0);
@@ -75,11 +26,11 @@ public class Cliente extends Usuario {
         this.setCoordenadas(coordenadas);
     }
     //duplico para no romper ningun test anterior
-    public Cliente(String nombre, String email, String direccion, Geo coordenadas){
+    public Cliente(String nombre, String email, String calle, Geo coordenadas){
         this.setNombreUsuario(nombre);
         this.setEmail(email);
         //this.setApp(app);
-        this.setDireccion(direccion);
+        this.setCalle(calle);
         this.setListaDeCompras(null);
         this.setMontoGastado(0);
         this.setMontoDeCompra(0);
@@ -131,8 +82,8 @@ public class Cliente extends Usuario {
                     System.out.println("AVISO: superaste el monto maximo de compra en categorias de alimento");
                 } else {
                     this.getListaDeCompras().agregarProducto(producto);
-                    this.montoGastado = this.getMontoGastado() + producto.getPrecio();
-                    this.montoAcumuladoEnAlimentos = this.getMontoAcumuladoEnAlimentos() + producto.getPrecio();
+                    this.setMontoGastado(this.getMontoGastado() + producto.getPrecio());
+                    this.setMontoAcumuladoEnAlimentos(this.getMontoAcumuladoEnAlimentos() + producto.getPrecio());
 
                 }
                 break;
@@ -141,23 +92,23 @@ public class Cliente extends Usuario {
                     System.out.println("AVISO: superaste el monto maximo de compra en categorias de bebidas alcoholicas");
                 } else {
                     this.getListaDeCompras().agregarProducto(producto);
-                    this.montoGastado = this.getMontoGastado() + producto.getPrecio();
-                    this.montoAcumuladoEnBebidasAlcoholicas = this.getMontoAcumuladoEnBebidasAlcoholicas() + producto.getPrecio();
+                    this.setMontoGastado(this.getMontoGastado() + producto.getPrecio());
+                    this.setMontoAcumuladoEnBebidasAlcoholicas(this.getMontoAcumuladoEnBebidasAlcoholicas() + producto.getPrecio());
 
                 }
                 break;
             default:
                 this.getListaDeCompras().agregarProducto(producto);
-                this.montoGastado = this.getMontoGastado() + producto.getPrecio();
+                this.setMontoGastado(this.getMontoGastado() + producto.getPrecio());
         }
     }
 
     public void realizarCompra() {
         if (this.getListaDeCompras().cantidadDeProductosEnLista() == 0) {
-            this.montoDeCompra = this.getMontoGastado();
+            setMontoDeCompra(getMontoGastado()) ;
         } else {
-            this.getHistorialDeCompras().add(this.getListaDeCompras());
-            this.montoDeCompra = this.getMontoGastado();
+            getHistorialDeCompras().add(getListaDeCompras());
+            setMontoDeCompra(getMontoGastado());
             this.setListaDeCompras(new ListaDeCompras());
         }
     }
