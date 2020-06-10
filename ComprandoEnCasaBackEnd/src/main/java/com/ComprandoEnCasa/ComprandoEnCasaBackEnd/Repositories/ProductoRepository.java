@@ -46,4 +46,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Integer> {
     @Query(value = "update BSProducto p set p.precio = (p.precio - ((p.precio * :descuento) / 100)) where p.categoria = :category", nativeQuery = true)
     void findByCategoriaProductoContainingWithOferta(@Param("descuento") int precio, @Param("category") String categoria);
 
+    @Modifying
+    @Query(value = "update BSProducto p set p.precio = (p.precio - ((p.precio * :descuento) / 100)) where p.id = :id", nativeQuery = true)
+    void findByProductoContainingWithOferta(@Param("descuento") int precio, @Param("id") long id);
 }

@@ -39,4 +39,9 @@ public class ProductoService {
         productoRepository.findByCategoriaProductoContainingWithOferta(descuento, categoria);
     }
 
+    @Transactional
+    public void buscarProductoYAplicarOferta(Producto producto, int descuento){
+        productoRepository.findByProductoContainingWithOferta(descuento, producto.getId());
+    }
+
 }

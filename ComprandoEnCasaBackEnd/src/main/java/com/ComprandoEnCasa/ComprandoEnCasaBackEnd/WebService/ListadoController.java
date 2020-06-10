@@ -24,6 +24,13 @@ public class ListadoController {
     }
 
     @CrossOrigin
+    @GetMapping("/api/productos/{id}")
+    public Producto getProductoConId(@PathVariable long id){
+        // Busca y devuelve el producto con el id correspondiente traido por parámetro
+        return productoService.findById(id);
+    }
+
+    @CrossOrigin
     @GetMapping("/api/buscarProductos")
     public  List<Producto> buscarProductos(@RequestParam("q") String consulta){
         return productoService.buscarProductoPorConsulta(consulta);
@@ -44,6 +51,13 @@ public class ListadoController {
     @PutMapping("/api/buscarPorCategoriaYAplicarOferta")
     public void buscarPorCategoriaYAplicarOferta(@RequestParam("q") String categoria, @RequestParam("d") int descuento){
         productoService.buscarProductosPorCategoriaYAplicarOferta(categoria, descuento);
+    }
+
+    @CrossOrigin
+    @PutMapping("/api/buscarProductoPorIdYAplicarOferta/{id}")
+    public void buscarProductoPorIdYAplicarOferta(@PathVariable long id, @RequestParam("d") int descuento){
+        Producto prodRes = productoService.findById(id);
+        productoService.buscarProductoYAplicarOferta(prodRes, descuento);
     }
 
 }

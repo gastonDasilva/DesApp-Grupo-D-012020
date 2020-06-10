@@ -40,4 +40,5 @@ export class ApiService {
     return this.http.put<ListaDeCompras>(this.urlLOcal + "listadecomprasAdd/"+id, listaDeCompras, { params:paramsIDProducto,observe: 'response' });
 
  }
+
 }

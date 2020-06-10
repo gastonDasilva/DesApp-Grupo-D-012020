@@ -79,6 +79,7 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                                 console.log("Producto Seleccionado en carrito", producto);
                                 this.data.userData.listaDeCompras = data;
                                 this.data.actualizarProductosEnCarrito();
+                                this.data.actualizarMonto(this.data.getListaCompras().montoAcumulado);
                                 console.log("Lista de compras ",this.data.getListaCompras());
                              },
 
