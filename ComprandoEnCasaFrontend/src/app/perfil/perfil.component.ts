@@ -15,4 +15,8 @@ export class PerfilComponent implements OnInit {
    console.log("data:", this.appcomp.data);
   }
 
+  public actualizarPerfilUsuario(){
+   console.log("data:", this.data.getuserData());
+   this.appcomp.actualizarPerfilUsuario();
+  }
 }

@@ -29,5 +29,18 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-
+    public Usuario updateUsuario(Usuario newuser, Long idUser){
+        /*Actualizo los datos del usuario   */
+        return usuarioRepository.findById(idUser).map(
+                user -> {
+                    /*por ahora hago que se actualizen estos datos. A futuro se van a actualizar mas cosas*/
+                    user.setNombreUsuario(newuser.getNombreUsuario());
+                    user.setCalle(newuser.getCalle());
+                    user.setProvincia(newuser.getProvincia());
+                    user.setCodigoPostal(newuser.getCodigoPostal());
+                    user.setImagenPerfil(newuser.getImagenPerfil());
+                    user.setLocalidad(newuser.getLocalidad());
+                    return usuarioRepository.save(user);
+        }).get();
+    }
 }

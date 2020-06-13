@@ -7,5 +7,10 @@ export interface UsuarioData {
   password: string,
   imagenPerfil:string,
   calle:string,
-  listaDeCompras:ListaDeCompras
+  localidad:string,
+  provincia:string,
+  pais:string,
+  codigoPostal:number,
+  listaDeCompras:ListaDeCompras,
+  historialDeCompras:ListaDeCompras[]
 }

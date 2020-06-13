@@ -11,9 +11,10 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "producto-create", component: ProductoCreateComponent},
   {path: "carrito", component: CarritoComponent},
-  {path: "home/carrito", component: CarritoComponent},
-  {path: "home/perfil-usuario", component: PerfilComponent},
-  {path: "perfil-usuario", component: PerfilComponent}
+  {path: "home/carrito", redirectTo:  "carrito"},
+  {path: "carrito/home",redirectTo:  "home"},
+  {path: "perfil-usuario", component: PerfilComponent},
+  {path: "home/perfil-usuario", redirectTo:  "perfil-usuario"}
 ];
 
 @NgModule({

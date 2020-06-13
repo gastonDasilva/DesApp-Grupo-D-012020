@@ -7,10 +7,7 @@ import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ProductoService;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,6 +39,14 @@ public class UsuarioConctroller {
     public ListaDeCompras getListaDeComprasBYIDUser(@PathVariable Long id){
         //Busco la lista de compras(carrito) que tiene el usuario con el ID correspondiente.
         return usuarioService.findById(id).getListaDeCompras();
+    }
+
+    @CrossOrigin
+    @PutMapping("api/usuario/actualizarUsuario/{id}")
+    public Usuario updateUsuarioData(@RequestBody Usuario usuario, @PathVariable Long id) {
+        /*Actualizo los datos del usuario.*/
+        System.out.println(usuario);
+        return usuarioService.updateUsuario(usuario,id);
     }
 
 }

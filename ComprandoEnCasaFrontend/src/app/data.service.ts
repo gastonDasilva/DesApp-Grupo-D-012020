@@ -15,9 +15,16 @@ export class DataService {
  userData: UsuarioData;
   constructor() { }
 
-   getProductos(): Producto[]{
+    getProductos(): Producto[]{
     /*Busco todo los productos.*/
      return this.products;
+    }
+    getuserData(){
+    return this.userData;
+    }
+
+    setuserData(user: UsuarioData){
+      return this.userData = user;
     }
 
     getListaCompras():ListaDeCompras{
@@ -33,4 +40,6 @@ export class DataService {
       this.montoGastado = monto;
       console.log("El monto acumulado hasta el momento es de: ", this.montoGastado);
     }
+
+
 }

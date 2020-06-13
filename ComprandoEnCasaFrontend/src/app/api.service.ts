@@ -41,4 +41,10 @@ export class ApiService {
 
  }
 
+ actualizarPerfilUsuario(userData: UsuarioData){
+ /*Llamo a la API para poder actualizar los datos del usuario*/
+ return this.http.put<UsuarioData>(this.urlLOcal+"usuario/actualizarUsuario/"+userData.id,userData,{observe: 'response' });
+ }
+
+
 }

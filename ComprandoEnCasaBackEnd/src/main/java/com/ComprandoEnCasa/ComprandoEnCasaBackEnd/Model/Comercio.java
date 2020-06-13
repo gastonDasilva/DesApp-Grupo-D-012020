@@ -4,7 +4,7 @@ import org.uqbar.commons.model.UserException;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Comercio {
+public class Comercio extends Usuario {
 
     private String nombreComercio;
     private String rubro;

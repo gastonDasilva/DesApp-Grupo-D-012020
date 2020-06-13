@@ -25,7 +25,7 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
       //this.productos.push(product);
     }
 
-    getProductosAPI$() {
+    public getProductosAPI$() {
     this.products = [];
       this.api.getProductosAPI$()
       .subscribe(resp => {
@@ -84,7 +84,15 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                              },
 
                      err => console.log(err));
-      ;
+      }
+
+      public actualizarPerfilUsuario(){
+      this.api.actualizarPerfilUsuario(this.data.getuserData())
+          .subscribe(resp => {  const data = resp.body
+                                this.data.setuserData(data);
+                              },
+                     err => console.log(err));
+
       }
 
 
