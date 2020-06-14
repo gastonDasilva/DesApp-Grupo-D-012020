@@ -47,4 +47,9 @@ export class ApiService {
  }
 
 
+ CrearProductoForUsuario(producto:Producto,idUser:any): Observable<HttpResponse<UsuarioData>>{
+   return this.http.post<UsuarioData>(this.urlLOcal+"crearProductosForComercio/"+idUser, producto, {observe: 'response' })
+ }
+
+
 }

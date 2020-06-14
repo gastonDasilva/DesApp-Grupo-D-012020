@@ -13,7 +13,8 @@ export class DataService {
  montoGastado: number = 0;
  nombreUsuario: String = ""
  userData: UsuarioData;
-  constructor() { }
+ userEsComercio: boolean =false;
+  constructor() {}
 
     getProductos(): Producto[]{
     /*Busco todo los productos.*/

@@ -1,7 +1,9 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.WebService;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Usuario;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ProductoService;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,8 @@ public class ListadoController {
     @Autowired
     private  ProductoService productoService;
 
+    @Autowired
+    private UsuarioService usuarioService;
 
     @CrossOrigin
     @GetMapping("/api/productos")
@@ -28,6 +32,14 @@ public class ListadoController {
     public Producto getProductoConId(@PathVariable long id){
         // Busca y devuelve el producto con el id correspondiente traido por parámetro
         return productoService.findById(id);
+    }
+
+
+    @CrossOrigin
+    @PostMapping("/api/crearProductosForComercio/{idUSer}")
+    Usuario newProducto(@RequestBody Producto newProducto, @PathVariable Long idUSer ) {
+        productoService.save(newProducto);
+        return usuarioService.agregarProductoAComercio(newProducto,idUSer);
     }
 
     @CrossOrigin

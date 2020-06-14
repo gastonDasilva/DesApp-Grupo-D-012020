@@ -43,4 +43,13 @@ public class UsuarioService {
                     return usuarioRepository.save(user);
         }).get();
     }
+
+
+    public Usuario agregarProductoAComercio(Producto newProducto, Long idUser){
+       return usuarioRepository.findById(idUser).map(
+                user -> {
+                    user.agregarProductoForComercio(newProducto);
+                    return usuarioRepository.save(user);
+                }).get();
+    }
 }

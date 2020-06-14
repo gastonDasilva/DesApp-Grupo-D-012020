@@ -16,6 +16,7 @@ public  class Usuario {
     private String email;
     private String password;
     private String imagenPerfil;
+    private Boolean esComercio;
 
     protected String Calle ;
     protected String localidad ;
@@ -37,6 +38,15 @@ public  class Usuario {
     @OneToOne
     private Geo coordenadas;
 
+    /*Atributos del Comercio*/
+    private String rubro;
+    private String diasYHorariosDeAtencion;
+    private float distanciaMaximaEnvio;
+
+    @OneToMany(targetEntity = Producto.class)
+    @JoinColumn(name="pd_fk",referencedColumnName = "id")
+    private List<Producto> productos;
+
 
     public Usuario(){};
 
@@ -45,6 +55,7 @@ public  class Usuario {
         setEmail(email);
         setPassword(pas);
         setImagenPerfil(image);
+        setEsComercio(false);
     }
 
     public long getId() {
@@ -62,6 +73,15 @@ public  class Usuario {
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
+
+    public Boolean getEsComercio() {
+        return esComercio;
+    }
+
+    public void setEsComercio(Boolean esComercio) {
+        this.esComercio = esComercio;
+    }
+
 
     public String getPais() {
         return pais;
@@ -181,5 +201,54 @@ public  class Usuario {
 
     public void setImagenPerfil(String imagenPerfil) {
         this.imagenPerfil = imagenPerfil;
+    }
+
+
+    /*Comercio*/
+
+
+    public String getDiasYHorariosDeAtencion() {
+        return diasYHorariosDeAtencion;
+    }
+
+    public void setDiasYHorariosDeAtencion(String diasYHorariosDeAtencion) {
+        this.diasYHorariosDeAtencion = diasYHorariosDeAtencion;
+    }
+
+    public float getDistanciaMaximaEnvio() {
+        return distanciaMaximaEnvio;
+    }
+
+    public void setDistanciaMaximaEnvio(float distanciaMaximaEnvio) {
+        this.distanciaMaximaEnvio = distanciaMaximaEnvio;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
+    public String getRubro() {
+        return rubro;
+    }
+
+    public void setRubro(String rubro) {
+        this.rubro = rubro;
+    }
+
+
+
+    public void convertirAComercio(){
+        setEsComercio(true);
+    }
+
+
+    public void agregarProductoForComercio(Producto producto ){
+        if(esComercio.equals(true)){
+            productos.add(producto);
+        }
     }
 }

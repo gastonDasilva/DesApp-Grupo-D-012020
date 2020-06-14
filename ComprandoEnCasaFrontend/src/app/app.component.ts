@@ -20,9 +20,13 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
       return this.data.products
     }
 
-    public createProducto(product: {id, name, description, email,urlImage}){
+    public createProducto(product: Producto){
     /*Por implementar*/
-      //this.productos.push(product);
+     this.api.CrearProductoForUsuario(product,this.data.getuserData().id)
+         .subscribe(resp => {  const data = resp.body
+                                this.data.setuserData(data);
+                                       },
+                              err => console.log(err));
     }
 
     public getProductosAPI$() {
@@ -62,7 +66,8 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
            .subscribe(resp => {
                           const data = resp.body
                           this.data.userData = data;
-                          this.data.nombreUsuario = this.data.userData.nombreUsuario
+                          this.data.nombreUsuario = this.data.userData.nombreUsuario;
+                          this.data.userEsComercio = this.data.userData.esComercio;
                           if(this.data.userData.listaDeCompras != undefined){
                               this.data.productosEnCarrito = this.data.userData.listaDeCompras.productosAcumulados;
                           }

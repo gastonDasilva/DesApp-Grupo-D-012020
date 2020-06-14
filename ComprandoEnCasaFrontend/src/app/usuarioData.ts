@@ -10,6 +10,7 @@ export interface UsuarioData {
   localidad:string,
   provincia:string,
   pais:string,
+  esComercio:boolean,
   codigoPostal:number,
   listaDeCompras:ListaDeCompras,
   historialDeCompras:ListaDeCompras[]

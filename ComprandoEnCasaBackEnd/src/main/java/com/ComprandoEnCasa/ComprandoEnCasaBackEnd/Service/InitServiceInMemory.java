@@ -57,8 +57,8 @@ public class InitServiceInMemory {
         productoService.save(producto);
         producto = new Producto("Harina 0000", "Pureza", 14, 52, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTvrqMNHeCSbHTrtHf5xkZEDLw3JXEZUUVRDpr2huqRSrdBtPhY&usqp=CAU", "Comida");
         productoService.save(producto);
-        producto = new Producto("Coca Cola en Lata", "Colca cola", 12, 65, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9JZuIjzpIEe0LOajQmW5vQ5Nosn23CurhJQzYGhESF3GJMFUM&usqp=CAU", "Bebida");
-        productoService.save(producto);
+        /*producto = new Producto("Coca Cola en Lata", "Colca cola", 12, 65, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9JZuIjzpIEe0LOajQmW5vQ5Nosn23CurhJQzYGhESF3GJMFUM&usqp=CAU", "Bebida");
+        productoService.save(producto);*/
 
         /*Initialize Users*/
 
@@ -72,6 +72,7 @@ public class InitServiceInMemory {
                                                 .withListaDeCompras(listaCompras)
                                                 .withDireccionCalle("calle falsa 1234")
                                                 .build();
+        usuario1.convertirAComercio();
         usuarioService.save(usuario1);
 
     }

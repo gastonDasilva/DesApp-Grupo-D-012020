@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Producto } from '../producto';
 
 @Component({
   selector: 'app-producto-create',
@@ -7,18 +8,23 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./producto-create.component.css']
 })
 export class ProductoCreateComponent implements OnInit {
-  producto : {id, name, description, email, urlImage} = {id: null, name: "", description: "", email: "", urlImage: ""};
+  producto : Producto;
 
-  constructor(public appcomp: AppComponent) { }
+  constructor(public appcomp: AppComponent) {
+  this.cleanProduct();
+  }
 
 
   ngOnInit() {
   }
 
-  createProducto(){
+ createProducto(){
     console.log(this.producto);
     this.appcomp.createProducto(this.producto);
-    this.producto = {id: null, name: "", description: "", email: "", urlImage: ""};
+    this.cleanProduct();
+  }
 
+  cleanProduct(){
+   this.producto = {id:0,nombreProducto: "", marca: "", stock: 0,precio: 0,imagen:"",categoria:"",cantidadAComprar:0};
   }
 }
