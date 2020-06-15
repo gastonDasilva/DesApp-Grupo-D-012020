@@ -40,20 +40,27 @@ export class ApiService {
     return this.http.put<ListaDeCompras>(this.urlLOcal + "listadecomprasAdd/"+id, listaDeCompras, { params:paramsIDProducto,observe: 'response' });
 
  }
+ sacarProductoDelCarritoAPI$(id: any,idProducto: any,listaDeCompras: ListaDeCompras):Observable<HttpResponse<ListaDeCompras>>{
+  let paramsIDProducto = new HttpParams().set('idProducto',idProducto);
+  return this.http.put<ListaDeCompras>(this.urlLOcal + "listadecomprasDeleteProduct/"+id,listaDeCompras,{ params:paramsIDProducto,observe: 'response' });
+ }
+
 
  actualizarPerfilUsuario(userData: UsuarioData){
  /*Llamo a la API para poder actualizar los datos del usuario*/
  return this.http.put<UsuarioData>(this.urlLOcal+"usuario/actualizarUsuario/"+userData.id,userData,{observe: 'response' });
  }
 
-
  CrearProductoForUsuario(producto:Producto,idUser:any): Observable<HttpResponse<UsuarioData>>{
    return this.http.post<UsuarioData>(this.urlLOcal+"crearProductosForComercio/"+idUser, producto, {observe: 'response' })
  }
 
- aplicarOfertaEnBebidasConDescuento(descuento: number): Observable<Producto[]>{
-  let paramsConsulta = new HttpParams().set("q", "Comida");
-  return this.http.put<Producto[]>(this.urlLOcal+"buscarPorCategoriaYAplicarOferta",{paramsConsulta,descuento, observe: 'response'})
+
+
+ aplicarOfertaEnBebidasConDescuento(descuento: number):Observable<Producto[]>{
+  let paramsConsulta = new HttpParams().set('q', 'Comida');
+  paramsConsulta= paramsConsulta.append('d', descuento.toString());
+  return this.http.put<Producto[]>(this.urlLOcal+"buscarPorCategoriaYAplicarOferta",{params:paramsConsulta, observe: 'response'})
  }
 
 

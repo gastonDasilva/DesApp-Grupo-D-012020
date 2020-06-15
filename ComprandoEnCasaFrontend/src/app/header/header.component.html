@@ -17,14 +17,13 @@
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userEsComercio">Crear Producto</a>
-          <a class="dropdown-item"  routerLink="/producto-create" >Link2</a>
         </div>
       </li>
     </ul>
 
-    
-      <button class="btn btn-primary" (click)="aplicarOfertaEnBebidas()"> Ofertas en comida </button>
-    
+
+      <!--<button class="btn btn-primary" (click)="aplicarOfertaEnBebidas()"> Ofertas en comida </button>-->
+
     <form class="form-inline  col-lg-3 ">
       <div class="input-group active-green-4">
         <input class="form-control" type="text" [(ngModel)]="consulta" [ngModelOptions]="{standalone: true}" placeholder="Buscar Producto" aria-label="Search">
@@ -51,6 +50,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" routerLink="perfil-usuario">Ver Perfil</a>
+              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio">Ver Productos Cargados</a>
               <a class="dropdown-item" href="#">Ver Historial de compras</a>
             </div>
           </div>

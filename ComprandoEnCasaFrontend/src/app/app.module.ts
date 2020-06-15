@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { ProductosCargadosComponent } from './productos-cargados/productos-cargados.component';
 
 
 
@@ -22,7 +23,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     HeaderComponent,
     FooterComponent,
     CarritoComponent,
-    PerfilComponent
+    PerfilComponent,
+    ProductosCargadosComponent
   ],
   imports: [
     BrowserModule,

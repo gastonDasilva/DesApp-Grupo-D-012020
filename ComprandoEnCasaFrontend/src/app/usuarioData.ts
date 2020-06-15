@@ -1,4 +1,5 @@
 import { ListaDeCompras } from './listaDeCompras';
+import { Producto } from './producto';
 
 export interface UsuarioData {
   nombreUsuario: string,
@@ -13,5 +14,6 @@ export interface UsuarioData {
   esComercio:boolean,
   codigoPostal:number,
   listaDeCompras:ListaDeCompras,
-  historialDeCompras:ListaDeCompras[]
+  historialDeCompras:ListaDeCompras[],
+  productos:Producto[]
 }

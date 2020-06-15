@@ -85,11 +85,21 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                                 this.data.userData.listaDeCompras = data;
                                 this.data.actualizarProductosEnCarrito();
                                 this.data.actualizarMonto(this.data.getListaCompras().montoAcumulado);
-                                console.log("Lista de compras ",this.data.getListaCompras());
                              },
 
                      err => console.log(err));
       }
+
+      public deleteProductoFromCarrito(producto: Producto){
+      /*Saco un producto seleccionado del carrito*/
+      this.api.sacarProductoDelCarritoAPI$(this.data.getListaCompras().id,producto.id,this.data.getListaCompras())
+          .subscribe(resp => {  const data = resp.body;
+                                this.data.userData.listaDeCompras = data;
+                                this.data.actualizarProductosEnCarrito();
+                              },
+                     err => console.log(err));
+      }
+
 
       public actualizarPerfilUsuario(){
       this.api.actualizarPerfilUsuario(this.data.getuserData())
@@ -107,6 +117,7 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                                },
                       err => console.log(err));
       }
+
 
 
 }

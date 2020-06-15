@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -57,8 +58,9 @@ public class ListadoController {
 
     @CrossOrigin
     @PutMapping("/api/buscarPorCategoriaYAplicarOferta")
-    public void buscarPorCategoriaYAplicarOferta(@RequestParam("q") String categoria, @RequestParam("d") int descuento){
-        productoService.buscarProductosPorCategoriaYAplicarOferta(categoria, descuento);
+    public List<Producto> buscarPorCategoriaYAplicarOferta(@RequestParam(required=false,name = "q") String categoria, @RequestParam(required=false,name ="d") String  descuento){
+        productoService.buscarProductosPorCategoriaYAplicarOferta(categoria, Integer.valueOf(descuento));
+        return new ArrayList<Producto>();
     }
 
     @CrossOrigin

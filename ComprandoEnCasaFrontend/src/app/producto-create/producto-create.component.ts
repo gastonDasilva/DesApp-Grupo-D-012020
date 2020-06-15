@@ -9,6 +9,7 @@ import { Producto } from '../producto';
 })
 export class ProductoCreateComponent implements OnInit {
   producto : Producto;
+  alert: Boolean = false;
 
   constructor(public appcomp: AppComponent) {
   this.cleanProduct();
@@ -22,9 +23,10 @@ export class ProductoCreateComponent implements OnInit {
     console.log(this.producto);
     this.appcomp.createProducto(this.producto);
     this.cleanProduct();
+    this.alert = true;
   }
 
   cleanProduct(){
-   this.producto = {id:0,nombreProducto: "", marca: "", stock: 0,precio: 0,imagen:"",categoria:"",cantidadAComprar:0};
+   this.producto = {id:0,nombreProducto: "", marca: "", stock: 0,precio: 0,imagen:"",categoria:"",cantidadAComprar:1};
   }
 }
