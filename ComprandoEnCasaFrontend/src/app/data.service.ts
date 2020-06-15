@@ -42,5 +42,9 @@ export class DataService {
       console.log("El monto acumulado hasta el momento es de: ", this.montoGastado);
     }
 
+    actualizarProductosConOferta(productos: Producto[]){
+      return this.products = productos;
+    }
+
 
 }

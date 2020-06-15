@@ -51,5 +51,10 @@ export class ApiService {
    return this.http.post<UsuarioData>(this.urlLOcal+"crearProductosForComercio/"+idUser, producto, {observe: 'response' })
  }
 
+ aplicarOfertaEnBebidasConDescuento(descuento: number): Observable<Producto[]>{
+  let paramsConsulta = new HttpParams().set("q", "Comida");
+  return this.http.put<Producto[]>(this.urlLOcal+"buscarPorCategoriaYAplicarOferta",{paramsConsulta,descuento, observe: 'response'})
+ }
+
 
 }

@@ -24,4 +24,8 @@ export class HeaderComponent implements OnInit {
   }
 
   }
+
+  aplicarOfertaEnBebidas(){
+    this.appcomp.aplicarOfertaEnCategoriaDeBebidas(10);
+  }
 }

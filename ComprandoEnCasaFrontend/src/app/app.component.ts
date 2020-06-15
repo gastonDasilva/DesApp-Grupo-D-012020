@@ -100,5 +100,13 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
 
       }
 
+      public aplicarOfertaEnCategoriaDeBebidas(descuento: number){
+        this.api.aplicarOfertaEnBebidasConDescuento(descuento)
+            .subscribe(resp => { const data = resp
+                                 this.data.actualizarProductosConOferta(data);
+                               },
+                      err => console.log(err));
+      }
+
 
 }
