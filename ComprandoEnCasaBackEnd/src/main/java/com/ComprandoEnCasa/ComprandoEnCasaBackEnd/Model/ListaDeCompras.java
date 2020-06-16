@@ -55,6 +55,18 @@ public class ListaDeCompras {
         this.montoAcumulado += producto.getPrecio();
     }
 
+    public  void sacarProducto(Long productoID){
+        /*genero una nueva lista de productos sacando el producto con el id traido por parametro*/
+        List<Producto>  newList= new ArrayList<Producto>();
+        setMontoAcumulado(0);
+        for (Producto p : getProductosAcumulados()){
+            if(!(p.getId() == productoID)){
+                newList.add(p);
+                this.montoAcumulado +=  p.getPrecio();
+            }
+        }
+        setProductosAcumulados(newList);
+    }
     public int cantidadDeProductosEnLista(){
 
         return this.getProductosAcumulados().size();

@@ -31,4 +31,13 @@ public class LIstaDeComprasController {
         return listaDeComprasService.agregarProductoALCarrito(id,idProducto);
     }
 
+
+    @CrossOrigin
+    @PutMapping("/api/listadecomprasDeleteProduct/{id}")
+    public ListaDeCompras listadecomprasDeleteProduct(@RequestBody ListaDeCompras listaDeCompras,@PathVariable Long id, @RequestParam("idProducto") Long idProducto) {
+        System.out.println(listaDeCompras);
+        return listaDeComprasService.sacarProductoDelCarrito(id,idProducto);
+    }
+
+
 }

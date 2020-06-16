@@ -17,13 +17,11 @@
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userEsComercio" i18n="crear | crear producto @@headerCrear">Crear Producto</a>
-          <a class="dropdown-item"  routerLink="/producto-create" >Link2</a>
         </div>
       </li>
     </ul>
 
 
-      <button class="btn btn-primary" (click)="aplicarOfertaEnBebidas()" i18n="ofertas | ofertas @@headerOfertas"> Ofertas en comida </button>
 
     <form class="form-inline  col-lg-3 ">
       <div class="input-group active-green-4">
@@ -52,8 +50,14 @@
               <i class="fa fa-user"></i> <span class="badge badge-pill"  >{{data.nombreUsuario}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<<<<<<< HEAD
               <a class="dropdown-item" routerLink="perfil-usuario" i18n="ver | ver perfil @@headerPerfil">Ver Perfil</a>
               <a class="dropdown-item" href="#" i18n="ver | ver historial  @@headerHistorial">Ver Historial de compras</a>
+=======
+              <a class="dropdown-item" routerLink="perfil-usuario">Ver Perfil</a>
+              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio">Ver Productos Cargados</a>
+              <a class="dropdown-item" href="#">Ver Historial de compras</a>
+>>>>>>> 9b3002c8e25b11832b1b3882a6376a0248e35c43
             </div>
           </div>
 

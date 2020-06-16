@@ -16,4 +16,9 @@ export class CarritoComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  public DeletectProductFromCarrito(producto:Producto){
+  this.appcomp.deleteProductoFromCarrito(producto);
+  }
+
 }

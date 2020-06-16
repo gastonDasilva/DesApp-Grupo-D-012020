@@ -41,4 +41,12 @@ public class ListaDeComprasService {
         listaCompras.agregarProducto(productoService.findById(productoID));
         return save(listaCompras);
     }
+
+
+    public ListaDeCompras sacarProductoDelCarrito(Long idListaCompras, Long productoID){
+        /*a partir de los ids de la lista de compras y del productos, saco el producto  de la lista de compras correspondiente.*/
+        ListaDeCompras listaCompras = findById(idListaCompras);
+        listaCompras.sacarProducto(productoID);
+        return save(listaCompras);
+    }
 }

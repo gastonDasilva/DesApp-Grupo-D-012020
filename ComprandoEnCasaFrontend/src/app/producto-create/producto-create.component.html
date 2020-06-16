@@ -52,4 +52,12 @@
           <button class="btn btn-primary" (click)="createProducto()" i18n="crear | crear producto @@productoCrear">Crear Producto</button>
         </form>
 
+  <br>
+  <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!alert" >
+    <strong>En Horabuena</strong> El producto ha sido creado perfectamente.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
 </div>
