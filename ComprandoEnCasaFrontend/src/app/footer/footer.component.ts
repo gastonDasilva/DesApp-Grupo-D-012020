@@ -11,6 +11,17 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
   }
+  changeLang(lang: string) {
+
+
+     if (lang === 'es') {
+         localStorage.setItem('locale', 'es');
+      }
+
+     if (lang === 'en') {
+         localStorage.setItem('locale', 'en');
+     }
+  }
 
 
 

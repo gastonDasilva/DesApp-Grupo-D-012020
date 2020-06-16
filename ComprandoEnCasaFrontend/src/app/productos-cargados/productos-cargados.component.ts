@@ -12,4 +12,8 @@ export class ProductosCargadosComponent implements OnInit {
   ngOnInit() {
   }
 
+  //DeletectProductFromUserComerciante(Component: string) {}
+  //ModificarProductFromUserComerciante(Component: string){}
+
+
 }
