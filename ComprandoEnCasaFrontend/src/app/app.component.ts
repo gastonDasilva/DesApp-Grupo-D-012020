@@ -108,5 +108,16 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                       err => console.log(err));
       }
 
+      changeLang(lang: string) {
+
+
+           if (lang === 'es') {
+               localStorage.setItem('locale', 'es');
+           }
+
+           if (lang === 'en') {
+               localStorage.setItem('locale', 'en');
+           }
+        }
 
 }

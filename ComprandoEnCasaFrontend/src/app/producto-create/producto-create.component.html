@@ -3,11 +3,11 @@
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="name">Nombre del producto</label>
+              <label for="name" i18n="nombre | nombre del producto @@productoNombre">Nombre del producto</label>
               <input [(ngModel)]="producto.nombreProducto" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Introduce el nombre">
             </div>
             <div class="form-group col-md-6">
-              <label for="marca">Marca</label>
+              <label for="marca" i18n="marca | marca @@productoMarca">Marca</label>
               <input [(ngModel)]="producto.marca" type="text" name="marca" class="form-control" id="marca"
                      placeholder="Coloque la marca del producto">
             </div>
@@ -16,12 +16,12 @@
           <div class="form-row" >
 
             <div class="form-group col-md-3">
-              <label for="stock">Stock</label>
+              <label for="stock" i18n="stock | stock @@productoStock">Stock</label>
               <input [(ngModel)]="producto.stock" type="number" name="stock" class="form-control" id="stock" >
             </div>
 
             <div class="form-group col-md-6">
-              <label for="precio">Precio</label>
+              <label for="precio" i18n="precio | precio @@productoPrecio">Precio</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend3">$</span>
@@ -35,7 +35,7 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="imagenURL">imagen URL</label>
+              <label for="imagenURL" i18n="url | imagen url @@productoImagen">imagen URL</label>
               <input [(ngModel)]="producto.imagen" type="text" name="imagenURL" class="form-control" id="imagenURL"
                      placeholder="Coloque la imagen url del producto">
             </div>
@@ -43,13 +43,13 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="categoria">Categoria</label>
+              <label for="categoria" i18n="categoria | categoria @@productoCategoria">Categoria</label>
               <input [(ngModel)]="producto.categoria" type="text" name="categoria" class="form-control" id="categoria"
                      placeholder="Categoria del producto">
             </div>
           </div>
 
-          <button class="btn btn-primary" (click)="createProducto()">Crear Producto</button>
+          <button class="btn btn-primary" (click)="createProducto()" i18n="crear | crear producto @@productoCrear">Crear Producto</button>
         </form>
 
 </div>

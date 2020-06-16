@@ -1,3 +1,12 @@
 <footer>
-  <p  class="text-xs-center">© Copyright 2020. Todos los derechos reservados.</p>
+  <button class="btn btn-outline-success my-2 my-sm-0" (click)="changeLang('es')" type="submit"><i class="fa fa-search"></i>es</button>
+  <button class="btn btn-outline-success my-2 my-sm-0" (click)="changeLang('en')" type="submit"><i class="fa fa-search"></i>en</button>
+
+  <div ng-controller="Ctrl">
+    <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">english</button>
+    <button ng-click="changeLanguage('es')" translate="BUTTON_LANG_ES">español</button>
+  </div>
+
+
+  <p  class="text-xs-center" i18n="copyrigth | derechos de autor @@footerCopyright">© Copyright 2020. Todos los derechos reservados.</p>
 </footer>

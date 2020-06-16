@@ -1,4 +1,4 @@
-<p>header works!</p>
+<p i18n="header | works @@headerworks">header works!</p>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
   <a class="navbar-brand" href="#">
     <img src="/assets/img/ShopLogo.png" width="30" height="30" alt="">Comprando En Casa
@@ -12,19 +12,19 @@
 
       <!-- Dropdown -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" i18n="acciones | menu de acciones @@headerMenu">
          Acciones
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userEsComercio">Crear Producto</a>
+          <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userEsComercio" i18n="crear | crear producto @@headerCrear">Crear Producto</a>
           <a class="dropdown-item"  routerLink="/producto-create" >Link2</a>
         </div>
       </li>
     </ul>
 
-    
-      <button class="btn btn-primary" (click)="aplicarOfertaEnBebidas()"> Ofertas en comida </button>
-    
+
+      <button class="btn btn-primary" (click)="aplicarOfertaEnBebidas()" i18n="ofertas | ofertas @@headerOfertas"> Ofertas en comida </button>
+
     <form class="form-inline  col-lg-3 ">
       <div class="input-group active-green-4">
         <input class="form-control" type="text" [(ngModel)]="consulta" [ngModelOptions]="{standalone: true}" placeholder="Buscar Producto" aria-label="Search">
@@ -34,7 +34,9 @@
             </button>
 
 
+
         </div>
+
       </div>
       <!--<input class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="Search">-->
     </form>
@@ -50,14 +52,17 @@
               <i class="fa fa-user"></i> <span class="badge badge-pill"  >{{data.nombreUsuario}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" routerLink="perfil-usuario">Ver Perfil</a>
-              <a class="dropdown-item" href="#">Ver Historial de compras</a>
+              <a class="dropdown-item" routerLink="perfil-usuario" i18n="ver | ver perfil @@headerPerfil">Ver Perfil</a>
+              <a class="dropdown-item" href="#" i18n="ver | ver historial  @@headerHistorial">Ver Historial de compras</a>
             </div>
           </div>
 
             <button type="button" class="btn btn-outline-success" routerLink="carrito">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{data.productosEnCarrito.length}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
             </button> <!-- glyphicon glyphicon-shopping-cart -->
+
+
+
 
 
         </div>

@@ -32,6 +32,8 @@
             "scripts": []
           },
           "configurations": {
+            "es": {"i18nFile": "src/locale/messages.es.xlf","i18nLocale": "es","i18nFormat": "xlf","aot": true},
+            "en": {"i18nFile": "src/locale/messages.en.xlf","i18nLocale": "en","i18nFormat": "xlf","aot": true},
             "production": {
               "fileReplacements": [
                 {
@@ -64,6 +66,8 @@
           }
         },
         "serve": {
+          "es": {"browserTarget": "ComprandoEnCasaFrontend:build:es"},
+          "en": {"browserTarget": "ComprandoEnCasaFrontend:build:en"},
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "ComprandoEnCasaFrontend:build"
@@ -71,7 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ComprandoEnCasaFrontend:build:production"
-            }
+            },
+            "es": {"browserTarget": "ComprandoEnCasaFrontend:build:es"},
+            "en": {"browserTarget": "ComprandoEnCasaFrontend:build:en"}
           }
         },
         "extract-i18n": {
@@ -120,9 +126,21 @@
             "production": {
               "devServerTarget": "ComprandoEnCasaFrontend:serve:production"
             }
+          },
+          "architect": {
+            "serve": {
+              "configurations": {
+                "es": {"devServerTarget": "test-i18n:serve:es"},
+                "en": {"devServerTarget": "test-i18n:serve:en"}
+              }
+            }
           }
         }
       }
-    }},
-  "defaultProject": "ComprandoEnCasaFrontend"
+    }
+  },
+  "defaultProject": "ComprandoEnCasaFrontend",
+  "cli": {
+    "analytics": "c4adf1df-4ed3-4835-9bb9-91cf0fe4802f"
+  }
 }
