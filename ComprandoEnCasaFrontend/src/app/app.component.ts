@@ -45,6 +45,21 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
       this.data.products = this.products;
     }
 
+    public getProductosEnOfertaAPI$() {
+      this.products = [];
+      this.api.aplicarOfertaEnBebidasConDescuento(10)
+          .subscribe(resp => {
+                     console.log(resp);
+                     for (const data of resp.body){
+                       this.products.push(data);
+                     }
+                     console.log(this.products);
+                    },
+                    err => console.log(err));
+            this.data.productosEnOferta = this.products;
+    }
+    
+
     public getProductosByConsulta(consulta:string){
       this.products = [];
       this.api.getProductosByConsultaAPI$(consulta)
@@ -109,15 +124,5 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                      err => console.log(err));
 
       }
-
-      public aplicarOfertaEnCategoriaDeBebidas(descuento: number){
-        this.api.aplicarOfertaEnBebidasConDescuento(descuento)
-            .subscribe(resp => { const data = resp
-                                 this.data.actualizarProductosConOferta(data);
-                               },
-                      err => console.log(err));
-      }
-
-
 
 }

@@ -2,13 +2,19 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Usuario;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Repositories.ProductoRepository;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioLogin;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioSimpleLogin;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Repositories.UsuarioRepository;
+import org.apache.tomcat.util.json.JSONParser;
+import org.apache.tomcat.util.json.JSONParserConstants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UsuarioService {
@@ -20,6 +26,7 @@ public class UsuarioService {
     public Usuario save(Usuario model) {
         return this.usuarioRepository.save(model);
     }
+
 
     public Usuario findById(Long id) {
         return this.usuarioRepository.findById(id).get();
@@ -52,4 +59,21 @@ public class UsuarioService {
                     return usuarioRepository.save(user);
                 }).get();
     }
+
+
+    public UsuarioSimpleLogin loginUsuario(UsuarioLogin usuario){
+        List<Usuario> users = this.findAll();
+        UsuarioSimpleLogin user = null;
+        for(Usuario u: users){
+            if(Objects.equals(usuario.getUsername(), u.getNombreUsuario()) &&
+               Objects.equals(usuario.getPassword(), u.getPassword())){
+               user = new UsuarioSimpleLogin(u.getId(), u.getNombreUsuario(), u.getEmail(), u.getEsComercio());
+            }
+        }
+        if(user == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "login fallido!");
+        }
+        return user;
+    }
+
 }

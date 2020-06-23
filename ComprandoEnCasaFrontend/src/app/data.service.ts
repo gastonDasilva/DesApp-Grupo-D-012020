@@ -14,12 +14,18 @@ export class DataService {
  nombreUsuario: String = ""
  userData: UsuarioData;
  userEsComercio: boolean =false;
+ productosEnOferta: Producto[]=[];
   constructor() {}
 
     getProductos(): Producto[]{
     /*Busco todo los productos.*/
      return this.products;
     }
+
+    getProductosEnOferta(): Producto[]{
+      return this.productosEnOferta;
+    }
+    
     getuserData(){
     return this.userData;
     }

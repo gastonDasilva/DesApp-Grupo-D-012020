@@ -1,6 +1,8 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Repositories;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
+import org.hibernate.annotations.SQLUpdate;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

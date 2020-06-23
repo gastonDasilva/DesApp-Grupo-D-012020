@@ -1,13 +1,16 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.WebService;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.ListaDeCompras;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Usuario;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ProductoService;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioLogin;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioSimpleLogin;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.UsuarioService;
+import netscape.javascript.JSObject;
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
+import org.uqbar.xtrest.api.annotation.Body;
 
 import java.util.List;
 
@@ -48,5 +51,13 @@ public class UsuarioConctroller {
         System.out.println(usuario);
         return usuarioService.updateUsuario(usuario,id);
     }
+
+    @CrossOrigin
+    @PostMapping("api/login")
+    UsuarioSimpleLogin loginUser(@RequestBody UsuarioLogin user){
+        //usuarioService.save(user);
+        return usuarioService.loginUsuario(user);
+    }
+
 
 }

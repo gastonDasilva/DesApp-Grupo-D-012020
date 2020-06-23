@@ -18,8 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class InitServiceInMemory {
 
-
-
     protected final Log logger = LogFactory.getLog(getClass());
 
     @Value("${spring.datasource.driverClassName:NONE}")

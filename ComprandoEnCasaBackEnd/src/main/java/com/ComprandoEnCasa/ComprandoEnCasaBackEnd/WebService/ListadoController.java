@@ -60,7 +60,7 @@ public class ListadoController {
     @PutMapping("/api/buscarPorCategoriaYAplicarOferta")
     public List<Producto> buscarPorCategoriaYAplicarOferta(@RequestParam(required=false,name = "q") String categoria, @RequestParam(required=false,name ="d") String  descuento){
         productoService.buscarProductosPorCategoriaYAplicarOferta(categoria, Integer.valueOf(descuento));
-        return new ArrayList<Producto>();
+        return productoService.findAll();
     }
 
     @CrossOrigin

@@ -57,10 +57,10 @@ export class ApiService {
 
 
 
- aplicarOfertaEnBebidasConDescuento(descuento: number):Observable<Producto[]>{
-  let paramsConsulta = new HttpParams().set('q', 'Comida');
-  paramsConsulta= paramsConsulta.append('d', descuento.toString());
-  return this.http.put<Producto[]>(this.urlLOcal+"buscarPorCategoriaYAplicarOferta",{params:paramsConsulta, observe: 'response'})
+ aplicarOfertaEnBebidasConDescuento(descuento: number): Observable<Producto[]>{
+   let paramsConsulta = new HttpParams().set('q', 'Comida');
+   paramsConsulta= paramsConsulta.append('d', descuento.toString());
+   return this.http.put<Producto[]>(this.urlLOcal+"buscarPorCategoriaYAplicarOferta",{params:paramsConsulta, observe: 'response'})
  }
 
 
