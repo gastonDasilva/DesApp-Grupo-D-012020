@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="homeAgregar" datatype="html">
+        <source> Agregar Al Carrito</source>
+        <target>Agregar al carrito</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description"> agregar al carrito </note>
+        <note priority="1" from="meaning">agregar </note>
+      </trans-unit>
+      <trans-unit id="productoNombre" datatype="html">
+        <source>Nombre del producto</source>
+        <target>nombre del producto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/producto-create/producto-create.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description"> nombre del producto </note>
+        <note priority="1" from="meaning">nombre </note>
+      </trans-unit>
+      <trans-unit id="productoMarca" datatype="html">
+        <source>Marca</source>
+        <target>marca</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/producto-create/producto-create.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description"> marca </note>
+        <note priority="1" from="meaning">marca </note>
+      </trans-unit>
+      <trans-unit id="productoStock" datatype="html">
+        <source>Stock</source>
+        <target>stock</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/producto-create/producto-create.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description"> stock </note>
+        <note priority="1" from="meaning">stock </note>
+      </trans-unit>
+      <trans-unit id="productoPrecio" datatype="html">
+        <source>Precio</source>
+        <target>precio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/producto-create/producto-create.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description"> precio </note>
+        <note priority="1" from="meaning">precio </note>
+      </trans-unit>
+      <trans-unit id="productoImagen" datatype="html">
+        <source>imagen URL</source>
+        <target>URL de la imagen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/producto-create/producto-create.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description"> imagen url </note>
+        <note priority="1" from="meaning">url </note>
+      </trans-unit>
+      <trans-unit id="productoCategoria" datatype="html">
+        <source>Categoria</source>
+        <target>categoria</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/producto-create/producto-create.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description"> categoria </note>
+        <note priority="1" from="meaning">categoria </note>
+      </trans-unit>
+      <trans-unit id="productoCrear" datatype="html">
+        <source>Crear Producto</source>
+        <target>crear producto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/producto-create/producto-create.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description"> crear producto </note>
+        <note priority="1" from="meaning">crear </note>
+      </trans-unit>
+      <trans-unit id="headerworks" datatype="html">
+        <source>header works!</source>
+        <target> el header funciona!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description"> works </note>
+        <note priority="1" from="meaning">header </note>
+      </trans-unit>
+      <trans-unit id="headerMenu" datatype="html">
+        <source>
+         Acciones
+        </source>
+        <target>acciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description"> menu de acciones </note>
+        <note priority="1" from="meaning">acciones </note>
+      </trans-unit>
+      <trans-unit id="headerCrear" datatype="html">
+        <source>Crear Producto</source>
+        <target>crear producto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description"> crear producto </note>
+        <note priority="1" from="meaning">crear </note>
+      </trans-unit>
+      <trans-unit id="headerOfertas" datatype="html">
+        <source> Ofertas en comida </source>
+        <target>crear oferta en comida</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description"> ofertas </note>
+        <note priority="1" from="meaning">ofertas </note>
+      </trans-unit>
+      <trans-unit id="headerPerfil" datatype="html">
+        <source>Ver Perfil</source>
+        <target>ver perfil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <note priority="1" from="description"> ver perfil </note>
+        <note priority="1" from="meaning">ver </note>
+      </trans-unit>
+      <trans-unit id="headerHistorial" datatype="html">
+        <source>Ver Historial de compras</source>
+        <target>ver historial de compras</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description"> ver historial  </note>
+        <note priority="1" from="meaning">ver </note>
+      </trans-unit>
+      <trans-unit id="footerCopyright" datatype="html">
+        <source>© Copyright 2020. Todos los derechos reservados.</source>
+        <target>© Copyright 2020. Todos los derechos reservados.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description"> derechos de autor </note>
+        <note priority="1" from="meaning">copyrigth </note>
+      </trans-unit>
+      <trans-unit id="carritoCarrito" datatype="html">
+        <source>Carrito</source>
+        <target>carrito</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carrito/carrito.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description"> chango </note>
+        <note priority="1" from="meaning">carrito</note>
+      </trans-unit>
+      <trans-unit id="7b2e8512178990187664136ac1a125433aef25a2" datatype="html">
+        <source>Seguir Comprando</source>
+        <target>seguir comprando</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carrito/carrito.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description"> seguir comprando @c@arritoSeguir</note>
+        <note priority="1" from="meaning">continuar</note>
+      </trans-unit>
+      <trans-unit id="carritoNombre" datatype="html">
+        <source>Nombre</source>
+        <target>nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carrito/carrito.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description"> nombre del producto </note>
+        <note priority="1" from="meaning">nombre</note>
+      </trans-unit>
+      <trans-unit id="carritoMarca" datatype="html">
+        <source>Marca</source>
+        <target>marca</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carrito/carrito.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description"> marca del producto </note>
+        <note priority="1" from="meaning">marca </note>
+      </trans-unit>
+      <trans-unit id="carritoPrecio" datatype="html">
+        <source>precio</source>
+        <target>precio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carrito/carrito.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description"> precio del producto </note>
+        <note priority="1" from="meaning">precio</note>
+      </trans-unit>
+      <trans-unit id="carritoMonto" datatype="html">
+        <source>Monto Gastado:$ <x id="INTERPOLATION" equiv-text="{{data.userData.listaDeCompras.montoAcumulado}}"/></source>
+        <target>Monto Gastado:$ <x id="INTERPOLATION" equiv-text="{{data.userData.listaDeCompras.montoAcumulado}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/carrito/carrito.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <note priority="1" from="description"> monto gastado </note>
+        <note priority="1" from="meaning">monto </note>
+      </trans-unit>
+      <trans-unit id="perfilNombre" datatype="html">
+        <source>Nombre de Usuario</source>
+        <target>nombre de usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/perfil/perfil.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description"> nombre del usuario </note>
+        <note priority="1" from="meaning">nombre </note>
+      </trans-unit>
+      <trans-unit id="perfilIngNom" datatype="html">
+        <source>Enter your user’s name</source>
+        <target>Ingrese su nombre de usuario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/perfil/perfil.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description"> ingrese su nombre </note>
+        <note priority="1" from="meaning">ingrese </note>
+      </trans-unit>
+      <trans-unit id="perfilEmail" datatype="html">
+        <source>Email</source>
+        <target>Correo electronico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/perfil/perfil.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description"> email </note>
+        <note priority="1" from="meaning">email </note>
+      </trans-unit>
+      <trans-unit id="perfilIngEmail" datatype="html">
+        <source>Enter your  email</source>
+        <target>Ingrese su email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/perfil/perfil.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description"> ingrese su email </note>
+        <note priority="1" from="meaning">ingrese </note>
+      </trans-unit>
+      <trans-unit id="perfilDireccion" datatype="html">
+        <source>Direccion calle</source>
+        <target>Domicilio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/perfil/perfil.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description"> direccion </note>
+        <note priority="1" from="meaning">direccion </note>
+      </trans-unit>
+      <trans-unit id="perfilIngDir" datatype="html">
+        <source>Enter your street direction</source>
+        <target>Ingrese su direccion</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/perfil/perfil.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description"> ingrese su direccion </note>
+        <note priority="1" from="meaning">ingrese </note>
+      </trans-unit>
+      <trans-unit id="perfilActualizar" datatype="html">
+        <source>Actualizar Perfil</source>
+        <target>actualizar perfil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/perfil/perfil.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description"> actualizar perfil </note>
+        <note priority="1" from="meaning">actualizar </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

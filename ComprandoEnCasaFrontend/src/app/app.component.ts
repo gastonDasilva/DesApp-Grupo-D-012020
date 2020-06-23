@@ -125,4 +125,18 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
 
       }
 
+<<<<<<< HEAD
+=======
+      public aplicarOfertaEnCategoriaDeBebidas(descuento: number){
+        this.api.aplicarOfertaEnBebidasConDescuento(descuento)
+            .subscribe(resp => { const data = resp
+                                 this.data.actualizarProductosConOferta(data);
+                               },
+                      err => console.log(err));
+      }
+
+
+
+
+>>>>>>> d8c1666bd7bad06dbf30fee403445f41f3f1e50a
 }

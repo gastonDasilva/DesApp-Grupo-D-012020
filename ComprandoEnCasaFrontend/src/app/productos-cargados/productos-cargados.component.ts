@@ -34,4 +34,8 @@ public agregarProducto(producto){
    console.log("Cant Productos en carrito:", this.data.productosEnCarrito.length);*/
  }
 
+  //DeletectProductFromUserComerciante(Component: string) {}
+  //ModificarProductFromUserComerciante(Component: string){}
+
+
 }

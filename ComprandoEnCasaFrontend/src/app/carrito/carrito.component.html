@@ -16,11 +16,11 @@
            <i class="fa fa-columns mt-0"></i>
          </button>
        </div>
-       <h1 class="white-text mx-3">Carrito</h1>
+       <h1 class="white-text mx-3" i18n="carrito| chango @@carritoCarrito">Carrito</h1>
 
        <div>
          <button type="button" class=" btn btn-light" routerLink="home">
-           <small>Seguir Comprando</small><i class="fa fa-angle-double-left"></i>
+           <small i18n="continuar| seguir comprando @c@arritoSeguir">Seguir Comprando</small><i class="fa fa-angle-double-left"></i>
          </button>
 
        </div>
@@ -33,10 +33,10 @@
        <thead class="thead-dark">
        <tr>
          <th></th>
-         <th>Nombre</th>
-         <th>Marca</th>
-         <th>precio</th>
-         <th>cantidad</th>
+         <th i18n="nombre| nombre del producto @@carritoNombre">Nombre</th>
+         <th i18n="marca | marca del producto @@carritoMarca">Marca</th>
+         <th i18n="precio| precio del producto @@carritoPrecio">precio</th>
+         <th i18m="cantidad | cantidad de productos @@carritoCantidad">cantidad</th>
          <th></th>
        </tr>
        </thead>
@@ -49,7 +49,9 @@
          <td> {{ producto.precio }} </td>
          <td> {{ producto.cantidadAComprar }} </td>
          <td>
-           <button type="button" class=" btn btn-danger" (click)="DeletectProductFromCarrito(producto)">
+
+           <!--<button type="button" class=" btn btn-danger" (click)="DeletectProductFromCarrito(producto)"> -->
+           <button type="button" class=" btn btn-danger" >
              <i class="fa fa-ban"></i>
            </button>
            <!--<button class="btn btn-primary" (click)="DeletectProductFromCarrito(producto)"> <i class="glyphicon glyphicon-remove mr-2 " aria-hidden="true"></i></button>-->
@@ -60,7 +62,7 @@
    </div>
      <div class="container ">
        <div class="row justify-content-md-center">
-         <small class="card-subtitle mb-2 text-muted">Monto Gastado:$ {{data.userData.listaDeCompras.montoAcumulado}}</small>
+         <small class="card-subtitle mb-2 text-muted" i18n="monto | monto gastado @@carritoMonto">Monto Gastado:$ {{data.userData.listaDeCompras.montoAcumulado}}</small>
        </div>
      </div>
 

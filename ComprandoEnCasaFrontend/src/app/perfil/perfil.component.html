@@ -5,23 +5,23 @@
       <div>
         <form>
           <div class="form-group">
-            <label for="name">Nombre de Usuario</label>
+            <label for="name" i18n="nombre | nombre del usuario @@perfilNombre">Nombre de Usuario</label>
             <input [(ngModel)]="data.userData.nombreUsuario" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name">
-            <small id="nameHelp" class="form-text text-muted">Enter your user’s name</small>
+            <small id="nameHelp" class="form-text text-muted" i18n="ingrese | ingrese su nombre @@perfilIngNom">Enter your user’s name</small>
 
-            <label for="email">Email</label>
+            <label for="email" i18n="email | email @@perfilEmail">Email</label>
             <input [(ngModel)]="data.userData.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
                    placeholder="Enter your email">
-            <small id="emailHelp" class="form-text text-muted">Enter your  email</small>
+            <small id="emailHelp" class="form-text text-muted" i18n="ingrese | ingrese su email @@perfilIngEmail">Enter your  email</small>
 
-            <label for="Calle">Direccion calle</label>
+            <label for="Calle" i18n="direccion | direccion @@perfilDireccion">Direccion calle</label>
             <textarea [(ngModel)]="data.userData.calle" name="Calle" class="form-control" id="Calle" aria-describedby="descHelp">
                       </textarea>
-            <small id="descHelp" class="form-text text-muted">Enter your street direction</small>
+            <small id="descHelp" class="form-text text-muted" i18n="ingrese | ingrese su direccion @@perfilIngDir">Enter your street direction</small>
 
           </div>
         </form>
-        <button class="btn btn-primary" (click)="actualizarPerfilUsuario()">Actualizar Perfil</button>
+        <button class="btn btn-primary" (click)="actualizarPerfilUsuario()" i18n="actualizar | actualizar perfil @@perfilActualizar">Actualizar Perfil</button>
       </div>
     </div>
   </div>

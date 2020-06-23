@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <div class="container  p-destacados" style="margin-top: 40px;">
   <div class="row">
     <div class="col-md-3 mt-4" *ngFor="let producto of data.productosEnOferta">
@@ -18,6 +19,17 @@
           </a>
 
         </div>
+=======
+    <div class="py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+      <div>
+        <button type="button" class=" btn btn-light">
+          <i class="fa fa-th-large mt-0"></i>
+        </button>
+        <button type ="button" class=" btn btn-light">
+          <i class="fa fa-columns mt-0"></i>
+        </button>
+>>>>>>> d8c1666bd7bad06dbf30fee403445f41f3f1e50a
       </div>
     </div>
   </div>
@@ -39,7 +51,47 @@
         </div>
 
 
+<<<<<<< HEAD
       </div>
+=======
+    <div class="table-responsive">
+      <table class="table  table-hover">
+        <thead class="thead-dark">
+        <tr>
+          <th></th>
+          <th>Nombre</th>
+          <th>Marca</th>
+          <th>precio</th>
+          <th>cantidad</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let producto of data.userData.productos">
+
+          <td>  <img src={{producto.imagen}} class="rounded" style="height: 80px;" ></td>
+          <td> {{ producto.nombreProducto }} </td>
+          <td> {{ producto.marca }}  </td>
+          <td> {{ producto.precio }} </td>
+          <td> {{ producto.cantidadAComprar }} </td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <!--<button type="button" class=" btn btn-danger" (click)="DeletectProductFromUserComerciante(producto)"> -->
+              <button type="button" class=" btn btn-danger" >
+                <i class="fa fa-ban"></i>
+              </button>
+              <!--<button type="button" class=" btn btn-success" (click)="ModificarProductFromUserComerciante(producto)">-->
+              <button type="button" class=" btn btn-success">
+                <i class="fa fa-check"></i>
+              </button>
+            </div>
+
+            <!--<button class="btn btn-primary" (click)="DeletectProductFromCarrito(producto)"> <i class="glyphicon glyphicon-remove mr-2 " aria-hidden="true"></i></button>-->
+          </td>
+        </tr>
+        </tbody>
+      </table>
+>>>>>>> d8c1666bd7bad06dbf30fee403445f41f3f1e50a
     </div>
   </div>
 </div>-->
