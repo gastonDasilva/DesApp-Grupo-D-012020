@@ -1,25 +1,7 @@
+<div class="container " style="margin-top: 140px;">
+  <!--Card image-->
+  <div class="card card-cascade narrower">
 
-<<<<<<< HEAD
-<div class="container  p-destacados" style="margin-top: 40px;">
-  <div class="row">
-    <div class="col-md-3 mt-4" *ngFor="let producto of data.productosEnOferta">
-      <div class="card text-center border-dark " >
-        <div class="card-header">
-          <img src={{producto.imagen}} class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{producto.nombreProducto}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{producto.marca}}</h6>
-          <h1><span class="badge badge-secondary">${{producto.precio}}</span></h1>
-
-        </div>
-        <div class="card-footer text-muted">
-          <a routerLink="carrito">
-            <button class="btn btn-primary" (click)="agregarProducto(producto)"> Agregar Al Carrito</button>
-          </a>
-
-        </div>
-=======
     <div class="py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
       <div>
@@ -29,31 +11,19 @@
         <button type ="button" class=" btn btn-light">
           <i class="fa fa-columns mt-0"></i>
         </button>
->>>>>>> d8c1666bd7bad06dbf30fee403445f41f3f1e50a
       </div>
+      <h1 class="white-text mx-3">Productos Cargados</h1>
+
+      <div>
+        <button type="button" class=" btn btn-light" routerLink="home">
+          <small>Seguir Comprando</small><i class="fa fa-angle-double-left"></i>
+        </button>
+
+      </div>
+
     </div>
-  </div>
-<!--
-<div class="container mt-4 p-destacados" >
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card text-center " *ngIf="selectedproducto">
-        <div class="card-header">
-          <img src="https://ugc.kn3.net/i/760x/http://ecx.images-amazon.com/images/I/417OGU3mpcL._SS500_.jpg" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{selectedproducto.name}}</h5>
-          <p class="card-text">{{selectedproducto.description}}</p>
-
-        </div>
-        <div class="card-footer text-muted">
-          <a href="#" class="btn btn-primary">Ver Detalle</a>
-        </div>
 
 
-<<<<<<< HEAD
-      </div>
-=======
     <div class="table-responsive">
       <table class="table  table-hover">
         <thead class="thead-dark">
@@ -91,9 +61,8 @@
         </tr>
         </tbody>
       </table>
->>>>>>> d8c1666bd7bad06dbf30fee403445f41f3f1e50a
     </div>
+
   </div>
-</div>-->
 
 </div>

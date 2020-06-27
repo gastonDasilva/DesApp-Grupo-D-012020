@@ -1,0 +1,26 @@
+<!-- login.component.html -->
+<div class="card-body"> 
+    <form class="custom-form" method="post"> 
+      <h6>  <img src="/assets/img/jesusBailando.gif" width="140" height="180" alt=""></h6>
+      <h1>Welcome to ComprandoEnCasa</h1>
+      <input
+        type="username"
+        [(ngModel)]="username"
+        name="username"
+        placeholder="Username"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Password"
+        required="required"
+      />
+      <div class="btn-group btn-group-justified">
+          <button type="button" class="btn btn-primary" routerLink="home">Log in</button>
+          <h1></h1>
+          <button type="button" class="btn btn-primary">No tenés cuenta? Registrate!</button>
+        </div>
+    </form>
+  </div>

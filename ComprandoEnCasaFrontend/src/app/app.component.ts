@@ -50,7 +50,7 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
       this.api.aplicarOfertaEnBebidasConDescuento(10)
           .subscribe(resp => {
                      console.log(resp);
-                     for (const data of resp.body){
+                     for (const data of resp){
                        this.products.push(data);
                      }
                      console.log(this.products);
@@ -125,8 +125,8 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
 
       }
 
-<<<<<<< HEAD
-=======
+
+
       public aplicarOfertaEnCategoriaDeBebidas(descuento: number){
         this.api.aplicarOfertaEnBebidasConDescuento(descuento)
             .subscribe(resp => { const data = resp
@@ -134,9 +134,4 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                                },
                       err => console.log(err));
       }
-
-
-
-
->>>>>>> d8c1666bd7bad06dbf30fee403445f41f3f1e50a
 }
