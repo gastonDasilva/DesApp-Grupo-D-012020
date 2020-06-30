@@ -14,6 +14,10 @@ export class ApiService {
  constructor(private http: HttpClient) { }
 
 
+  login(user: any): Observable<any>{
+    return this.http.post(this.urlLOcal+'login', user);
+  } 
+
   getProductosAPI$(): Observable<HttpResponse<Producto[]>> {
   /*Busco todo los productos.*/
    return this.http.get<Producto[]>(
