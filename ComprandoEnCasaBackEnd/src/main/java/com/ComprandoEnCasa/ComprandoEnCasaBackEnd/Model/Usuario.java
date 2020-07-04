@@ -50,11 +50,10 @@ public  class Usuario {
 
     public Usuario(){};
 
-    public Usuario(String name,String email, String pas, String image ){
+    public Usuario(String name,String email, String pas){
         setNombreUsuario(name);
         setEmail(email);
         setPassword(pas);
-        setImagenPerfil(image);
         setEsComercio(false);
     }
 

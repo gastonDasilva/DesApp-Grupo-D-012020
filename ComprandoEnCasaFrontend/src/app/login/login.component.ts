@@ -28,8 +28,11 @@ import { Router, RouterLink } from '@angular/router';
             this.router.navigateByUrl('/home');
         }),
         error => {
-            this.errorState = error;
             console.log(error);
         }
+    }
+
+    registrar() {
+        this.router.navigateByUrl('/register');
     }
 }

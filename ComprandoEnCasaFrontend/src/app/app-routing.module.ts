@@ -6,12 +6,14 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProductosCargadosComponent } from './productos-cargados/productos-cargados.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
   {path:  "", pathMatch:  "full",redirectTo:  "home"},
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent},
+  {path: "register", component: RegisterComponent},
   {path: "producto-create", component: ProductoCreateComponent},
   {path: "home/carrito", component: CarritoComponent},
   {path: "home/carrito", redirectTo:  "carrito"},

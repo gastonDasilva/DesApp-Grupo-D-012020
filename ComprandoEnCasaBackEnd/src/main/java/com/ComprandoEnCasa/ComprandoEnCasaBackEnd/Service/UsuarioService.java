@@ -1,9 +1,6 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service;
 
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Producto;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Usuario;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioLogin;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioSimpleLogin;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.*;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Repositories.UsuarioRepository;
 import org.apache.tomcat.util.json.JSONParser;
 import org.apache.tomcat.util.json.JSONParserConstants;
@@ -74,6 +71,14 @@ public class UsuarioService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "login fallido!");
         }
         return user;
+    }
+
+
+    public UsuarioSimpleRegister registrarUsuario(UsuarioRegister user){
+        Usuario userNew = new Usuario(user.getUsername(), user.getEmail(), user.getPassword());
+        UsuarioSimpleRegister userRet = new UsuarioSimpleRegister(user.getUsername(), user.getEmail(), user.getAddress());
+        this.usuarioRepository.save(userNew);
+        return userRet;
     }
 
 }

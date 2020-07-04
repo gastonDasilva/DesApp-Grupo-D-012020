@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ComprandoEnCasaFrontend/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ComprandoEnCasaFrontend/src/app/footer/footer.component.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,16 +46,16 @@
   <component name="ProjectId" id="1b33yPDCNxNp1a3IWoxcPWXBykt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588633089329" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ComprandoEnCasaFrontend/src/locale" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ComprandoEnCasaBackEnd" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15270936" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -71,18 +70,6 @@
       <recent name="C:\Users\Alexander87\Desktop\DesApp-Grupo-D-012020\ComprandoEnCasaBackEnd\src" />
       <recent name="C:\Users\Alexander87\Desktop\DesApp-Grupo-D-012020" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.ComprandoEnCasaBackEndApplication">
     <configuration name="ComprandoEnCasaBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -225,13 +212,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="clear code: borrando clases categorias que no se usan" />
@@ -239,9 +225,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="clear code: borrando comentarios innecesarios" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587847218831">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="523" y="196" width="424" height="484" key="FileChooserDialogImpl" timestamp="1593835027096">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="523" y="196" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1593835027096" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587847218831" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587847209278">
       <screen x="67" y="27" width="1853" height="1053" />

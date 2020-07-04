@@ -1,9 +1,6 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.WebService;
 
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.ListaDeCompras;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.Usuario;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioLogin;
-import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.UsuarioSimpleLogin;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.*;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.UsuarioService;
 import netscape.javascript.JSObject;
 import org.apache.tomcat.util.json.JSONParser;
@@ -58,6 +55,14 @@ public class UsuarioConctroller {
         //usuarioService.save(user);
         return usuarioService.loginUsuario(user);
     }
+
+    @CrossOrigin
+    @PostMapping("api/register")
+    UsuarioSimpleRegister registerUser(@RequestBody UsuarioRegister user){
+        return usuarioService.registrarUsuario(user);
+    }
+
+
 
 
 }

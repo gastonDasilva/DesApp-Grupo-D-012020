@@ -11,4 +11,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
     Optional<Usuario> findById(Long id);
 
     List<Usuario> findAll();
+
+
 }

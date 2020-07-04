@@ -23,7 +23,8 @@ public class UsuarioBuilder {
     private  int codigoPostal = 0;
 
     public Usuario build() {
-        Usuario user = new Usuario(nombreUsuario,email,password,imagenPerfil);
+        Usuario user = new Usuario(nombreUsuario,email,password);
+        user.setImagenPerfil(imagenPerfil);
         user.setCoordenadas(coordenadas);
         user.setHistorialDeCompras(historialDeCompras);
         user.setListaDeCompras(listaDeCompras);

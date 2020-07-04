@@ -16,7 +16,11 @@ export class ApiService {
 
   login(user: any): Observable<any>{
     return this.http.post(this.urlLOcal+'login', user);
-  } 
+  }
+  
+  register(user: any): Observable<any>{
+    return this.http.post(this.urlLOcal+'register', user);
+  }
 
   getProductosAPI$(): Observable<HttpResponse<Producto[]>> {
   /*Busco todo los productos.*/
