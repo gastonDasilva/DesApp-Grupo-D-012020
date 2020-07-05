@@ -2,6 +2,7 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service;
 
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.*;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Repositories.UsuarioRepository;
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Builder.UsuarioBuilder;
 import org.apache.tomcat.util.json.JSONParser;
 import org.apache.tomcat.util.json.JSONParserConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +13,15 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+    @Autowired
+    private  ListaDeComprasService ListaDeComprasService;
 
     @Transactional
     public Usuario save(Usuario model) {
@@ -79,6 +83,29 @@ public class UsuarioService {
         UsuarioSimpleRegister userRet = new UsuarioSimpleRegister(user.getUsername(), user.getEmail(), user.getAddress());
         this.usuarioRepository.save(userNew);
         return userRet;
+    }
+
+    @Transactional
+    public Usuario loguearWithGoogle(UsuarioLogin user){
+        //Primero busco el usuario que coincida con el mail de google logueado, si no existe lo creo y lo devuelvo para que despues el frontend se encargue de gestionar los datos.
+        Usuario userReturn = null;
+        Optional<Usuario> userReturnOptioal  = this.usuarioRepository.findByEmail(user.getEmail());
+        /*SI no existe un usuario con ese mail, entonces lo creo*/
+        if( userReturnOptioal.isEmpty()){
+            ListaDeCompras listaCompras = new ListaDeCompras();
+            ListaDeComprasService.save(listaCompras);
+            userReturn = new UsuarioBuilder().withNombreUsuario(user.getEmail())
+                                .withEmail(user.getEmail())
+                                .withPassword("")
+                                .withListaDeCompras(listaCompras)
+                                .build();
+            /*Grabo el usuario en la BD*/
+            this.save(userReturn);
+        }else{
+            userReturn = userReturnOptioal.get();
+        }
+
+        return userReturn;
     }
 
 }

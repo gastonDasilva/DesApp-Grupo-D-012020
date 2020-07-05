@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 import { Producto } from './producto';
-import { DataService } from './data.service'
+import { DataService } from './data.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   title = 'ComprandoEnCasaFrontend';
    products: Producto[] = [];
 
-constructor(private http: HttpClient,private api: ApiService, public data: DataService) {}
+constructor(public router: Router,private http: HttpClient,private api: ApiService, public data: DataService) {}
 
     public getProductos():Array<{nombreProducto, marca, stock, precio, imagen, categoria}>{
       return this.data.products
@@ -58,7 +59,7 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                     err => console.log(err));
             this.data.productosEnOferta = this.products;
     }
-    
+
 
     public getProductosByConsulta(consulta:string){
       this.products = [];
@@ -75,9 +76,9 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
       }
 
 
-      public getUserData(){
+      public getUserData(idUser:string){
       /*Consulto a la API y obtengo los datos del usuario*/
-        this.api.getUserData$()
+        this.api.getUserData$(idUser)
            .subscribe(resp => {
                           const data = resp.body
                           this.data.userData = data;
@@ -86,6 +87,7 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                           if(this.data.userData.listaDeCompras != undefined){
                               this.data.productosEnCarrito = this.data.userData.listaDeCompras.productosAcumulados;
                           }
+                           this.router.navigateByUrl('/home');
 
                                },
 
@@ -133,5 +135,15 @@ constructor(private http: HttpClient,private api: ApiService, public data: DataS
                                  this.data.actualizarProductosConOferta(data);
                                },
                       err => console.log(err));
+      }
+
+      public gestionaLogin(user:any){
+      /*Esta function se encarga de usar la api para loguearme , en este caso con Google*/
+      this.api.loginWithGoogle(user)
+          .subscribe(resp => { const data = resp
+                               /* Lleno el userData con todos los datos del usuario.*/
+                               this.getUserData(data.id.toString());
+                               },
+                     err => console.log(err));
       }
 }

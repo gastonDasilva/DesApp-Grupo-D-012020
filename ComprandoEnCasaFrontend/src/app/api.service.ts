@@ -17,10 +17,16 @@ export class ApiService {
   login(user: any): Observable<any>{
     return this.http.post(this.urlLOcal+'login', user);
   }
-  
+
   register(user: any): Observable<any>{
     return this.http.post(this.urlLOcal+'register', user);
   }
+
+
+  loginWithGoogle(user: any): Observable<any>{
+  /*Hago el llamado al backend para loguearme con google*/
+  return this.http.post(this.urlLOcal+'/usuario/loginWithGoogle', user);
+   }
 
   getProductosAPI$(): Observable<HttpResponse<Producto[]>> {
   /*Busco todo los productos.*/
@@ -35,10 +41,10 @@ export class ApiService {
      this.urlLOcal+'buscarProductos', { params:paramsConsulta, observe: 'response' });
   }
 
- getUserData$(): Observable<HttpResponse<UsuarioData>> {
+ getUserData$(idUser:string): Observable<HttpResponse<UsuarioData>> {
   /*Busco los datos de usuario.*/
    return this.http.get<UsuarioData>(
-      this.urlLOcal+'usuario/1', { observe: 'response' });
+      this.urlLOcal+'usuario/'+idUser, { observe: 'response' });
       /* por ahora pongo /1 para obtener los datos del usuario con id 1, pero esto no va a quedar asi, hay que cambiarlo en el futuro y
        agarrar los datos del usuario con el cual se logea el cliente. */
   }

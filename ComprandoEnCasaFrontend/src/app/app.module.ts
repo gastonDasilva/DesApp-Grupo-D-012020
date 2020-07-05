@@ -14,8 +14,21 @@ import { FormsModule } from '@angular/forms';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProductosCargadosComponent } from './productos-cargados/productos-cargados.component';
+/*Modulos para inicio de sesion para redes sociales*/
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 
 
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("311052136099-qqf6f12v6pdpt5tfv67lqfe8gdivg920.apps.googleusercontent.com")
+  },
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -34,9 +47,13 @@ import { ProductosCargadosComponent } from './productos-cargados/productos-carga
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [ {
+                    provide: AuthServiceConfig,
+                    useFactory: provideConfig
+                  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

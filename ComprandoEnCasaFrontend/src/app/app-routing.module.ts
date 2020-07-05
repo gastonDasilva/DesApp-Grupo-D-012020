@@ -10,11 +10,12 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-  {path:  "", pathMatch:  "full",redirectTo:  "home"},
+  {path:  "", pathMatch:  "full",redirectTo:  "login"},
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   {path: "producto-create", component: ProductoCreateComponent},
+  {path: "carrito", component: CarritoComponent},
   {path: "home/carrito", component: CarritoComponent},
   {path: "home/carrito", redirectTo:  "carrito"},
   {path: "carrito/home",redirectTo:  "home"},

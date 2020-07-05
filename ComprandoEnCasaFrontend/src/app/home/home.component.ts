@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
        this.appcomp.getProductosAPI$();
         console.log("Save button is clicked!", this.data.getProductos());
         //llamo y traigo los datos de usuario, por ahora va aca. despues se creara una component LOgin para esto.
-        if(this.data.userData == null){
-         this.appcomp.getUserData();
-        }
+       /* if(this.data.userData == null){
+         this.appcomp.getUserData("1");
+        }*/
 
   }
 

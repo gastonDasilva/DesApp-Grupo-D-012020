@@ -63,6 +63,12 @@ public class UsuarioConctroller {
     }
 
 
+    @CrossOrigin
+    @PostMapping("api/usuario/loginWithGoogle")
+    public Usuario loginUserWithGoogle(@RequestBody UsuarioLogin user){
+        //Primero busco el usuario que coincida con el mail de google logueado, si no existe lo creo y lo devuelvo para que despues el frontend se encargue de gestionar los datos.
+        return usuarioService.loguearWithGoogle(user);
+    }
 
 
 }
