@@ -8,7 +8,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-
+  userUpdate: Boolean = false;
   constructor(public appcomp: AppComponent,public data: DataService) { }
 
   ngOnInit() {
@@ -18,5 +18,6 @@ export class PerfilComponent implements OnInit {
   public actualizarPerfilUsuario(){
    console.log("data:", this.data.getuserData());
    this.appcomp.actualizarPerfilUsuario();
+   this.userUpdate=true;
   }
 }

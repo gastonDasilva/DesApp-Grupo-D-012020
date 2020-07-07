@@ -1,4 +1,4 @@
-<div class="container " style="margin-top: 140px;">
+<!--<div class="container " style="margin-top: 140px;">
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
 
@@ -25,5 +25,97 @@
       </div>
     </div>
   </div>
+</div>-->
+
+<div class="container contact-form" style="margin-top: 140px;">
+  <h1>Configuración de Perfil</h1>
+  <hr>
+
+  <div class="row">
+
+    <div class="col-md-6">
+              <form>
+                <img src="{{data.userData.imagenPerfil}}" alt="..." class="rounded" style="width:40%;box-shadow: 0px 0px 10px 2px ;">
+                <hr>
+                <div class="form-group">
+              <input [(ngModel)]="data.userData.imagenPerfil" type="text" name="imagenPerfil" class="form-control" id="imagenPerfil"  placeholder="Enter your Url image">
+              <small id="imagenPerfilhlp" class="form-text " i18n="ingrese | ingrese su nombre @@perfilIngNom">Enter your user’s Url image</small>
+            </div>
+
+                <div class="form-group" [hidden]="!data.userData.esComercio">
+                  <label for="sel1">Rubro:</label>
+                  <select class="form-control input-sm" id="sel1">
+                    <option>Comida</option>
+                    <option>Perfumeria</option>
+                    <option>Carniceria</option>
+                  </select>
+                  <small id="sel1hp" class="form-text " i18n="ingrese | ingrese su nombre @@perfilIngNom">selecciona un rubro</small>
+                </div>
+
+          </form>
+    </div>
+
+    <div class="col-md-6">
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="name" i18n="nombre | nombre del usuario @@perfilNombre">Nombre de Usuario</label>
+            <input [(ngModel)]="data.userData.nombreUsuario" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name">
+            <small id="nameHelp" class="form-text " i18n="ingrese | ingrese su nombre @@perfilIngNom">Enter your user’s name</small>
+          </div>
+          <div class="form-group">
+            <label for="email" i18n="email | email @@perfilEmail">Email</label>
+            <input [(ngModel)]="data.userData.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                   placeholder="Enter your email">
+            <small id="emailHelp" class="form-text " i18n="ingrese | ingrese su email @@perfilIngEmail">Enter your  email</small>
+          </div>
+          <div class="form-group">
+            <label for="Calle" i18n="direccion | direccion @@perfilDireccion">Direccion calle</label>
+            <input [(ngModel)]="data.userData.calle" name="Calle" class="form-control" id="Calle" aria-describedby="descHelp">
+            <small id="descHelp" class="form-text " i18n="ingrese | ingrese su direccion @@perfilIngDir">Enter your street direction</small>
+
+          </div>
+        </form>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button class="btn btn-success" (click)="actualizarPerfilUsuario()" i18n="actualizar | actualizar perfil @@perfilActualizar">Actualizar Perfil</button>
+          <button class="btn btn-success" (click)="ConvertirEnComerciante" [hidden]="data.userData.esComercio">Convertirse en Comerciante</button>
+        </div>
+
+        <br>
+        <br>
+        <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!userUpdate" >
+          <strong>Success!</strong> User Updated.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+
+      </div>
+<!--
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Massage</label>
+        <textarea  class="form-control" rows="7"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">Send</button>
+      </div>
+-->
+    </div>
+
+  </div>
+
 </div>
 <app-header></app-header>
