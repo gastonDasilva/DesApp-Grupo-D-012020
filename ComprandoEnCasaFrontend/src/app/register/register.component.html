@@ -1,6 +1,6 @@
 <div class="register">
     <form class="custom-form" method="post">
-      <h1>Register</h1>
+      <h1 i18n="registrarse | registrarse @@registerRegistrarse">Registrarse</h1>
       <input
         type="username"
         [(ngModel)]="username"
@@ -29,6 +29,6 @@
         placeholder="Email"
         required="required"
       />
-      <button type="submit" (click)="register()">Register</button>
+      <button type="submit" (click)="register()" i18n="registrarse | registrarse @@registerRegistrarseBot">Registrarse</button>
     </form>
   </div>

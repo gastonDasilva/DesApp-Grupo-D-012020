@@ -9,7 +9,10 @@ import { Producto } from '../producto';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent implements OnInit {
+
   selectedproducto:Producto;
   constructor(private http: HttpClient,public appcomp: AppComponent, public data: DataService) {}
 
