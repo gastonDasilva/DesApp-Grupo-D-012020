@@ -28,6 +28,11 @@ export class ApiService {
   return this.http.post(this.urlLOcal+'/usuario/loginWithGoogle', user);
    }
 
+
+  realizarCompra(userData: UsuarioData){
+    return this.http.put<UsuarioData>(this.urlLOcal+'/usuario/realizarCompra/'+userData.id,{ observe: 'response'});
+  }
+
   getProductosAPI$(): Observable<HttpResponse<Producto[]>> {
   /*Busco todo los productos.*/
    return this.http.get<Producto[]>(

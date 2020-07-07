@@ -71,4 +71,12 @@ public class UsuarioConctroller {
     }
 
 
+    @CrossOrigin
+    @PutMapping("api/usuario/realizarCompra/{id}")
+    public Usuario realizarCompraEnChanguito(@PathVariable Long id){
+        // agrego al historial de compras los productos agregados en el carrito del usuario
+        return usuarioService.realizarCompra(id);
+    }
+
+
 }

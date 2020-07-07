@@ -31,7 +31,7 @@ import { SocialUser } from "angularx-social-login";
 
             }
           });
-      }
+        }
 
     login() {
         const user = {username: this.username, password: this.password};

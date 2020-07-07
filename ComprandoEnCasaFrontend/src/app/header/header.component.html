@@ -52,7 +52,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item"  (click)="signOut()">Cerrar Sesion</a>
               <a class="dropdown-item"  (click)="verPerfil()" i18n="ver | ver perfil @@headerPerfil">Ver Perfil</a>
-              <a class="dropdown-item" href="#" i18n="ver | ver historial  @@headerHistorial">Ver Historial de compras</a>
+              <a class="dropdown-item" (click)="verHistorial()">Ver Historial de compras</a>
               <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio">Ver Productos Cargados</a>
             </div>
           </div>

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProductosCargadosComponent } from './productos-cargados/productos-cargados.component';
+import { HistorialComponent } from './historial-de-compras/historial.component';
 /*Modulos para inicio de sesion para redes sociales*/
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
@@ -41,7 +42,8 @@ export function provideConfig() {
     FooterComponent,
     CarritoComponent,
     PerfilComponent,
-    ProductosCargadosComponent
+    ProductosCargadosComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,

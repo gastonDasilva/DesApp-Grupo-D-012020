@@ -7,6 +7,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { ProductosCargadosComponent } from './productos-cargados/productos-cargados.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HistorialComponent } from './historial-de-compras/historial.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {path: "perfil-usuario", component: PerfilComponent},
   {path: "home/perfil-usuario", redirectTo:  "perfil-usuario"},
   {path: "productos-cargados", component: ProductosCargadosComponent},
+  {path: "history", component: HistorialComponent},
+  {path: "home/history", component: HistorialComponent},
+  {path: "home/history", redirectTo: "history"},
+  {path: "history/home", redirectTo: "home" }
 ];
 
 @NgModule({

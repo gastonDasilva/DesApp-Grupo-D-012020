@@ -44,4 +44,7 @@ export class HeaderComponent implements OnInit {
   verCarrito(): void{
      this.route.navigateByUrl('carrito');
   }
+  verHistorial(): void{
+    this.route.navigateByUrl('history');
+  }
 }

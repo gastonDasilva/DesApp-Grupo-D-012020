@@ -108,4 +108,15 @@ public class UsuarioService {
         return userReturn;
     }
 
+    public Usuario realizarCompra(Long idUser){
+        return usuarioRepository.findById(idUser).map(
+                user -> {
+                    ListaDeCompras listaCompras = new ListaDeCompras();
+                    ListaDeComprasService.save(listaCompras);
+                    user.getHistorialDeCompras().add(user.getListaDeCompras());
+                    user.setListaDeCompras(listaCompras);
+                    return usuarioRepository.save(user);
+                }).get();
+    }
+
 }
