@@ -1,4 +1,4 @@
-package com.ComprandoEnCasa.ComprandoEnCasaBackEnd;
+package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
