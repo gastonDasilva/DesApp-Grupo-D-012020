@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service'
 import { AppComponent } from '../app.component';
+import { Router, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-perfil',
@@ -9,15 +11,33 @@ import { AppComponent } from '../app.component';
 })
 export class PerfilComponent implements OnInit {
   userUpdate: Boolean = false;
-  constructor(public appcomp: AppComponent,public data: DataService) { }
+  constructor(public router: Router,public appcomp: AppComponent,public data: DataService) { }
 
-  ngOnInit() {
+  ngOnInit() { /**/
    console.log("data:", this.appcomp.data);
+
   }
 
   public actualizarPerfilUsuario(){
    console.log("data:", this.data.getuserData());
    this.appcomp.actualizarPerfilUsuario();
+   this.data.actualizarNombreUsuario();
    this.userUpdate=true;
   }
+
+
+    public ConvertirEnComerciante(){
+     console.log("SI, quiero ser comerciante", this.data.getuserData());
+     this.data.userData.esComercio = true;
+     this.actualizarPerfilUsuario();
+    }
+
+    public closeAlert(){
+    /*Este boton es solo para gestionar la aletar que muestra que el usuario fue actualizado*/
+    this.userUpdate = false;
+    }
+
+    public volverAlHome(){
+     this.router.navigateByUrl('home');
+    }
 }

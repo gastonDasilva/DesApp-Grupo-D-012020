@@ -1,38 +1,3 @@
-<!--<div class="container mt-5">
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Marca</th>
-      <th>precio</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let producto of productos">
-
-      <td>{{ producto.nombreProducto }}</td>
-      <td> {{ producto.marca }}</td>
-      <td> {{ producto.precio }}</td>
-      <td>
-        <button class="btn btn-primary" (click)="selectProduct(producto)"> Show details</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <div class="card text-center" *ngIf="selectedproducto">
-    <div class="card-header">
-      # {{selectedproducto.id}}
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">{{selectedproducto.name}}</h4>
-      <p class="card-text">
-        {{selectedproducto.description}}
-      </p>
-    </div>
-
-  </div>
-</div>-->
 
   <div class="container  p-destacados" style="margin-top: 40px;">
     <div class="row">
@@ -56,28 +21,5 @@
         </div>
       </div>
     </div>
-<!--
-  <div class="container mt-4 p-destacados" >
-    <div class="row">
-      <div class="col-md-3">
-        <div class="card text-center " *ngIf="selectedproducto">
-          <div class="card-header">
-            <img src="https://ugc.kn3.net/i/760x/http://ecx.images-amazon.com/images/I/417OGU3mpcL._SS500_.jpg" class="card-img-top" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{selectedproducto.name}}</h5>
-            <p class="card-text">{{selectedproducto.description}}</p>
-
-          </div>
-          <div class="card-footer text-muted">
-            <a href="#" class="btn btn-primary">Ver Detalle</a>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </div>-->
-
 </div>
 <app-header></app-header>

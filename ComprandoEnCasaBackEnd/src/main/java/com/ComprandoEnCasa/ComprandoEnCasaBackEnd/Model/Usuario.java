@@ -40,7 +40,7 @@ public  class Usuario {
 
     /*Atributos del Comercio*/
     private String rubro;
-    private String diasYHorariosDeAtencion;
+    private String  diasYHorariosDeAtencion;
     private float distanciaMaximaEnvio;
 
     @OneToMany(targetEntity = Producto.class)
