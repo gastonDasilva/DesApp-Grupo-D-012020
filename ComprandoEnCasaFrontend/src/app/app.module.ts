@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+/*import { HttpClientModule } from '@angular/common/http';*/
 import { HomeComponent } from './home/home.component';
 import { ProductoCreateComponent } from './producto-create/producto-create.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,7 +17,14 @@ import { ProductosCargadosComponent } from './productos-cargados/productos-carga
 /*Modulos para inicio de sesion para redes sociales*/
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
-
+/* modulos para traduccion dinamica*/
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MainComponent } from './components/main/main.component';
+/*modulos para fecha y moneda*/
+//en app.component
 
 let config = new AuthServiceConfig([
   {
@@ -41,14 +48,25 @@ export function provideConfig() {
     FooterComponent,
     CarritoComponent,
     PerfilComponent,
-    ProductosCargadosComponent
+    ProductosCargadosComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    NgbModule,
+        TranslateModule.forRoot(),
+        HttpClientModule,
+        TranslateModule.forRoot({
+              loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [ HttpClient ]
+              }
+            })
   ],
   providers: [ {
                     provide: AuthServiceConfig,
@@ -57,3 +75,7 @@ export function provideConfig() {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

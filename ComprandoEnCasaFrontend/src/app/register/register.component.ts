@@ -3,6 +3,8 @@
 import { Component } from "@angular/core";
 import { ApiService } from '../api.service';
 import { Router, RouterLink } from '@angular/router';
+/*traduc...*/
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: "app-register",
@@ -15,7 +17,10 @@ export class RegisterComponent {
   address: String;
   email: String;
 
-  constructor(public apiService: ApiService, public router: Router) {}
+  constructor(public apiService: ApiService, public router: Router,translate: TranslateService) {
+      translate.setDefaultLang('es');
+      translate.use('es');
+  }
 
   register() {
     const user = {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service'
 import { AppComponent } from '../app.component';
+/*traduccion*/
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-perfil',
@@ -9,7 +11,10 @@ import { AppComponent } from '../app.component';
 })
 export class PerfilComponent implements OnInit {
   userUpdate: Boolean = false;
-  constructor(public appcomp: AppComponent,public data: DataService) { }
+  constructor(public appcomp: AppComponent,public data: DataService,translate: TranslateService) {
+    translate.setDefaultLang('es');
+    translate.use('es');
+   }
 
   ngOnInit() {
    console.log("data:", this.appcomp.data);

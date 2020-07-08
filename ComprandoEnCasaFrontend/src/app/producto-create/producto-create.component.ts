@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { Producto } from '../producto';
+/*traducc*/
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-producto-create',
@@ -11,7 +13,9 @@ export class ProductoCreateComponent implements OnInit {
   producto : Producto;
   alert: Boolean = false;
 
-  constructor(public appcomp: AppComponent) {
+  constructor(public appcomp: AppComponent,translate: TranslateService) {
+    translate.setDefaultLang('es');
+    translate.use('es');
   this.cleanProduct();
   }
 

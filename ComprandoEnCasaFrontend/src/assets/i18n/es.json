@@ -1,0 +1,87 @@
+{
+  "main": {
+    "bienvenido": "Bienvenido a ",
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "username_placeholder": "nombre de usuario",
+    "password_placeholder": "contraseña",
+    "iniciarSesion": "iniciar sesion",
+    "registrarse": "No tenés cuenta? Registrate!",
+    "conGoogle": "Iniciar sesion con Google"
+  },
+  "carrito": {
+    "carrito": "Carrito",
+    "nombre": "Nombre",
+    "marca": "Marca",
+    "precio": "precio",
+    "cantidad": "cantidad",
+    "monto": "Monto Gastado:$ ",
+    "seguir": "Seguir Comprando"
+  },
+
+  "footer": {
+    "copyright": "© Copyright 2020. Todos los derechos reservados."
+  },
+
+  "header": {
+    "buscar": "Buscar Producto",
+    "acciones": "Acciones",
+    "crear": "Crear Producto",
+    "cerrar": "Cerrar Sesion",
+    "perfil": "Ver Perfil",
+    "historial": "Ver Historial de compras",
+    "productos": "Ver Productos Cargados",
+    "carrito": "Carrito"
+  },
+
+  "perfil": {
+    "image_placeholder": "ingrese la URL de la imagen",
+    "imageURL": "vinculo de su imagen",
+    "rubro": "Rubro:",
+    "comida": "Comida",
+    "perfumeria": "Perfumeria",
+    "carniceria": "Carniceria",
+    "seleRub": "selecciona un rubro",
+    "nombre": "Nombre de Usuario",
+    "name_placeholder": "nombre de usuario",
+    "ingreseNom": "ingrese su nombre de usuario",
+    "email": "Correo electronico",
+    "email_placeholder": "ingrese su email",
+    "ingEmail": "ingrese su correo electronico",
+    "direccion": "Direccion calle",
+    "ingDir": "indique la calle/avenida",
+    "actualizar": "Actualizar Perfil",
+    "convertir": "Convertirse en Comerciante",
+    "exito": "Enhorabuena!",
+    "actualizado": "Su perfil ha sido actualizado"
+  },
+
+  "productos": {
+    "nombre": "Nombre del producto",
+    "nombre_placeholder": "introduzca el nombre del producto",
+    "marca": "Marca",
+    "marca_placeholder": "Coloque la marca del producto",
+    "stock": "Stock",
+    "precio": "Precio",
+    "imagen": "Imagen del producto",
+    "imagen_placeholder": "Coloque la url de la imagen del producto",
+    "categoria": "Categoria",
+    "categoria_placeholder": "Categoria del producto",
+    "crear": "crear producto",
+    "creado": "El producto ha sido creado perfectamente.",
+    "cargado": "Productos Cargados",
+    "seguir": "Seguir Comprando",
+    "cantidad": "cantidad"
+  },
+
+  "register": {
+    "password_placeholder": "contraseña",
+    "address_placeholder": "direccion",
+    "email_placeholder": "correo electronico"
+  },
+
+  "home": {
+    "agregar": " Agregar Al Carrito"
+  }
+}

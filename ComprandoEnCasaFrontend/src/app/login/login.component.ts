@@ -8,6 +8,8 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
+/*traduccion*/
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-login',
@@ -20,7 +22,7 @@ import { SocialUser } from "angularx-social-login";
       errorState: String;
       private user: SocialUser;
       private loggedIn: boolean;
-      constructor(public appcomp: AppComponent ,public apiService: ApiService, public router: Router,private authService: AuthService) {}
+      constructor(public appcomp: AppComponent ,public apiService: ApiService, public router: Router,private authService: AuthService, private translate: TranslateService) {}
 
       ngOnInit() {
        this.authService.authState.subscribe((user) => {
@@ -59,4 +61,16 @@ import { SocialUser } from "angularx-social-login";
     signOut(): void {
       this.authService.signOut();
     }
+
+    // Se cambia el idioma a Español
+      changeLanguageToSpanish(): void {
+        this.translate.use('es');
+        console.log('Idioma cambiado al Español');
+      }
+
+      // Se cambia el idioma a Inglés
+      changeLanguageToEnglish(): void {
+        this.translate.use('en');
+        console.log('Idioma cambiado al Inglés');
+      }
 }

@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 import { DataService } from '../data.service';
 import { Producto } from '../producto';
+/*traduccion*/
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +17,10 @@ import { Producto } from '../producto';
 export class HomeComponent implements OnInit {
 
   selectedproducto:Producto;
-  constructor(private http: HttpClient,public appcomp: AppComponent, public data: DataService) {}
+  constructor(private http: HttpClient,public appcomp: AppComponent, public data: DataService,translate: TranslateService) {
+      translate.setDefaultLang('es');
+      translate.use('es');
+  }
 
   ngOnInit() {
        this.appcomp.getProductosAPI$();

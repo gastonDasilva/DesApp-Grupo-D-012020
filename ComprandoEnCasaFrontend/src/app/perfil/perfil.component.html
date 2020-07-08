@@ -38,18 +38,23 @@
                 <img src="{{data.userData.imagenPerfil}}" alt="..." class="rounded" style="width:40%;box-shadow: 0px 0px 10px 2px ;">
                 <hr>
                 <div class="form-group">
-              <input [(ngModel)]="data.userData.imagenPerfil" type="text" name="imagenPerfil" class="form-control" id="imagenPerfil"  placeholder="Enter your Url image">
-              <small id="imagenPerfilhlp" class="form-text " i18n="ingrese | ingrese su nombre @@perfilIngNom">Enter your user’s Url image</small>
+              <input [(ngModel)]="data.userData.imagenPerfil" type="text" name="imagenPerfil" class="form-control" id="imagenPerfil"  placeholder="{{ 'perfil.image_placeholder' | translate }}">
+              <small id="imagenPerfilhlp" class="form-text " >{{ 'perfil.imageURL' | translate }}</small>
             </div>
 
                 <div class="form-group" [hidden]="!data.userData.esComercio">
-                  <label for="sel1">Rubro:</label>
+                  <label for="sel1">{{ 'perfil.rubro' | translate }} Rubro:</label>
                   <select class="form-control input-sm" id="sel1">
+                    <!--
                     <option>Comida</option>
                     <option>Perfumeria</option>
                     <option>Carniceria</option>
+                    -->
+                    <option>{{ 'perfil.comida' | translate }}</option>
+                    <option>{{ 'perfil.perfumeria' | translate }}</option>
+                    <option>{{ 'perfil.carniceria' | translate }}</option>
                   </select>
-                  <small id="sel1hp" class="form-text " i18n="ingrese | ingrese su nombre @@perfilIngNom">selecciona un rubro</small>
+                  <small id="sel1hp" class="form-text " >{{ 'perfil.seleRub' | translate }}</small>
                 </div>
 
           </form>
@@ -59,33 +64,54 @@
       <div>
         <form>
           <div class="form-group">
+            <!--
             <label for="name" i18n="nombre | nombre del usuario @@perfilNombre">Nombre de Usuario</label>
             <input [(ngModel)]="data.userData.nombreUsuario" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name">
             <small id="nameHelp" class="form-text " i18n="ingrese | ingrese su nombre @@perfilIngNom">Enter your user’s name</small>
+            -->
+            <label for="name" >{{ 'perfil.nombre' | translate }}</label>
+            <input [(ngModel)]="data.userData.nombreUsuario" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="{{ 'perfil.name_placeholder' | translate }}">
+            <small id="nameHelp" class="form-text " >{{ 'perfil.ingreseNom' | translate }}</small>
           </div>
+          <!--
           <div class="form-group">
             <label for="email" i18n="email | email @@perfilEmail">Email</label>
             <input [(ngModel)]="data.userData.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
                    placeholder="Enter your email">
             <small id="emailHelp" class="form-text " i18n="ingrese | ingrese su email @@perfilIngEmail">Enter your  email</small>
           </div>
+          -->
+          <div class="form-group">
+            <label for="email" >{{ 'perfil.email' | translate }}</label>
+            <input [(ngModel)]="data.userData.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                   placeholder="{{ 'perfil.email_placeholder' | translate }}">
+            <small id="emailHelp" class="form-text " >{{ 'perfil.ingEmail' | translate }}</small>
+          </div>
+          <!--
           <div class="form-group">
             <label for="Calle" i18n="direccion | direccion @@perfilDireccion">Direccion calle</label>
             <input [(ngModel)]="data.userData.calle" name="Calle" class="form-control" id="Calle" aria-describedby="descHelp">
             <small id="descHelp" class="form-text " i18n="ingrese | ingrese su direccion @@perfilIngDir">Enter your street direction</small>
 
           </div>
+          -->
+          <div class="form-group">
+            <label for="Calle" >{{ 'perfil.direccion' | translate }}</label>
+            <input [(ngModel)]="data.userData.calle" name="Calle" class="form-control" id="Calle" aria-describedby="descHelp">
+            <small id="descHelp" class="form-text " >{{ 'perfil.ingDir' | translate }}</small>
+
+          </div>
         </form>
 
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button class="btn btn-success" (click)="actualizarPerfilUsuario()" i18n="actualizar | actualizar perfil @@perfilActualizar">Actualizar Perfil</button>
-          <button class="btn btn-success" (click)="ConvertirEnComerciante" [hidden]="data.userData.esComercio">Convertirse en Comerciante</button>
+          <button class="btn btn-success" (click)="actualizarPerfilUsuario()" >{{ 'perfil.actualizar' | translate }}</button>
+          <button class="btn btn-success" (click)="ConvertirEnComerciante" [hidden]="data.userData.esComercio">{{ 'perfil.convertir' | translate }} </button>
         </div>
 
         <br>
         <br>
         <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!userUpdate" >
-          <strong>Success!</strong> User Updated.
+          <strong>{{ 'perfil.exito' | translate }}Success!</strong>{{ 'perfil.actualizado' | translate }} User Updated.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

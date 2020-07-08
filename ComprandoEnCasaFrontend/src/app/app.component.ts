@@ -5,6 +5,13 @@ import { Observable } from 'rxjs';
 import { Producto } from './producto';
 import { DataService } from './data.service';
 import { Router, RouterLink } from '@angular/router';
+/*para la traduccion*/
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Title } from '@angular/platform-browser';
+/*para la fecha y moneda*/
+import localeIt from '@angular/common/locales/es-AR';
+import localeEnGb from '@angular/common/locales/en';
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +23,17 @@ export class AppComponent {
   title = 'ComprandoEnCasaFrontend';
    products: Producto[] = [];
 
-constructor(public router: Router,private http: HttpClient,private api: ApiService, public data: DataService) {}
+constructor(public router: Router,private http: HttpClient,private api: ApiService, public data: DataService,private translate: TranslateService, private titleService: Title ) {
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
+
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.translate.get('app.title').subscribe((res: string) => {
+        this.titleService.setTitle(res);
+      });
+    });
+
+}
 
     public getProductos():Array<{nombreProducto, marca, stock, precio, imagen, categoria}>{
       return this.data.products
@@ -147,4 +164,6 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
                                },
                      err => console.log(err));
       }
+
+
 }
