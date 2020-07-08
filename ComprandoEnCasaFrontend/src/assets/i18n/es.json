@@ -17,7 +17,8 @@
     "precio": "precio",
     "cantidad": "cantidad",
     "monto": "Monto Gastado:$ ",
-    "seguir": "Seguir Comprando"
+    "seguir": "Seguir Comprando",
+    "comprar": "Comprar"
   },
 
   "footer": {
@@ -54,7 +55,9 @@
     "actualizar": "Actualizar Perfil",
     "convertir": "Convertirse en Comerciante",
     "exito": "Enhorabuena!",
-    "actualizado": "Su perfil ha sido actualizado"
+    "actualizado": "Su perfil ha sido actualizado",
+    "esasSeguro": "¿Estás seguro que querés realizar esta operación?",
+    "si": "Si"
   },
 
   "productos": {

@@ -33,5 +33,8 @@ export class CarritoComponent implements OnInit {
      this.route.navigateByUrl('home');
     }
 
-
+    public realizarCompra(){
+      this.appcomp.getAgregarCompraEnHistorial();
+      this.route.navigateByUrl('history');
+    }
 }

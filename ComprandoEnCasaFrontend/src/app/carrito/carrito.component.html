@@ -69,6 +69,7 @@
          <!-- <label class="card-subtitle mb-2 text-muted" i18n="monto | monto gastado @@carritoMonto">Monto Gastado:$ {{data.userData.listaDeCompras.montoAcumulado}}</label> -->
          <label class="card-subtitle mb-2 text-muted" >{{ 'carrito.monto' | translate }}{{data.userData.listaDeCompras.montoAcumulado}}</label>
        </div>
+        <button class="btn btn-primary" (click)="realizarCompra()"> {{ 'carrito.comprar' | translate }} </button>
      </div>
 
 

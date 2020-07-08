@@ -45,7 +45,6 @@ public class UsuarioConctroller {
     @PutMapping("api/usuario/actualizarUsuario/{id}")
     public Usuario updateUsuarioData(@RequestBody Usuario usuario, @PathVariable Long id) {
         /*Actualizo los datos del usuario.*/
-        System.out.println(usuario);
         return usuarioService.updateUsuario(usuario,id);
     }
 
@@ -68,6 +67,14 @@ public class UsuarioConctroller {
     public Usuario loginUserWithGoogle(@RequestBody UsuarioLogin user){
         //Primero busco el usuario que coincida con el mail de google logueado, si no existe lo creo y lo devuelvo para que despues el frontend se encargue de gestionar los datos.
         return usuarioService.loguearWithGoogle(user);
+    }
+
+
+    @CrossOrigin
+    @PutMapping("api/usuario/realizarCompra/{id}")
+    public Usuario realizarCompraEnChanguito(@PathVariable Long id){
+        // agrego al historial de compras los productos agregados en el carrito del usuario
+        return usuarioService.realizarCompra(id);
     }
 
 

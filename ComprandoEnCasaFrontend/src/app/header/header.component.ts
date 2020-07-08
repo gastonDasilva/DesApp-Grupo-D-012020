@@ -64,4 +64,7 @@ export class HeaderComponent implements OnInit {
      console.log('Idioma cambiado al Inglés');
    }
 
+  verHistorial(): void{
+    this.route.navigateByUrl('history');
+  }
 }

@@ -33,7 +33,7 @@ import { TranslateService } from '@ngx-translate/core';
 
             }
           });
-      }
+        }
 
     login() {
         const user = {username: this.username, password: this.password};

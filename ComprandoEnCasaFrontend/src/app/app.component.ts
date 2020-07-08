@@ -8,9 +8,6 @@ import { Router, RouterLink } from '@angular/router';
 /*para la traduccion*/
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
-/*para la fecha y moneda*/
-import localeIt from '@angular/common/locales/es-AR';
-import localeEnGb from '@angular/common/locales/en';
 
 
 @Component({
@@ -47,6 +44,7 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
                                        },
                               err => console.log(err));
     }
+
 
     public getProductosAPI$() {
     this.products = [];
@@ -145,6 +143,14 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
 
       }
 
+
+      public getAgregarCompraEnHistorial(){
+        this.api.realizarCompra(this.data.getuserData())
+            .subscribe(resp => { const data = resp.historialDeCompras
+                                 this.data.setHistorialDeCompras(data);
+                               },
+                       err => console.log(err));
+      }
 
 
       public aplicarOfertaEnCategoriaDeBebidas(descuento: number){

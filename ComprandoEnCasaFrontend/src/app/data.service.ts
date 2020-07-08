@@ -10,6 +10,7 @@ export class DataService {
 
  products: Producto[] =[];
  productosEnCarrito: Producto[] =[];
+ historialDeCompras: ListaDeCompras[] = [];
  montoGastado: number = 0;
  nombreUsuario: String = ""
  userData: UsuarioData;
@@ -25,9 +26,13 @@ export class DataService {
     getProductosEnOferta(): Producto[]{
       return this.productosEnOferta;
     }
-    
+
     getuserData(){
     return this.userData;
+    }
+
+    getHistorialDeCompras(): ListaDeCompras[]{
+      return this.historialDeCompras;
     }
 
     setuserData(user: UsuarioData){
@@ -36,6 +41,11 @@ export class DataService {
 
     getListaCompras():ListaDeCompras{
     return this.userData.listaDeCompras;
+    }
+
+    setHistorialDeCompras(compras: ListaDeCompras[]){
+      this.historialDeCompras = compras;
+      this.userData.historialDeCompras = this.getHistorialDeCompras();
     }
 
     actualizarProductosEnCarrito(){
@@ -50,6 +60,10 @@ export class DataService {
 
     actualizarProductosConOferta(productos: Producto[]){
       return this.products = productos;
+    }
+
+    actualizarNombreUsuario(){
+    this.nombreUsuario = this.userData.nombreUsuario;
     }
 
 

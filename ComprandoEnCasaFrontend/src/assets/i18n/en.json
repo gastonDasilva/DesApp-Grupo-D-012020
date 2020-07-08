@@ -18,7 +18,8 @@
     "precio": "price",
     "cantidad": "units",
     "monto": "Amount to pay U$S ",
-    "seguir": "Continue Shopping"
+    "seguir": "Continue Shopping",
+    "comprar": "Buy it"
   },
 
   "footer": {
@@ -55,7 +56,9 @@
     "actualizar": "Update Profile",
     "convertir": "Become Seller",
     "exito": "Congratulations!",
-    "actualizado": "Your profile has been updated"
+    "actualizado": "Your profile has been updated",
+    "estasSeguro": "Are you sure to do it?",
+    "si": "Yes"
   },
 
   "productos": {

@@ -5,7 +5,7 @@ import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ProductoService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackageClasses = {ProductoService.class,ListadoController.class})
+@SpringBootApplication
 public class ComprandoEnCasaBackEndApplication {
 
 	public static void main(String[] args) {
