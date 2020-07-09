@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service'
 import { AppComponent } from '../app.component';
-<<<<<<< HEAD
 /*traduccion*/
 import { TranslateService } from '@ngx-translate/core';
 

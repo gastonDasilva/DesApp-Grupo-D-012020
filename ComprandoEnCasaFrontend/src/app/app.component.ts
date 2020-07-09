@@ -5,15 +5,12 @@ import { Observable } from 'rxjs';
 import { Producto } from './producto';
 import { DataService } from './data.service';
 import { Router, RouterLink } from '@angular/router';
-<<<<<<< HEAD
 import { ListaDeCompras } from './listaDeCompras';
 import { UsuarioData } from './usuarioData';
-=======
 /*para la traduccion*/
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 
->>>>>>> b42dff247b8fe898c9afccf1a2a15d80e98b2a58
 
 @Component({
   selector: 'app-root',
@@ -171,7 +168,7 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
       public getAgregarCompraEnHistorial(){
         this.api.realizarCompra(this.data.getuserData())
             .subscribe(resp => { const data = resp.historialDeCompras
-                                 this.data.setHistorialDeCompras(data);      
+                                 this.data.setHistorialDeCompras(data);
                                },
                        err => console.log(err));
       }

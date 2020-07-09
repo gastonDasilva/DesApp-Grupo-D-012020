@@ -20,7 +20,6 @@ import { DetallesComponent } from './detalles-compra/detalles.component';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 /* modulos para traduccion dinamica*/
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -51,13 +50,9 @@ export function provideConfig() {
     CarritoComponent,
     PerfilComponent,
     ProductosCargadosComponent,
-<<<<<<< HEAD
     HistorialComponent,
-    DetallesComponent
-=======
+    DetallesComponent,
     MainComponent
-    HistorialComponent
->>>>>>> b42dff247b8fe898c9afccf1a2a15d80e98b2a58
   ],
   imports: [
     BrowserModule,
@@ -65,7 +60,7 @@ export function provideConfig() {
     HttpClientModule,
     FormsModule,
     SocialLoginModule,
-    NgbModule,
+    //NgbModule,
         TranslateModule.forRoot(),
         HttpClientModule,
         TranslateModule.forRoot({
