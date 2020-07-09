@@ -46,7 +46,7 @@ export class DataService {
     getProductosEnOferta(): Producto[]{
       return this.productosEnOferta;
     }
-    
+
     getuserData(){
     return this.userData;
     }
@@ -88,6 +88,10 @@ export class DataService {
 
     actualizarProductosConOferta(productos: Producto[]){
       return this.products = productos;
+    }
+
+    actualizarNombreUsuario(){
+    this.nombreUsuario = this.userData.nombreUsuario;
     }
 
 

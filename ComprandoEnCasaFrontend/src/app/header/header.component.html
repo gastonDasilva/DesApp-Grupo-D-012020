@@ -12,11 +12,11 @@
 
       <!-- Dropdown -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" i18n="acciones | menu de acciones @@headerMenu">
-         Acciones
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
+          {{ 'header.acciones' | translate }}
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userEsComercio" i18n="crear | crear producto @@headerCrear">Crear Producto</a>
+          <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userEsComercio" >{{ 'header.crear' | translate }}</a>
         </div>
       </li>
     </ul>
@@ -25,7 +25,7 @@
 
     <form class="form-inline  col-lg-3 ">
       <div class="input-group active-green-4">
-        <input class="form-control" type="text" [(ngModel)]="consulta" [ngModelOptions]="{standalone: true}" placeholder="Buscar Producto" aria-label="Search">
+        <input class="form-control" type="text" [(ngModel)]="consulta" [ngModelOptions]="{standalone: true}" placeholder="{{ 'header.buscar' | translate }}" aria-label="Search">
         <div class="input-group-append">
 
             <button class="btn btn-outline-success my-2 my-sm-0" (click)="callProductosByConsulting()" type="submit"><i class="fa fa-search"></i>
@@ -50,15 +50,30 @@
               <i class="fa fa-user"></i> <span class="badge badge-pill"  >{{data.nombreUsuario}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item"  (click)="signOut()">Cerrar Sesion</a>
+              <!--
+              <a class="dropdown-item"  (click)="signOut()" i18n="cerrar | cerrar sesion @@headerCerrar">Cerrar Sesion</a>
               <a class="dropdown-item"  (click)="verPerfil()" i18n="ver | ver perfil @@headerPerfil">Ver Perfil</a>
-              <a class="dropdown-item" (click)="verHistorial()">Ver Historial de compras</a>
-              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio">Ver Productos Cargados</a>
+              <a class="dropdown-item" href="#" i18n="ver | ver historial  @@headerHistorial">Ver Historial de compras</a>
+              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio" i18n="ver | ver Chango @@headerVerProductos">Ver Productos Cargados</a>
+              -->
+              <a class="dropdown-item"  (click)="signOut()" >{{ 'header.cerrar' | translate }}</a>
+              <a class="dropdown-item"  (click)="verPerfil()" >{{ 'header.perfil' | translate }}</a>
+              <a class="dropdown-item" (click)="verHistorial()">{{ 'header.historial' | translate }}</a>
+              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio" >{{ 'header.productos' | translate }}</a>
             </div>
+            <div ngbDropdown class="d-inline-block">
+              <input ngbDropdownToggle type="button" class="btn btn-outline-primary" id="dropdownIdioma" value="{{ 'main.language' | translate }}" />
+              <div ngbDropdownMenu aria-labelledby="dropdownIdioma">
+                <input type="button" class="dropdown-item" value="{{ 'main.spanish' | translate }}" (click)="changeLanguageToSpanish()" />
+                <input type="button" class="dropdown-item" value="{{ 'main.english' | translate }}" (click)="changeLanguageToEnglish()" />
+              </div>
+            </div>
+
+
           </div>
 
             <button type="button" class="btn btn-outline-success" (click)="verCarrito()">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{data.productosEnCarrito.length}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ 'header.carrito' | translate }} <span class="badge badge-pill badge-danger">{{data.productosEnCarrito.length}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
             </button> <!-- glyphicon glyphicon-shopping-cart -->
 
 

@@ -37,6 +37,7 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
+    @Transactional
     public Usuario updateUsuario(Usuario newuser, Long idUser){
         /*Actualizo los datos del usuario   */
         return usuarioRepository.findById(idUser).map(
@@ -48,6 +49,7 @@ public class UsuarioService {
                     user.setCodigoPostal(newuser.getCodigoPostal());
                     user.setImagenPerfil(newuser.getImagenPerfil());
                     user.setLocalidad(newuser.getLocalidad());
+                    user.setEsComercio(newuser.getEsComercio());
                     return usuarioRepository.save(user);
         }).get();
     }
@@ -97,6 +99,7 @@ public class UsuarioService {
             userReturn = new UsuarioBuilder().withNombreUsuario(user.getEmail())
                                 .withEmail(user.getEmail())
                                 .withPassword("")
+                                .withImagenPerfil(user.getPhotoUrl())
                                 .withListaDeCompras(listaCompras)
                                 .build();
             /*Grabo el usuario en la BD*/

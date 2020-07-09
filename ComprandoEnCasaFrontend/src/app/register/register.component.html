@@ -1,6 +1,6 @@
 <div class="register">
     <form class="custom-form" method="post">
-      <h1>Register</h1>
+      <h1 i18n="registrarse | registrarse @@registerRegistrarse">Registrarse</h1>
       <input
         type="username"
         [(ngModel)]="username"
@@ -12,23 +12,23 @@
         type="password"
         [(ngModel)]="password"
         name="password"
-        placeholder="Password"
+        placeholder="{{ 'register.password_placeholder' | translate }}"
         required="required"
       />
       <input
         type="address"
         [(ngModel)]="address"
         name="address"
-        placeholder="Address"
+        placeholder="{{ 'register.address_placeholder' | translate }}"
         required="required"
       />
       <input
         type="email"
         [(ngModel)]="email"
         name="email"
-        placeholder="Email"
+        placeholder="{{ 'register.email_placeholder' | translate }}"
         required="required"
       />
-      <button type="submit" (click)="register()">Register</button>
+      <button type="submit" (click)="register()" i18n="registrarse | registrarse @@registerRegistrarseBot">Registrarse</button>
     </form>
   </div>

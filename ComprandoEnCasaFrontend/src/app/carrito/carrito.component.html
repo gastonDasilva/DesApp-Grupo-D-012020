@@ -16,11 +16,11 @@
            <i class="fa fa-columns mt-0"></i>
          </button>
        </div>
-       <h1 class="white-text mx-3" i18n="carrito| chango @@carritoCarrito">Carrito</h1>
+       <h1 class="white-text mx-3" >{{ 'carrito.carrito' | translate }}</h1>
 
        <div>
          <button type="button" class=" btn btn-light" (click)="seguirComprando()">
-           <small i18n="continuar| seguir comprando @c@arritoSeguir">Seguir Comprando</small><i class="fa fa-angle-double-left"></i>
+           <small >{{ 'carrito.seguir' | translate }}</small><i class="fa fa-angle-double-left"></i>
          </button>
        </div>
      </div>
@@ -31,10 +31,17 @@
        <thead class="thead-dark">
        <tr>
          <th></th>
+         <!--
          <th i18n="nombre| nombre del producto @@carritoNombre">Nombre</th>
          <th i18n="marca | marca del producto @@carritoMarca">Marca</th>
          <th i18n="precio| precio del producto @@carritoPrecio">precio</th>
          <th i18m="cantidad | cantidad de productos @@carritoCantidad">cantidad</th>
+         -->
+         <th >{{ 'carrito.nombre' | translate }}</th>
+         <th >{{ 'carrito.marca' | translate }}</th>
+         <th >{{ 'carrito.precio' | translate }}</th>
+         <th >{{ 'carrito.cantidad' | translate }}</th>
+
          <th></th>
        </tr>
        </thead>
@@ -59,9 +66,10 @@
    </div>
      <div class="container ">
        <div class="row justify-content-md-center">
-         <label class="card-subtitle mb-2 text-muted" i18n="monto | monto gastado @@carritoMonto">Monto Gastado:$ {{data.userData.listaDeCompras.montoAcumulado}}</label>
-        </div>
-        <button class="btn btn-primary" (click)="realizarCompra()"> Comprar </button>
+         <!-- <label class="card-subtitle mb-2 text-muted" i18n="monto | monto gastado @@carritoMonto">Monto Gastado:$ {{data.userData.listaDeCompras.montoAcumulado}}</label> -->
+         <label class="card-subtitle mb-2 text-muted" >{{ 'carrito.monto' | translate }}{{data.userData.listaDeCompras.montoAcumulado}}</label>
+       </div>
+        <button class="btn btn-primary" (click)="realizarCompra()"> {{ 'carrito.comprar' | translate }} </button>
      </div>
 
 

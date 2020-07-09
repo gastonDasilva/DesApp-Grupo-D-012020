@@ -9,6 +9,7 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -32,7 +33,7 @@
             "scripts": []
           },
           "configurations": {
-            "es": {"i18nFile": "src/locale/messages.es.xlf","i18nLocale": "es","i18nFormat": "xlf","aot": true},
+            "es": {"i18nFile": "src/locale/messages.xlf","i18nLocale": "es","i18nFormat": "xlf","aot": true},
             "en": {"i18nFile": "src/locale/messages.en.xlf","i18nLocale": "en","i18nFormat": "xlf","aot": true},
             "production": {
               "fileReplacements": [
@@ -97,8 +98,10 @@
               "src/favicon.ico",
               "src/assets"
             ],
+
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -143,4 +146,5 @@
   "cli": {
     "analytics": "c4adf1df-4ed3-4835-9bb9-91cf0fe4802f"
   }
+
 }

@@ -6,6 +6,7 @@ public class UsuarioLogin {
     private String username;
     private String password;
     private String email;
+    private  String photoUrl;
 
     public String getUsername() {
         return username;
@@ -36,4 +37,11 @@ public class UsuarioLogin {
         this.email = email;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
 }

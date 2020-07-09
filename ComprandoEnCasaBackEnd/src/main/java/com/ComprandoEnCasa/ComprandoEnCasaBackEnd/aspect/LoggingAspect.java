@@ -2,10 +2,7 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -26,15 +23,15 @@ public class LoggingAspect {
     /**
      * Pointcut que machea con todos los  REST Controllers endpoints.
      */
-    @Pointcut(value = "within(@org.springframework.web.bind.annotation.RestController *)")
+    /*@Pointcut(value = "within(@org.springframework.web.bind.annotation.RestController *)")
     public void springBeanPointcutRestController() {
-        // Este metodo es vacio ya que es un  Pointcut, La implementacion esta en el advices.
-    }
+
+    }*/
 
     /**
      * Pointcut that matches all Spring beans in the application's main packages.
      */
-    @Pointcut(value = "within(com.ComprandoEnCasa.ComprandoEnCasaBackEnd.WebService..*)")
+    @Pointcut("execution(*  com.ComprandoEnCasa.ComprandoEnCasaBackEnd.WebService.*.*(..))")
     public void applicationPackagePointcut() {
         // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
@@ -48,7 +45,7 @@ public class LoggingAspect {
      * @return result
      * @throws Throwable throws IllegalArgumentException
      */
-    @Around("applicationPackagePointcut() && springBeanPointcutRestController()")
+    @Around("applicationPackagePointcut()")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         if (log.isDebugEnabled()) {
             log.debug("Enter: {}.{}() with argument[s] = {}", joinPoint.getSignature().getDeclaringTypeName(),

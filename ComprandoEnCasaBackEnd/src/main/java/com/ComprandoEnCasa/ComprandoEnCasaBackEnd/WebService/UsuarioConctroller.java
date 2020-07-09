@@ -54,7 +54,6 @@ public class UsuarioConctroller {
     @PutMapping("api/usuario/actualizarUsuario/{id}")
     public Usuario updateUsuarioData(@RequestBody Usuario usuario, @PathVariable Long id) {
         /*Actualizo los datos del usuario.*/
-        System.out.println(usuario);
         return usuarioService.updateUsuario(usuario,id);
     }
 

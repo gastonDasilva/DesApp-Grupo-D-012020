@@ -1,0 +1,91 @@
+{
+  "main": {
+    "bienvenido": "Welcome to ",
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English",
+    "username_placeholder": "username",
+    "password_placeholder": "password",
+    "iniciarSesion": "log in",
+    "registrarse": "don't have acconunt? sign in!",
+    "conGoogle": "log in with Google"
+  },
+
+  "carrito": {
+    "carrito": "Cart",
+    "nombre": "Name",
+    "marca": "Mark",
+    "precio": "price",
+    "cantidad": "units",
+    "monto": "Amount to pay U$S ",
+    "seguir": "Continue Shopping",
+    "comprar": "Buy it"
+  },
+
+  "footer": {
+    "copyright": "© Copyright 2020. All rights reserved"
+  },
+
+  "header": {
+    "buscar": "Search Product",
+    "acciones": "Actions",
+    "crear": "Create Product",
+    "cerrar": "Log Off",
+    "perfil": "Your Profile",
+    "historial": "Shopping history",
+    "productos": "Loaded Products",
+    "carrito": "Cart"
+  },
+
+  "perfil": {
+    "image_placeholder": "enter image URL",
+    "imageURL": "image link",
+    "rubro": "Category:",
+    "comida": "Food",
+    "perfumeria": "Perfumery",
+    "carniceria": "Butcher shop",
+    "seleRub": "select a category",
+    "nombre": "User's name",
+    "name_placeholder": "new user's name",
+    "ingreseNom": "enter a name for your user",
+    "email": "e-mail",
+    "email_placeholder": "enter your email ",
+    "ingEmail": "your e-mail",
+    "direccion": "Street Address",
+    "ingDir": "enter your street/avenue 's name",
+    "actualizar": "Update Profile",
+    "convertir": "Become Seller",
+    "exito": "Congratulations!",
+    "actualizado": "Your profile has been updated",
+    "estasSeguro": "Are you sure to do it?",
+    "si": "Yes"
+  },
+
+  "productos": {
+    "nombre": "Product's name",
+    "nombre_placeholder": "enter the name of the product",
+    "marca": "Mark",
+    "marca_placeholder": "which mark",
+    "stock": "Stock",
+    "precio": "Price",
+    "imagen": "Product's image",
+    "imagen_placeholder": "enter image URL",
+    "categoria": "Category",
+    "categoria_placeholder": "Product Category",
+    "crear": "Create Product",
+    "creado": "The product has been created succesfuly!",
+    "cargado": "Loaded Products",
+    "seguir": "Continue Shopping",
+    "cantidad": "units"
+  },
+
+  "register": {
+    "password_placeholder": "password",
+    "address_placeholder": "address",
+    "email_placeholder": "email"
+  },
+
+  "home": {
+    "agregar": " Add to Cart"
+  }
+}

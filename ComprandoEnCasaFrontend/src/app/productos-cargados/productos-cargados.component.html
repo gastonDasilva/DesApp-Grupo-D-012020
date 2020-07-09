@@ -12,11 +12,19 @@
           <i class="fa fa-columns mt-0"></i>
         </button>
       </div>
-      <h1 class="white-text mx-3">Productos Cargados</h1>
+      <!--
+      <h1 class="white-text mx-3" i18n="producto | productos cargados @@prodCarProdCar">Productos Cargados</h1>
+      -->
+      <h1 class="white-text mx-3">{{ 'productos.cargado' | translate }}</h1>
 
       <div>
+        <!--
         <button type="button" class=" btn btn-light" routerLink="home">
-          <small>Seguir Comprando</small><i class="fa fa-angle-double-left"></i>
+          <small i18n="seguir | seguir comprando @@prodCarSeguir">Seguir Comprando</small><i class="fa fa-angle-double-left"></i>
+        </button>
+        -->
+        <button type="button" class=" btn btn-light" routerLink="home">
+          <small >{{ 'productos.seguir' | translate }}</small><i class="fa fa-angle-double-left"></i>
         </button>
 
       </div>
@@ -29,10 +37,16 @@
         <thead class="thead-dark">
         <tr>
           <th></th>
-          <th>Nombre</th>
-          <th>Marca</th>
-          <th>precio</th>
-          <th>cantidad</th>
+          <!--
+          <th i18n="nombre | nombre @@prodCarNombre">Nombre</th>
+          <th i18n="marca | marca @@prodCarMarca">Marca</th>
+          <th i18n="precio | nombre @@prodCarPrecio">precio</th>
+          <th i18n="cantidad | cantidad @@prodCarCantidad">cantidad</th>
+          -->
+          <th >{{ 'productos.nombre' | translate }}</th>
+          <th >{{ 'productos.marca' | translate }}</th>
+          <th >{{ 'productos.precio' | translate }}</th>
+          <th >{{ 'productos.cantidad' | translate }}</th>
           <th></th>
         </tr>
         </thead>
@@ -42,7 +56,7 @@
           <td>  <img src={{producto.imagen}} class="rounded" style="height: 80px;" ></td>
           <td> {{ producto.nombreProducto }} </td>
           <td> {{ producto.marca }}  </td>
-          <td> {{ producto.precio }} </td>
+          <td> {{ producto.precio  }} </td>
           <td> {{ producto.cantidadAComprar }} </td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
