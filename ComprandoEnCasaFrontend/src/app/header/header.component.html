@@ -36,7 +36,6 @@
         </div>
 
       </div>
-      <!--<input class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="Search">-->
     </form>
 
     <ul class="navbar-nav ml-auto ">
@@ -50,36 +49,24 @@
               <i class="fa fa-user"></i> <span class="badge badge-pill"  >{{data.nombreUsuario}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <!--
-              <a class="dropdown-item"  (click)="signOut()" i18n="cerrar | cerrar sesion @@headerCerrar">Cerrar Sesion</a>
-              <a class="dropdown-item"  (click)="verPerfil()" i18n="ver | ver perfil @@headerPerfil">Ver Perfil</a>
-              <a class="dropdown-item" href="#" i18n="ver | ver historial  @@headerHistorial">Ver Historial de compras</a>
-              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio" i18n="ver | ver Chango @@headerVerProductos">Ver Productos Cargados</a>
-              -->
               <a class="dropdown-item"  (click)="signOut()" >{{ 'header.cerrar' | translate }}</a>
               <a class="dropdown-item"  (click)="verPerfil()" >{{ 'header.perfil' | translate }}</a>
               <a class="dropdown-item" (click)="verHistorial()">{{ 'header.historial' | translate }}</a>
               <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio" >{{ 'header.productos' | translate }}</a>
             </div>
-            <div ngbDropdown class="d-inline-block">
-              <input ngbDropdownToggle type="button" class="btn btn-outline-primary" id="dropdownIdioma" value="{{ 'main.language' | translate }}" />
-              <div ngbDropdownMenu aria-labelledby="dropdownIdioma">
-                <input type="button" class="dropdown-item" value="{{ 'main.spanish' | translate }}" (click)="changeLanguageToSpanish()" />
-                <input type="button" class="dropdown-item" value="{{ 'main.english' | translate }}" (click)="changeLanguageToEnglish()" />
+
+            <div class="dropdown d-inline-block">
+              <button class="btn btn-outline-success dropdown-toggle" id="dropdownIdioma"  type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false"> {{ 'main.language' | translate }} </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownIdioma">
+                <a class="dropdown-item"   (click)="changeLanguageToSpanish()" >{{ 'main.spanish' | translate }}</a>
+                <a class="dropdown-item"     (click)="changeLanguageToEnglish()" >{{ 'main.english' | translate }}</a>
               </div>
             </div>
-
-
           </div>
-
             <button type="button" class="btn btn-outline-success" (click)="verCarrito()">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ 'header.carrito' | translate }} <span class="badge badge-pill badge-danger">{{data.productosEnCarrito.length}}</span><!-- Aca podria tener uan variable en JS para obtener la cantidad de porductos en el carrito-->
             </button> <!-- glyphicon glyphicon-shopping-cart -->
-
-
-
-
-
         </div>
       </li>
     </ul>

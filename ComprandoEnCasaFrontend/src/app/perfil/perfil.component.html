@@ -22,33 +22,25 @@
 
   <div class="row">
     <div class="col-md-6">
-<<<<<<< HEAD
-              <form>
-                <img src="{{data.userData.imagenPerfil}}" alt="..." class="rounded" style="width:40%;box-shadow: 0px 0px 10px 2px ;">
-                <hr>
-                <div class="form-group">
-              <input [(ngModel)]="data.userData.imagenPerfil" type="text" name="imagenPerfil" class="form-control" id="imagenPerfil"  placeholder="{{ 'perfil.image_placeholder' | translate }}">
-              <small id="imagenPerfilhlp" class="form-text " >{{ 'perfil.imageURL' | translate }}</small>
-=======
+
       <form>
         <br>
-        <img src="{{data.userData.imagenPerfil}}" alt="..." class="rounded" style="width:30%;box-shadow: 0px 0px 10px 2px ;">
+        <img src="{{data.userData.imagenPerfil}}" alt="..." class="rounded" style="width:40%;box-shadow: 0px 0px 10px 2px ;">
         <hr>
-
         <div class="form-group">
-          <input [(ngModel)]="data.userData.imagenPerfil"  type="text" name="imagenPerfil" class="form-control" id="imagenPerfil"  placeholder="Enter your Url image">
-          <small id="imagenPerfilhlp" class="form-text " >Ingresa una imagen URL</small>
-        </div>
+          <input [(ngModel)]="data.userData.imagenPerfil" type="text" name="imagenPerfil" class="form-control" id="imagenPerfil"  placeholder="{{ 'perfil.image_placeholder' | translate }}">
+          <small id="imagenPerfilhlp" class="form-text " >{{ 'perfil.imageURL' | translate }}</small>
 
-        <div class="form-group" [hidden]="!data.userData.esComercio">
-          <label for="sel1">Rubro:</label>
-          <select class="form-control input-sm" id="sel1">
-            <option>Comida</option>
-            <option>Perfumeria</option>
-            <option>Carniceria</option>
-          </select>
-          <small id="sel1hp" class="form-text ">selecciona un rubro</small>
-        </div>
+          <div class="form-group" [hidden]="!data.userData.esComercio">
+            <label for="sel1">{{ 'perfil.rubro' | translate }}</label>
+            <select class="form-control input-sm" id="sel1">
+              <option>{{ 'perfil.comida' | translate }}</option>
+              <option>{{ 'perfil.perfumeria' | translate }}</option>
+              <option>{{ 'perfil.carniceria' | translate }}</option>
+            </select>
+            <small id="sel1hp" class="form-text " >{{ 'perfil.seleRub' | translate }}</small>
+          </div>
+
 
 
         <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal" [hidden]="!data.userData.esComercio">
@@ -72,80 +64,38 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary">Guardar</button>
               </div>
->>>>>>> 17270a1ff1d207a9c0f5d452dfe1e56aebb6b053
+
             </div>
           </div>
         </div>
-
-<<<<<<< HEAD
-                <div class="form-group" [hidden]="!data.userData.esComercio">
-                  <label for="sel1">{{ 'perfil.rubro' | translate }} Rubro:</label>
-                  <select class="form-control input-sm" id="sel1">
-                    <!--
-                    <option>Comida</option>
-                    <option>Perfumeria</option>
-                    <option>Carniceria</option>
-                    -->
-                    <option>{{ 'perfil.comida' | translate }}</option>
-                    <option>{{ 'perfil.perfumeria' | translate }}</option>
-                    <option>{{ 'perfil.carniceria' | translate }}</option>
-                  </select>
-                  <small id="sel1hp" class="form-text " >{{ 'perfil.seleRub' | translate }}</small>
-                </div>
-
-          </form>
-=======
+        </div>
       </form>
->>>>>>> 17270a1ff1d207a9c0f5d452dfe1e56aebb6b053
     </div>
 
     <div class="col-md-6">
       <div>
         <form>
           <div class="form-group">
-            <!--
-            <label for="name" i18n="nombre | nombre del usuario @@perfilNombre">Nombre de Usuario</label>
-            <input [(ngModel)]="data.userData.nombreUsuario" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name">
-<<<<<<< HEAD
-            <small id="nameHelp" class="form-text " i18n="ingrese | ingrese su nombre @@perfilIngNom">Enter your user’s name</small>
-            -->
             <label for="name" >{{ 'perfil.nombre' | translate }}</label>
             <input [(ngModel)]="data.userData.nombreUsuario" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="{{ 'perfil.name_placeholder' | translate }}">
             <small id="nameHelp" class="form-text " >{{ 'perfil.ingreseNom' | translate }}</small>
-=======
->>>>>>> 17270a1ff1d207a9c0f5d452dfe1e56aebb6b053
           </div>
-          <!--
-          <div class="form-group">
-            <label for="email" i18n="email | email @@perfilEmail">Email</label>
-            <input [(ngModel)]="data.userData.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
-                   placeholder="Enter your email">
-          </div>
-          -->
           <div class="form-group">
             <label for="email" >{{ 'perfil.email' | translate }}</label>
             <input [(ngModel)]="data.userData.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
                    placeholder="{{ 'perfil.email_placeholder' | translate }}">
             <small id="emailHelp" class="form-text " >{{ 'perfil.ingEmail' | translate }}</small>
           </div>
-          <!--
-          <div class="form-group">
-            <label for="Calle" i18n="direccion | direccion @@perfilDireccion">Direccion calle</label>
-            <input [(ngModel)]="data.userData.calle" name="Calle" class="form-control" id="Calle" aria-describedby="descHelp">
-            <small id="descHelp" class="form-text " i18n="ingrese | ingrese su direccion @@perfilIngDir">Ingresa una dirección</small>
-          </div>
-          -->
           <div class="form-group">
             <label for="Calle" >{{ 'perfil.direccion' | translate }}</label>
             <input [(ngModel)]="data.userData.calle" name="Calle" class="form-control" id="Calle" aria-describedby="descHelp">
             <small id="descHelp" class="form-text " >{{ 'perfil.ingDir' | translate }}</small>
-
           </div>
         </form>
 
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button class="btn btn-success" (click)="actualizarPerfilUsuario()" >{{ 'perfil.actualizar' | translate }}</button>
-          <button class="btn btn-success" (click)="ConvertirEnComerciante" [hidden]="data.userData.esComercio">{{ 'perfil.convertir' | translate }} </button>
+          <button class="btn btn-outline-success" (click)="actualizarPerfilUsuario()" >{{ 'perfil.actualizar' | translate }}</button>
+          <button class="btn btn-outline-success" data-toggle="modal" data-target="#ModalConvertirComer" [hidden]="data.userData.esComercio">{{ 'perfil.convertir' | translate }} </button>
         </div>
 
 
@@ -158,7 +108,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <p> {{ 'perfil.estasSeguro' | translate }} </p>
+                <p> Está seguro que quiere realizar esta operación </p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
@@ -172,7 +122,7 @@
         <br>
         <br>
         <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!userUpdate" >
-          <strong>{{ 'perfil.exito' | translate }}Success!</strong>{{ 'perfil.actualizado' | translate }} User Updated.
+          <strong>{{ 'perfil.exito' | translate }}</strong>{{ 'perfil.actualizado' | translate }}
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
