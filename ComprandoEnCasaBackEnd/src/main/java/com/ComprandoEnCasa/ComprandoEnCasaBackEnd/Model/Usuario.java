@@ -250,4 +250,13 @@ public  class Usuario {
             productos.add(producto);
         }
     }
+
+    private void agregarHistorialDeCOmpras(ListaDeCompras listaDeCompras){
+        getHistorialDeCompras().add(listaDeCompras);
+    }
+
+    public void generarComprar(){
+        /*A partir del modo envio(retirar en el local o envio a domicilio) genero la compra*/
+        agregarHistorialDeCOmpras(getListaDeCompras());
+    }
 }

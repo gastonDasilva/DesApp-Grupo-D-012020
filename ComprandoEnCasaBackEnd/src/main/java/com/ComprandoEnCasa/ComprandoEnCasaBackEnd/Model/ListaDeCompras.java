@@ -72,5 +72,10 @@ public class ListaDeCompras {
         return this.getProductosAcumulados().size();
     }
 
+    public  void limpiarProductosEnCarrito(){
+        setProductosAcumulados(new ArrayList<Producto>());
+        setMontoAcumulado(0);
+    }
+
 
 }

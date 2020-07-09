@@ -23,6 +23,9 @@ public class UsuarioService {
     @Autowired
     private  ListaDeComprasService ListaDeComprasService;
 
+    @Autowired
+    private SendMailService sendMailService;
+
     @Transactional
     public Usuario save(Usuario model) {
         return this.usuarioRepository.save(model);
@@ -116,8 +119,9 @@ public class UsuarioService {
                 user -> {
                     ListaDeCompras listaCompras = new ListaDeCompras();
                     ListaDeComprasService.save(listaCompras);
-                    user.getHistorialDeCompras().add(user.getListaDeCompras());
-                    user.setListaDeCompras(listaCompras);
+                    user.generarComprar();
+                    user.setListaDeCompras(listaCompras); /*Con lo de abajo se envia el mail.*/
+                    //sendMailService.sendMail("gastonoscardasilva@gmail.com",user.getEmail(),"PRueba","Probando los mails ");
                     return usuarioRepository.save(user);
                 }).get();
     }
