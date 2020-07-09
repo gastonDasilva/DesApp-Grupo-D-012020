@@ -21,6 +21,7 @@
       <tr>
         <th>ID</th>
         <th>Costo de la compra</th>
+        <th> </th>
       </tr>
       </thead>
       <tbody>
@@ -28,6 +29,11 @@
                                                               
           <td> {{ compra.id }} </td>
           <td> {{ compra.montoAcumulado }}  </td>
+          
+          <td>
+            <button class="btn btn-primary" (click)="verDetallesDeProductos(compra.productosAcumulados)"> Ver detalles </button>
+          </td>
+        
       </tr>
      </tbody>
     </table>

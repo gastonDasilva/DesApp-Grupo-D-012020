@@ -39,6 +39,10 @@ export class ApiService {
       this.urlLOcal+'productos', { observe: 'response' });
   }
 
+  getHistorialDeComprasAPI$(userData: UsuarioData): Observable<HttpResponse<ListaDeCompras[]>>{
+    return this.http.get<ListaDeCompras[]>(this.urlLOcal+'usuario/historialDeCompras'+userData.id,{ observe: 'response'});
+  }
+
   getProductosByConsultaAPI$(consulta:string): Observable<HttpResponse<Producto[]>> {
   /*Busco los productos a partir de una consulta, por ahora busca por nonbre y marca.*/
     let paramsConsulta = new HttpParams().set('q',consulta);

@@ -8,6 +8,7 @@ import { ProductosCargadosComponent } from './productos-cargados/productos-carga
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HistorialComponent } from './historial-de-compras/historial.component';
+import { DetallesComponent } from './detalles-compra/detalles.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: "history", component: HistorialComponent},
   {path: "home/history", component: HistorialComponent},
   {path: "home/history", redirectTo: "history"},
-  {path: "history/home", redirectTo: "home" }
+  {path: "history/home", redirectTo: "home" },
+  {path: "detalles", component: DetallesComponent}
 ];
 
 @NgModule({

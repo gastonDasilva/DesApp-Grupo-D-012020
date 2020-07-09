@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Producto } from './producto';
 import { DataService } from './data.service';
 import { Router, RouterLink } from '@angular/router';
+import { ListaDeCompras } from './listaDeCompras';
+import { UsuarioData } from './usuarioData';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ import { Router, RouterLink } from '@angular/router';
 export class AppComponent {
   title = 'ComprandoEnCasaFrontend';
    products: Producto[] = [];
+   history: ListaDeCompras[] = [];
 
 constructor(public router: Router,private http: HttpClient,private api: ApiService, public data: DataService) {}
 
@@ -46,6 +49,24 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
                          err => console.log(err));
       this.data.products = this.products;
     }
+
+
+    public getHistorialDeComprasAPI$(user: UsuarioData){
+      this.history = [];
+       this.api.getHistorialDeComprasAPI$(user)
+        .subscribe(resp => {
+                       console.log(resp);
+                       //
+                       for (const data of resp.body){
+                             this.history.push(data);
+                       }
+                       console.log(this.history);
+                      },
+
+                      err => console.log(err));
+          this.data.historialDeCompras = this.history;
+        }
+
 
     public getProductosEnOfertaAPI$() {
       this.products = [];
@@ -132,7 +153,7 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
       public getAgregarCompraEnHistorial(){
         this.api.realizarCompra(this.data.getuserData())
             .subscribe(resp => { const data = resp.historialDeCompras
-                                 this.data.setHistorialDeCompras(data);
+                                 this.data.setHistorialDeCompras(data);      
                                },
                        err => console.log(err));
       }

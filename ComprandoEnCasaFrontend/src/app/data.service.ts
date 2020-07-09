@@ -10,13 +10,33 @@ export class DataService {
 
  products: Producto[] =[];
  productosEnCarrito: Producto[] =[];
- historialDeCompras: ListaDeCompras[] = [];
+ historialDeCompras: ListaDeCompras[];
  montoGastado: number = 0;
  nombreUsuario: String = ""
  userData: UsuarioData;
  userEsComercio: boolean =false;
  productosEnOferta: Producto[]=[];
+ productosAcumulados: Producto[];
+ productosCopia: Producto[];
   constructor() {}
+
+    getProductosAcumulados(): Producto[]{
+      return this.productosAcumulados;
+    }
+
+    setProductosAcumulados(productos: Producto[]){
+      this.productosCopia = productos;
+      this.productosAcumulados = this.productosCopia;
+      this.productosCopia = [];
+    }
+
+    getProductosCopia(): Producto[]{
+      return this.productosCopia;
+    }
+
+    setProductosCopia(productos: Producto[]){
+      return this.productosCopia = productos;
+    }
 
     getProductos(): Producto[]{
     /*Busco todo los productos.*/
@@ -44,8 +64,16 @@ export class DataService {
     }
 
     setHistorialDeCompras(compras: ListaDeCompras[]){
-      this.historialDeCompras = compras;
-      this.userData.historialDeCompras = this.getHistorialDeCompras();
+      return this.historialDeCompras = compras;
+    }
+
+    getHistorialDeComprasDelUsuario(): ListaDeCompras[]{
+      return this.userData.historialDeCompras;
+    }
+
+    actualizarHistorialDeCompras(){
+      this.historialDeCompras = this.getHistorialDeComprasDelUsuario();
+      console.log("Cant compras en historial:", this.historialDeCompras.length);
     }
 
     actualizarProductosEnCarrito(){

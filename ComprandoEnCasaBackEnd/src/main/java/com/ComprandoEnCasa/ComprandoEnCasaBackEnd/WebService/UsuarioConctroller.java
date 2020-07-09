@@ -41,6 +41,15 @@ public class UsuarioConctroller {
         return usuarioService.findById(id).getListaDeCompras();
     }
 
+
+    @CrossOrigin
+    @GetMapping("/api/usuario/historialDeCompras/{id}")
+    public List<ListaDeCompras> getHistorialDeComprasByIdUser(@PathVariable Long id){
+        // Busco el historial de compras que tiene el usuario con el ID corespondiente.
+        return usuarioService.findById(id).getHistorialDeCompras();
+    }
+
+
     @CrossOrigin
     @PutMapping("api/usuario/actualizarUsuario/{id}")
     public Usuario updateUsuarioData(@RequestBody Usuario usuario, @PathVariable Long id) {

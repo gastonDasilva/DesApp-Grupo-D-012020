@@ -15,5 +15,12 @@ import { ListaDeCompras } from '../listaDeCompras';
     constructor(public appcomp: AppComponent, public data: DataService,private route: Router){}
 
     ngOnInit(){
+      console.log("this history is: ", this.data.userData.historialDeCompras);
+    }
+
+    public verDetallesDeProductos(productos: Producto[]){
+      this.data.setProductosAcumulados(productos);
+      this.route.navigateByUrl('detalles');
+      console.log("los productos de esta compra son: ", this.data.getProductosAcumulados());
     }
   }
