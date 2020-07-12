@@ -1,10 +1,13 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 import org.uqbar.commons.model.UserException;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.ArrayList;
 
 public class Comercio extends Usuario {
+
+    private Logger log = Logger.getLogger(this.getClass());
 
     private String nombreComercio;
     private String rubro;
@@ -141,7 +144,7 @@ public class Comercio extends Usuario {
             }
         }
         if(prod == null){
-            System.out.println("No se encontro el producto con id: " + cod);
+            log.trace("No se encontro el producto con id: " + cod);
             return prod;
         }
         return prod;
@@ -169,10 +172,10 @@ public class Comercio extends Usuario {
         for(Producto p : productos) {
             contador++;
             palabraImpresa = palabraProducto.concat(Integer.toString(contador));
-            System.out.println(palabraImpresa);
+            log.trace(palabraImpresa);
             p.imprimirEnPantalla();
         }
-        System.out.println("Cantidad de productos listados: "+ Integer.toString(contador));
+        log.trace("Cantidad de productos listados: "+ Integer.toString(contador));
     }
 
     public boolean aceptaMedioDePago(String esteMedioDePago){

@@ -3,10 +3,14 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
+
 
 /*@Entity
 @Table(name = "BSUsuarioCliente")*/
 public class Cliente extends Usuario {
+
+    private Logger log = Logger.getLogger(this.getClass());
     /*@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)*/
     private long ClienteID;
@@ -67,7 +71,7 @@ public class Cliente extends Usuario {
 
     */
     if(this.getListaDeCompras() == null){
-        System.out.println("tenes que registrarte!");
+        log.trace("tenes que registrarte!");
     }
     else{
         this.verificarUmbralDeProducto(producto, comercio);
@@ -79,7 +83,7 @@ public class Cliente extends Usuario {
         switch (producto.getCategoria()) {
             case "Alimento":
                 if (this.getMontoAcumuladoEnAlimentos() + producto.getPrecio() > comercio.getMontoMaximoCategoriaAlimentos()) {
-                    System.out.println("AVISO: superaste el monto maximo de compra en categorias de alimento");
+                    log.trace("AVISO: superaste el monto maximo de compra en categorias de alimento");
                 } else {
                     this.getListaDeCompras().agregarProducto(producto);
                     this.setMontoGastado(this.getMontoGastado() + producto.getPrecio());
@@ -89,7 +93,7 @@ public class Cliente extends Usuario {
                 break;
             case "Bebida alcoholica":
                 if (this.getMontoAcumuladoEnBebidasAlcoholicas() + producto.getPrecio() > comercio.getMontoMaximoCategoriaBebidasAlcoholicas()) {
-                    System.out.println("AVISO: superaste el monto maximo de compra en categorias de bebidas alcoholicas");
+                    log.trace("AVISO: superaste el monto maximo de compra en categorias de bebidas alcoholicas");
                 } else {
                     this.getListaDeCompras().agregarProducto(producto);
                     this.setMontoGastado(this.getMontoGastado() + producto.getPrecio());

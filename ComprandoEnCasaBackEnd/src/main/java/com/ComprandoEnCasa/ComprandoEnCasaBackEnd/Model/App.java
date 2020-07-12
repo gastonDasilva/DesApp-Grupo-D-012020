@@ -2,10 +2,13 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 import org.uqbar.commons.model.UserException;
 
 public class App {
+
+    private Logger log = Logger.getLogger(this.getClass());
 
     private List<Comercio> comercios;
     private List<Cliente> clientes;
@@ -55,7 +58,7 @@ public class App {
             prod = c.buscarProductoPorCodigo(cod);
         }
         if(prod == null){
-            System.out.println("No se encontro el producto con id: " + cod);
+            log.trace("No se encontro el producto con id: " + cod);
             return prod;
         }
         return prod;

@@ -5,12 +5,15 @@ import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.ListaDeComprasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 @RestController
 @EnableAutoConfiguration
 public class LIstaDeComprasController {
+
+    private Logger log = Logger.getLogger(this.getClass());
 
     @Autowired
     private ListaDeComprasService listaDeComprasService;
@@ -27,7 +30,7 @@ public class LIstaDeComprasController {
     @CrossOrigin
     @PutMapping("/api/listadecomprasAdd/{id}")
     public ListaDeCompras agregarProductoALCarrito(@RequestBody ListaDeCompras listaDeCompras,@PathVariable Long id, @RequestParam("idProducto") Long idProducto) {
-        System.out.println(listaDeCompras);
+        log.trace(listaDeCompras);
         return listaDeComprasService.agregarProductoALCarrito(id,idProducto);
     }
 
@@ -35,7 +38,7 @@ public class LIstaDeComprasController {
     @CrossOrigin
     @PutMapping("/api/listadecomprasDeleteProduct/{id}")
     public ListaDeCompras listadecomprasDeleteProduct(@RequestBody ListaDeCompras listaDeCompras,@PathVariable Long id, @RequestParam("idProducto") Long idProducto) {
-        System.out.println(listaDeCompras);
+        log.trace(listaDeCompras);
         return listaDeComprasService.sacarProductoDelCarrito(id,idProducto);
     }
 

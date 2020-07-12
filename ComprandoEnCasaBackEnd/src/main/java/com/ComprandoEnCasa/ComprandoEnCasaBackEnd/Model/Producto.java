@@ -2,10 +2,12 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
 
 import javax.persistence.*;
+import org.apache.log4j.Logger;
 
 @Entity
 @Table(name = "BSProducto")
 public class Producto {
+
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -106,12 +108,13 @@ public class Producto {
     }
 
     public void imprimirEnPantalla() {
-        System.out.print("[");
-        System.out.print("Nombre del producto: "+ this.getNombreProducto());
-        System.out.print(" ,Marca: "+ this.getMarca());
-        System.out.print(" ,stock: "+this.getStock());
-        System.out.println(" ,precio:"+ this.getPrecio());
-        System.out.println("]");
+        Logger log = Logger.getLogger(this.getClass());
+        log.trace("[");
+        log.trace("Nombre del producto: "+ this.getNombreProducto());
+        log.trace(" ,Marca: "+ this.getMarca());
+        log.trace(" ,stock: "+this.getStock());
+        log.trace(" ,precio:"+ this.getPrecio());
+        log.trace("]");
     }
 
 
