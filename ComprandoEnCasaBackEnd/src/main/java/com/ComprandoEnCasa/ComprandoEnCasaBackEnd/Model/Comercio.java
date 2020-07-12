@@ -9,7 +9,7 @@ public class Comercio extends Usuario {
     private String nombreComercio;
     private String rubro;
     private String domicilio;
-    private String diasYHorariosDeAtencion;
+    private String horariosYDiasDeAtencion;
     private String mediosDePago;
     private float distanciaMaximaEnvio;
     private List<Producto> productos;
@@ -30,8 +30,8 @@ public class Comercio extends Usuario {
         return domicilio;
     }
 
-    public String getDiasYHorariosDeAtencion() {
-        return diasYHorariosDeAtencion;
+    public String getHorariosYDiasDeAtencion() {
+        return horariosYDiasDeAtencion;
     }
 
     public String getMediosDePago() {
@@ -55,8 +55,8 @@ public class Comercio extends Usuario {
         this.domicilio = domicilio;
     }
 
-    public void setDiasYHorariosDeAtencion(String diasYHorariosDeAtencion) {
-        this.diasYHorariosDeAtencion = diasYHorariosDeAtencion;
+    public void setHorariosYDiasDeAtencion(String horariosYDiasDeAtencion) {
+        this.horariosYDiasDeAtencion = horariosYDiasDeAtencion;
     }
 
     public void setMediosDePago(String mediosDePago) {
@@ -96,7 +96,7 @@ public class Comercio extends Usuario {
         this.setNombreComercio(nombre);
         this.setRubro(rubro);
         this.setDomicilio(domicilio);
-        this.setDiasYHorariosDeAtencion(diasYHorariosDeAtencion);
+        this.setHorariosYDiasDeAtencion(diasYHorariosDeAtencion);
         this.setMediosDePago(mediosDePago);
         this.setDistanciaMaximaEnvio(distancia);
         this.setProductos(new ArrayList<Producto>());

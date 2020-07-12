@@ -28,10 +28,11 @@
 
           <div class="form-group" [hidden]="!data.userData.esComercio">
             <label for="sel1">{{ 'perfil.rubro' | translate }}</label>
-            <select class="form-control input-sm" id="sel1">
-              <option>{{ 'perfil.comida' | translate }}</option>
+            <select class="form-control input-sm" name="rubros" [(ngModel)]="data.userData.rubro" id="sel1">
+              <option [value]="item" *ngFor="let item of data.rubros">{{item}}</option>
+              <!--<option>{{ 'perfil.comida' | translate }}</option>
               <option>{{ 'perfil.perfumeria' | translate }}</option>
-              <option>{{ 'perfil.carniceria' | translate }}</option>
+              <option>{{ 'perfil.carniceria' | translate }}</option>-->
             </select>
             <small id="sel1hp" class="form-text " >{{ 'perfil.seleRub' | translate }}</small>
           </div>
@@ -53,11 +54,49 @@
                 </button>
               </div>
               <div class="modal-body">
-                <p> A IMPLEMENTAR EL Desarrollo de horarios y dias </p>
+                <div class="row" >
+                  <div class="table-responsive">
+                    <table class="table  table-hover">
+                      <thead class="thead-dark">
+                      <tr>
+                        <th >Dia</th>
+                        <th >Hora de inicio</th>
+                        <th >Hora de fin</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let item of data.userData.diasYHorariosDeAtencion">
+                        <td>  {{item.dia}}</td>
+                        <td> <input  type="number" name="hinicio" class="form-control" value={{item.horarioInicio}}  id="hinicio">  </td>
+                        <td> <input  type="number" name="hfin" class="form-control" value={{item.horarioFin}}  id="hfin"> </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--
+                  <div class="col-2">
+                    <small> {{item.dia}} </small>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="hinicio" > <small>Horario de inicio</small></label>
+                      <input  type="number" name="hinicio" class="form-control" [(ngModel)]="item.horarioInicio" id="hinicio">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="hfin" ><small>Horario de fin</small></label>
+                      <input  type="number" name="hfin" class="form-control" [(ngModel)]="item.horarioFin" id="hfin">
+                    </div>
+                  </div>
+-->
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" >Guardar</button>
               </div>
 
             </div>

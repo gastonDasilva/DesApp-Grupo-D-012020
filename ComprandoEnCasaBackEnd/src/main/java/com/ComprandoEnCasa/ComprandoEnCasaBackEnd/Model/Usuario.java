@@ -2,7 +2,7 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name = "BSUsuario")
@@ -40,7 +40,10 @@ public  class Usuario {
 
     /*Atributos del Comercio*/
     private String rubro;
-    private String  diasYHorariosDeAtencion;
+
+    @OneToMany(targetEntity = HorarioYDiaClass.class)
+    @JoinColumn(name="hyd_fk",referencedColumnName = "id")
+    private List<HorarioYDiaClass>  diasYHorariosDeAtencion;
     private float distanciaMaximaEnvio;
 
     @OneToMany(targetEntity = Producto.class)
@@ -206,11 +209,11 @@ public  class Usuario {
     /*Comercio*/
 
 
-    public String getDiasYHorariosDeAtencion() {
+    public List<HorarioYDiaClass> getDiasYHorariosDeAtencion() {
         return diasYHorariosDeAtencion;
     }
 
-    public void setDiasYHorariosDeAtencion(String diasYHorariosDeAtencion) {
+    public void setDiasYHorariosDeAtencion(List<HorarioYDiaClass> diasYHorariosDeAtencion) {
         this.diasYHorariosDeAtencion = diasYHorariosDeAtencion;
     }
 
@@ -259,4 +262,44 @@ public  class Usuario {
         /*A partir del modo envio(retirar en el local o envio a domicilio) genero la compra*/
         agregarHistorialDeCOmpras(getListaDeCompras());
     }
+
+    public Date getTurnoFechaFromUserComprador(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        String diasemana = diaSemana();
+        if(diasemana.equals("S")){
+            calendar.add(Calendar.DAY_OF_YEAR, 2);
+        }else if (diasemana.equals("D")){
+            calendar.add(Calendar.DAY_OF_YEAR, 1);
+        }
+        return calendar.getTime();
+    }
+
+    public String diaSemana ()
+    {
+        String letraD="";
+        TimeZone timezone = TimeZone.getDefault();
+        Calendar calendar = new GregorianCalendar(timezone);
+        int nD=calendar.get(Calendar.DAY_OF_WEEK);
+        switch (nD){
+            case 1: letraD = "D";
+                break;
+            case 2: letraD = "L";
+                break;
+            case 3: letraD = "M";
+                break;
+            case 4: letraD = "X";
+                break;
+            case 5: letraD = "J";
+                break;
+            case 6: letraD = "V";
+                break;
+            case 7: letraD = "S";
+                break;
+        }
+
+        return letraD;
+    }
+
+
 }

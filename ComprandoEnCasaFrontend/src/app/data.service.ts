@@ -8,6 +8,7 @@ import { ListaDeCompras } from './listaDeCompras';
 })
 export class DataService {
 
+ rubros:string[]=["Comida","Perfumeria","Jugueteria", "Limpieza"];
  products: Producto[] =[];
  productosEnCarrito: Producto[] =[];
  historialDeCompras: ListaDeCompras[];
@@ -56,6 +57,7 @@ export class DataService {
     }
 
     setuserData(user: UsuarioData){
+      console.log("Usuario actualizado:",user)
       return this.userData = user;
     }
 
@@ -94,5 +96,8 @@ export class DataService {
     this.nombreUsuario = this.userData.nombreUsuario;
     }
 
+    setListaDeCompras(listaDeCompras: ListaDeCompras){
+    this.userData.listaDeCompras = listaDeCompras;
+    }
 
 }

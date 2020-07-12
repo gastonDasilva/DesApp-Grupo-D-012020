@@ -14,6 +14,8 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
+  modoDeEnvio=0;
+
 
   constructor(public appcomp: AppComponent, public data: DataService,private route: Router,private translate: TranslateService, private titleService: Title) {
       this.translate.setDefaultLang('es');
@@ -34,7 +36,10 @@ export class CarritoComponent implements OnInit {
     }
 
     public realizarCompra(){
-      this.appcomp.getAgregarCompraEnHistorial();
-      this.route.navigateByUrl('history');
+      console.log(this.modoDeEnvio);
+     this.appcomp.comprar(this.modoDeEnvio.toString())
+
+      /*this.appcomp.getAgregarCompraEnHistorial();
+      this.route.navigateByUrl('history');*/
     }
 }

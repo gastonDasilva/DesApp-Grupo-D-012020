@@ -16,7 +16,7 @@
           {{ 'header.acciones' | translate }}
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userEsComercio" >{{ 'header.crear' | translate }}</a>
+          <a class="dropdown-item"  routerLink="/producto-create" [hidden]="!data.userData.esComercio" >{{ 'header.crear' | translate }}</a>
         </div>
       </li>
     </ul>
@@ -52,7 +52,7 @@
               <a class="dropdown-item"  (click)="signOut()" >{{ 'header.cerrar' | translate }}</a>
               <a class="dropdown-item"  (click)="verPerfil()" >{{ 'header.perfil' | translate }}</a>
               <a class="dropdown-item" (click)="verHistorial()">{{ 'header.historial' | translate }}</a>
-              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userEsComercio" >{{ 'header.productos' | translate }}</a>
+              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userData.esComercio" >{{ 'header.productos' | translate }}</a>
             </div>
 
             <div class="dropdown d-inline-block">

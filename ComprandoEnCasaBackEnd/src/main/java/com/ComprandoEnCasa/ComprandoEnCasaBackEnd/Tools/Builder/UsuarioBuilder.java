@@ -34,7 +34,6 @@ public class UsuarioBuilder {
         user.setLocalidad(localidad);
         user.setPais(pais);
         user.setProvincia(provincia);
-        user.setDiasYHorariosDeAtencion(horarioYDIaAtencion);
         return user;
     }
 
@@ -72,10 +71,5 @@ public class UsuarioBuilder {
     public UsuarioBuilder withDireccionCalle(String calle){
         this.direccionCalle = calle;
         return this;
-    }
-
-    public UsuarioBuilder withHorarioYDIaAtencion(String listHyD){
-        this.horarioYDIaAtencion = listHyD;
-        return  this;
     }
 }

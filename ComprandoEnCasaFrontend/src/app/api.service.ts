@@ -29,8 +29,9 @@ export class ApiService {
    }
 
 
-  realizarCompra(userData: UsuarioData){
-    return this.http.put<UsuarioData>(this.urlLOcal+'/usuario/realizarCompra/'+userData.id,{ observe: 'response'});
+  realizarCompra(userData: UsuarioData,modo:String){
+    //let paramsModoEnvio = new HttpParams().set('modoEnvio',modo);
+    return this.http.put<UsuarioData>(this.urlLOcal+'/usuario/realizarCompra/'+userData.id,{idUsuario: userData.id,modoEnvio: modo },{ /*params:paramsModoEnvio,*/observe: 'response'});
   }
 
  actualizarPerfilUsuario(userData: UsuarioData){

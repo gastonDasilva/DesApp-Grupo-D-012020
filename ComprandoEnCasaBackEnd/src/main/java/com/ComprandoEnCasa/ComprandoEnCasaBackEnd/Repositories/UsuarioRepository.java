@@ -16,5 +16,7 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
     @Query(value = "Select * from BSUsuario where email like %?1%", nativeQuery = true)
     Optional<Usuario> findByEmail(String  email);
 
+    @Query(value = "SELECT BSUsuario.id FROM BSProducto INNER JOIN BSUsuario ON(BSUsuario.pd_fk = BSProducto.id ) WHERE BSProducto.id IN (?1) ",nativeQuery = true)
+    List<Long>findUserIDsFRomProductsIDs(String productosID);
 
 }

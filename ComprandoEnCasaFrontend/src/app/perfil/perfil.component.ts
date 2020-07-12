@@ -14,6 +14,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
   userUpdate: Boolean = false;
+
   constructor(public router: Router,public appcomp: AppComponent,public data: DataService,translate: TranslateService) {
     translate.setDefaultLang('es');
     translate.use('es');

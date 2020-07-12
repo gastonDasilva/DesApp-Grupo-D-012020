@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class UsuarioService {
@@ -22,9 +20,10 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
     @Autowired
     private  ListaDeComprasService ListaDeComprasService;
-
     @Autowired
     private SendMailService sendMailService;
+    @Autowired
+    private HorarioYDiaClassService horarioYDiaClassService;
 
     @Transactional
     public Usuario save(Usuario model) {
@@ -53,8 +52,36 @@ public class UsuarioService {
                     user.setImagenPerfil(newuser.getImagenPerfil());
                     user.setLocalidad(newuser.getLocalidad());
                     user.setEsComercio(newuser.getEsComercio());
+                    user.setRubro(newuser.getRubro());
+                    generarDiasYHorarios(user,newuser);
                     return usuarioRepository.save(user);
         }).get();
+    }
+
+    @Transactional
+    private void generarDiasYHorarios(Usuario user, Usuario newUser){
+        /*Genero los dias y horarios si el usuario es un comercio y el campo de dias y horarios es vacio*/
+        if(user.getEsComercio()){
+            List<HorarioYDiaClass> horarioYDiaClasses;
+            if(user.getDiasYHorariosDeAtencion().isEmpty()){
+                horarioYDiaClasses = new ArrayList<HorarioYDiaClass>();
+                List<String> dias = HorarioYDiaClass.getDiasSemanales();
+                for(String dia: dias){
+                    /*generio los horarios y dias para los usuarios que son comercio.*/
+                    HorarioYDiaClass hydia = new HorarioYDiaClass(dia,8,18);
+                    hydia = horarioYDiaClassService.save(hydia);
+                    horarioYDiaClasses.add(hydia);
+                }
+            }else{
+                horarioYDiaClasses = newUser.getDiasYHorariosDeAtencion();
+                /*actualizo los horarios y dias*/
+                for(HorarioYDiaClass hyd: horarioYDiaClasses){
+                    horarioYDiaClassService.save(hyd);
+                }
+            }
+
+            user.setDiasYHorariosDeAtencion(horarioYDiaClasses);
+        }
     }
 
 
@@ -114,16 +141,45 @@ public class UsuarioService {
         return userReturn;
     }
 
-    public Usuario realizarCompra(Long idUser){
+    public Usuario realizarCompra(Long idUser,Integer modo){
         return usuarioRepository.findById(idUser).map(
                 user -> {
                     ListaDeCompras listaCompras = new ListaDeCompras();
                     ListaDeComprasService.save(listaCompras);
                     user.generarComprar();
-                    user.setListaDeCompras(listaCompras); /*Con lo de abajo se envia el mail.*/
-                    //sendMailService.sendMail("gastonoscardasilva@gmail.com",user.getEmail(),"PRueba","Probando los mails ");
+                    /*Con lo de abajo se envia el mail.*/
+                    enviarMailSegúnModoDeEnvio(user,modo);
+                    user.setListaDeCompras(listaCompras);
+
                     return usuarioRepository.save(user);
                 }).get();
+    }
+
+    private void enviarMailSegúnModoDeEnvio(Usuario user, Integer modo){
+        /*Segun el modo de envio gestiono el mail de compra.*/
+        switch (modo){
+            case 0: break; /*falta implentar el mail. */
+                //sendMailService.sendMail("gastonoscardasilva@gmail.com",user.getEmail(),"PRueba","Probando los mails ");
+        }
+    }
+
+    private  List<Usuario> getUsuariosComercioFromCarrito(String productosID){
+        List<Usuario> users = new ArrayList<Usuario>();
+        List<Long> usuariosIDs =  usuarioRepository.findUserIDsFRomProductsIDs(productosID);
+        for (Long userID :usuariosIDs){
+            Usuario user = findById(userID);
+            users.add(user);
+        }
+        return users;
+    }
+
+    private void gestionarMailModoRetiroEnLocal(ListaDeCompras listaDeCompras){
+        String body = "";
+        String productosID = listaDeCompras.getProductosIDFromCarrito();
+        List<Usuario> users = getUsuariosComercioFromCarrito(productosID);
+        for (Usuario user: users){
+            Date turnoFecha = user.getTurnoFechaFromUserComprador();
+        }
     }
 
 }

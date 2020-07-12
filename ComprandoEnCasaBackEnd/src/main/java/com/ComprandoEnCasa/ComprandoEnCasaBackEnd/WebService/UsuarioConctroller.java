@@ -1,5 +1,6 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.WebService;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Dao.CompraDAO;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.*;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service.UsuarioService;
 import netscape.javascript.JSObject;
@@ -81,9 +82,9 @@ public class UsuarioConctroller {
 
     @CrossOrigin
     @PutMapping("api/usuario/realizarCompra/{id}")
-    public Usuario realizarCompraEnChanguito(@RequestParam(required=false, name = "modoEnvio") String modoEnvio,@PathVariable Long id){
+    public Usuario realizarCompraEnChanguito(@RequestBody CompraDAO compraDAO, @PathVariable Long id){
         // agrego al historial de compras los productos agregados en el carrito del usuario
-        return usuarioService.realizarCompra(id);
+        return usuarioService.realizarCompra(id,compraDAO.getModoEnvio());
     }
 
 
