@@ -1,61 +1,29 @@
-<!--<div class="container mt-5">
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Marca</th>
-      <th>precio</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let producto of productos">
+<app-header></app-header>
+<body>
+<div class="container  p-destacados" style="margin-top: 70px;">
+  <div class="row">
+    <div class="col-md-3 mt-4" *ngFor="let producto of data.products">
+      <div class="card text-center border-dark " style="box-shadow: 0px 0px 9px 4px grey;">
+        <div class="card-header">
+          <img src={{producto.imagen}} class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{producto.nombreProducto}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{producto.marca}}</h6>
+          <h1><span class="badge badge-secondary">${{producto.precio}}</span></h1>
 
-      <td>{{ producto.nombreProducto }}</td>
-      <td> {{ producto.marca }}</td>
-      <td> {{ producto.precio }}</td>
-      <td>
-        <button class="btn btn-primary" (click)="selectProduct(producto)"> Show details</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <div class="card text-center" *ngIf="selectedproducto">
-    <div class="card-header">
-      # {{selectedproducto.id}}
-    </div>
-    <div class="card-block">
-      <h4 class="card-title">{{selectedproducto.name}}</h4>
-      <p class="card-text">
-        {{selectedproducto.description}}
-      </p>
-    </div>
+        </div>
+        <div class="card-footer text-muted">
+          <a routerLink="carrito">
+            <!--<button class="btn btn-primary" (click)="agregarProducto(producto)" i18n="agregar | agregar al carrito @@homeAgregar"> Agregar Al Carrito</button>
+            -->
+            <button class="btn btn-primary" [translate]="'home.agregar'" (click)="agregarProducto(producto)" ></button>
+          </a>
 
-  </div>
-</div>-->
-  <div class="container  p-destacados" style="margin-top: 40px;">
-    <div class="row">
-      <div class="col-md-3 mt-4" *ngFor="let producto of data.products">
-        <div class="card text-center border-dark " >
-          <div class="card-header">
-            <img src={{producto.imagen}} class="card-img-top" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{producto.nombreProducto}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{producto.marca}}</h6>
-            <h1><span class="badge badge-secondary">${{producto.precio}}</span></h1>
-
-          </div>
-          <div class="card-footer text-muted">
-            <a routerLink="carrito">
-              <!--<button class="btn btn-primary" (click)="agregarProducto(producto)" i18n="agregar | agregar al carrito @@homeAgregar"> Agregar Al Carrito</button>
-              -->
-              <button class="btn btn-primary" [translate]="'home.agregar'" (click)="agregarProducto(producto)" ></button>
-            </a>
-
-          </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
-<app-header></app-header>
+</body>
+

@@ -1,4 +1,21 @@
-<div class="main-form" >
+<app-header></app-header>
+<body>
+  <div class="container product-form " style="margin-top: 140px;">
+    <div class="row">
+      <div class="col-10">
+        <h1 >Crear Producto</h1>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-outline-light" (click)="volverAlHome()">
+          <small >Volver al Home</small><i class="fa fa-angle-double-left"></i>
+        </button>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+
+      <div class="main-form" >
         <form>
 
           <div class="form-row">
@@ -58,16 +75,18 @@
           <!--
           <button class="btn btn-primary" (click)="createProducto()" i18n="crear | crear producto @@productoCrear">Crear Producto</button>
           -->
-          <button class="btn btn-primary" [translate]="'productos.crear'" (click)="createProducto()" ></button>
+          <button class="btn btn-outline-success" [translate]="'productos.crear'" (click)="createProducto()" ></button>
         </form>
 
-  <br>
-  <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!alert" >
-    <strong i18n="success | exito @@productoExito">{{ 'perfil.exito' | translate }}</strong> {{ 'productos.creado' | translate }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+        <br>
+        <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!alert" >
+          <strong i18n="success | exito @@productoExito">{{ 'perfil.exito' | translate }}</strong> {{ 'productos.creado' | translate }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
+</body>
 
-</div>
-<app-header></app-header>
