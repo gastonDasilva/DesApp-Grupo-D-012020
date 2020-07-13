@@ -114,6 +114,15 @@ public class InitServiceInMemory {
         producto = new Producto("Manteca", "Ilolay", 33, 216, "https://d26lpennugtm8s.cloudfront.net/stores/798/865/products/38038584-d285d9fa9ff9b6687d15721105043983-640-0.jpg", "Comida");
         productoService.save(producto);
 
+        producto = new Producto("Hamburguesa", "Good Mark", 28, 164, "https://www.maxiconsumo.com/media/catalog/product/cache/29/image/300x/9df78eab33525d08d6e5fb8d27136e95/9/2/9288_9.jpg", "Comida");
+        productoService.save(producto);
+
+        producto = new Producto("Tapa de empanadas", "La Salteña", 35, 68, "https://www.stock.com.py/images/thumbs/0143588.jpeg", "Comida");
+        productoService.save(producto);
+
+        producto = new Producto("Mayonesa", "Natura", 26, 116, "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/2440048_f.jpg", "Comida");
+        productoService.save(producto);
+
         usuario1.agregarProductoForComercio(producto);
 
         usuarioService.save(usuario1);
