@@ -72,9 +72,17 @@
             </div>
           </div>
 
-          <!--
-          <button class="btn btn-primary" (click)="createProducto()" i18n="crear | crear producto @@productoCrear">Crear Producto</button>
-          -->
+          <small>importar productos</small>
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="onFileChange($event)"
+                     aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Elegir Archivo</label>
+            </div>
+          </div>
+
+          <br>
+          <br>
           <button class="btn btn-outline-success" [translate]="'productos.crear'" (click)="createProducto()" ></button>
         </form>
 
