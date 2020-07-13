@@ -1,6 +1,11 @@
+<app-header></app-header>
+
+<body>
+
+
 <div class="container " style="margin-top: 140px;">
   <!--Card image-->
-  <div class="card card-cascade narrower">
+  <div class="card card-cascade narrower" style="box-shadow: 0px 0px 10px 6px black;">
 
     <div class="py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
@@ -12,21 +17,11 @@
           <i class="fa fa-columns mt-0"></i>
         </button>
       </div>
-      <!--
-      <h1 class="white-text mx-3" i18n="producto | productos cargados @@prodCarProdCar">Productos Cargados</h1>
-      -->
       <h1 class="white-text mx-3">{{ 'productos.cargado' | translate }}</h1>
-
       <div>
-        <!--
-        <button type="button" class=" btn btn-light" routerLink="home">
-          <small i18n="seguir | seguir comprando @@prodCarSeguir">Seguir Comprando</small><i class="fa fa-angle-double-left"></i>
-        </button>
-        -->
-        <button type="button" class=" btn btn-light" routerLink="home">
+        <button type="button" class=" btn btn-light" (click)="seguirComprando()">
           <small >{{ 'productos.seguir' | translate }}</small><i class="fa fa-angle-double-left"></i>
         </button>
-
       </div>
 
     </div>
@@ -37,12 +32,6 @@
         <thead class="thead-dark">
         <tr>
           <th></th>
-          <!--
-          <th i18n="nombre | nombre @@prodCarNombre">Nombre</th>
-          <th i18n="marca | marca @@prodCarMarca">Marca</th>
-          <th i18n="precio | nombre @@prodCarPrecio">precio</th>
-          <th i18n="cantidad | cantidad @@prodCarCantidad">cantidad</th>
-          -->
           <th >{{ 'productos.nombre' | translate }}</th>
           <th >{{ 'productos.marca' | translate }}</th>
           <th >{{ 'productos.precio' | translate }}</th>
@@ -60,23 +49,18 @@
           <td> {{ producto.cantidadAComprar }} </td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <!--<button type="button" class=" btn btn-danger" (click)="DeletectProductFromUserComerciante(producto)"> -->
               <button type="button" class=" btn btn-danger" >
                 <i class="fa fa-ban"></i>
               </button>
-              <!--<button type="button" class=" btn btn-success" (click)="ModificarProductFromUserComerciante(producto)">-->
               <button type="button" class=" btn btn-success">
                 <i class="fa fa-check"></i>
               </button>
             </div>
-
-            <!--<button class="btn btn-primary" (click)="DeletectProductFromCarrito(producto)"> <i class="glyphicon glyphicon-remove mr-2 " aria-hidden="true"></i></button>-->
           </td>
         </tr>
         </tbody>
       </table>
     </div>
-
   </div>
-
 </div>
+</body>

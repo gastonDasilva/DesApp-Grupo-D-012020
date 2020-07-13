@@ -64,14 +64,7 @@ public class UsuarioService {
         if(user.getEsComercio()){
             List<HorarioYDiaClass> horarioYDiaClasses;
             if(user.getDiasYHorariosDeAtencion().isEmpty()){
-                horarioYDiaClasses = new ArrayList<HorarioYDiaClass>();
-                List<String> dias = HorarioYDiaClass.getDiasSemanales();
-                for(String dia: dias){
-                    /*generio los horarios y dias para los usuarios que son comercio.*/
-                    HorarioYDiaClass hydia = new HorarioYDiaClass(dia,8,18);
-                    hydia = horarioYDiaClassService.save(hydia);
-                    horarioYDiaClasses.add(hydia);
-                }
+                horarioYDiaClasses = generarHorariosYDiasDefaults(user);
             }else{
                 horarioYDiaClasses = newUser.getDiasYHorariosDeAtencion();
                 /*actualizo los horarios y dias*/
@@ -82,6 +75,19 @@ public class UsuarioService {
 
             user.setDiasYHorariosDeAtencion(horarioYDiaClasses);
         }
+    }
+
+    @Transactional
+    public List<HorarioYDiaClass> generarHorariosYDiasDefaults(Usuario user){
+        List<HorarioYDiaClass> horarioYDiaClasses = new ArrayList<HorarioYDiaClass>();
+        List<String> dias = HorarioYDiaClass.getDiasSemanales();
+        for(String dia: dias){
+            /*generio los horarios y dias para los usuarios que son comercio.*/
+            HorarioYDiaClass hydia = new HorarioYDiaClass(dia,8,18);
+            hydia = horarioYDiaClassService.save(hydia);
+            horarioYDiaClasses.add(hydia);
+        }
+        return horarioYDiaClasses;
     }
 
 
@@ -157,13 +163,10 @@ public class UsuarioService {
 
     private void enviarMailSegúnModoDeEnvio(Usuario user, Integer modo){
         /*Segun el modo de envio gestiono el mail de compra.*/
-        switch (modo){
-            case 0: break; /*falta implentar el mail. */
-                //sendMailService.sendMail("gastonoscardasilva@gmail.com",user.getEmail(),"PRueba","Probando los mails ");
-        }
+        gestionarMail(user.getListaDeCompras(),user,modo);
     }
 
-    private  List<Usuario> getUsuariosComercioFromCarrito(String productosID){
+    private  List<Usuario> getUsuariosComercioFromCarrito(List<Long> productosID){
         List<Usuario> users = new ArrayList<Usuario>();
         List<Long> usuariosIDs =  usuarioRepository.findUserIDsFRomProductsIDs(productosID);
         for (Long userID :usuariosIDs){
@@ -173,13 +176,24 @@ public class UsuarioService {
         return users;
     }
 
-    private void gestionarMailModoRetiroEnLocal(ListaDeCompras listaDeCompras){
-        String body = "";
-        String productosID = listaDeCompras.getProductosIDFromCarrito();
+    private void gestionarMail(ListaDeCompras listaDeCompras,Usuario usuario,Integer modo){
+        String body = "Gracias por comprar en nuestra tienda. Has elegido la opcion de";
+        body = (modo.equals(0))?body.concat(" retirar en el local.\n"): "entraga a domicilio.\n";
+        String titulo = "Comprando en Casa";
+        List<Long> productosID = listaDeCompras.getProductosIDFromCarrito();
         List<Usuario> users = getUsuariosComercioFromCarrito(productosID);
         for (Usuario user: users){
-            Date turnoFecha = user.getTurnoFechaFromUserComprador();
+            Date turnoFecha = user.ObtenerTurnoFechaFromUserComprador();
+            save(user);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(turnoFecha);
+
+            body = body.concat(user.getNombreUsuario())+"; Direccion: " + user.getCalle()+ "; Localidad: " + user.getLocalidad() ;
+            body = (modo.equals(0))?body.concat(".\nTus productos podrán ser retirados en el local en la fecha: "+ calendar.get(Calendar.DAY_OF_MONTH)+"/"+calendar.get(Calendar.MONTH) + " a las "+ calendar.get(Calendar.HOUR_OF_DAY) + ": " + calendar.get(Calendar.MINUTE) +".\n"):
+                             body.concat("Tus productos llegarán en la fecha  " + calendar.get(Calendar.DAY_OF_MONTH)+"/"+calendar.get(Calendar.MONTH)  );
         }
+        body = body.concat("Que tenga un buen dia le desea Comprando En Casa.");
+        sendMailService.sendMail("chinovirtualv2.0@gmail.com",usuario.getEmail(),titulo,body);
     }
 
 }

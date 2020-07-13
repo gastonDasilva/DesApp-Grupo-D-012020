@@ -1,5 +1,7 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.DaysCTE;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,13 +62,13 @@ public class HorarioYDiaClass {
     public static List<String> getDiasSemanales(){
         /*hago un get de los dias que tiene la semana, este metodo se usa para generar los horarios y dias de atencion de un comercio.*/
         List<String> diassemanales = new ArrayList<String>();
-        diassemanales.add("Lunes");
-        diassemanales.add("Martes");
-        diassemanales.add("Miercoles");
-        diassemanales.add("Jueves");
-        diassemanales.add("Viernes");
-        diassemanales.add("Sabado");
-        diassemanales.add("Domingo");
+        diassemanales.add(DaysCTE.lunes);
+        diassemanales.add(DaysCTE.martes);
+        diassemanales.add(DaysCTE.miercoles);
+        diassemanales.add(DaysCTE.Jueves);
+        diassemanales.add(DaysCTE.Viernes);
+        diassemanales.add(DaysCTE.Sabado);
+        diassemanales.add(DaysCTE.Domingo);
         return diassemanales;
     }
 }

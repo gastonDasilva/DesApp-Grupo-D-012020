@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 import { Producto } from '../producto';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 /*trad..*/
 import { TranslateService } from '@ngx-translate/core';
 
@@ -15,7 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class ProductosCargadosComponent implements OnInit {
   selectedproducto:Producto;
 
-  constructor(private http: HttpClient,public appcomp: AppComponent,public data: DataService,translate: TranslateService) {
+  constructor(private http: HttpClient,private route: Router,public appcomp: AppComponent,public data: DataService,translate: TranslateService) {
     translate.setDefaultLang('es');
     translate.use('es');
    }
@@ -38,7 +39,9 @@ public agregarProducto(producto){
    this.data.productosEnCarrito.push(producto)
    console.log("Cant Productos en carrito:", this.data.productosEnCarrito.length);*/
  }
-
+  public seguirComprando(){
+     this.route.navigateByUrl('home');
+    }
   //DeletectProductFromUserComerciante(Component: string) {}
   //ModificarProductFromUserComerciante(Component: string){}
 

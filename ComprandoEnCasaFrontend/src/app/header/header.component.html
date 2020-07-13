@@ -11,7 +11,7 @@
     <ul class="navbar-nav mr-auto ">
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" [hidden]="!data.userData.esComercio">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
           {{ 'header.acciones' | translate }}
         </a>
@@ -52,7 +52,7 @@
               <a class="dropdown-item"  (click)="signOut()" >{{ 'header.cerrar' | translate }}</a>
               <a class="dropdown-item"  (click)="verPerfil()" >{{ 'header.perfil' | translate }}</a>
               <a class="dropdown-item" (click)="verHistorial()">{{ 'header.historial' | translate }}</a>
-              <a class="dropdown-item" routerLink="productos-cargados"[hidden]="!data.userData.esComercio" >{{ 'header.productos' | translate }}</a>
+              <a class="dropdown-item" (click)="verProductosCargados()" [hidden]="!data.userData.esComercio" >{{ 'header.productos' | translate }}</a>
             </div>
 
             <div class="dropdown d-inline-block">

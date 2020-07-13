@@ -67,4 +67,8 @@ export class HeaderComponent implements OnInit {
   verHistorial(): void{
     this.route.navigateByUrl('history');
   }
+
+  verProductosCargados():void{
+   this.route.navigateByUrl('productos-cargados');
+  }
 }

@@ -1,6 +1,8 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
 
+import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.DaysCTE;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -17,6 +19,7 @@ public  class Usuario {
     private String password;
     private String imagenPerfil;
     private Boolean esComercio;
+    private int turno;
 
     protected String Calle ;
     protected String localidad ;
@@ -58,6 +61,7 @@ public  class Usuario {
         setEmail(email);
         setPassword(pas);
         setEsComercio(false);
+
     }
 
     public long getId() {
@@ -241,10 +245,20 @@ public  class Usuario {
         this.rubro = rubro;
     }
 
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+
+    public int getTurno() {
+        return turno;
+    }
 
 
     public void convertirAComercio(){
+
         setEsComercio(true);
+        setTurno(0);
+        setProductos(new ArrayList<Producto>());
     }
 
 
@@ -263,16 +277,70 @@ public  class Usuario {
         agregarHistorialDeCOmpras(getListaDeCompras());
     }
 
-    public Date getTurnoFechaFromUserComprador(){
+    public Date ObtenerTurnoFechaFromUserComprador(){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         String diasemana = diaSemana();
-        if(diasemana.equals("S")){
-            calendar.add(Calendar.DAY_OF_YEAR, 2);
-        }else if (diasemana.equals("D")){
-            calendar.add(Calendar.DAY_OF_YEAR, 1);
+        Date res ;
+
+        HorarioYDiaClass hydia = getHorarioParaUnDiaDeterminado(diasemana);
+        calendar.setTime(addMinutes(calendar.getTime(),getTurno()*15));
+        HorarioYDiaClass hydiares = getHorarioParaDiaHabilitado(hydia,calendar,diasemana);
+        if(!hydia.getDia().equals(hydiares.getDia())){
+            hydia = hydiares;
+            Date date = calendar.getTime();
+            date.setHours(hydia.getHorarioInicio());
+            res = addMinutes(date,getTurno()*15);
+            setTurno(getTurno() +1);
+        }else{
+            res = calendar.getTime();
         }
+        return res;
+    }
+    private Date addMinutes(Date date, int amount){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.MINUTE, amount);
+
         return calendar.getTime();
+    }
+
+
+    private HorarioYDiaClass getHorarioParaDiaHabilitado(HorarioYDiaClass hydia,Calendar calendar, String diasemana){
+        HorarioYDiaClass res = hydia;
+        int hora = calendar.get(Calendar.HOUR_OF_DAY);
+        if (res.getHorarioFin() < hora){
+            res = getHorarioParaUnDiaDeterminado(getNextDay(diasemana));
+            calendar.add(Calendar.DAY_OF_YEAR,1);
+            setTurno(0);
+        }
+        return res;
+    }
+
+    private String getNextDay(String day){
+        String nextDay = "";
+        switch (day){
+            case "Lunes" : nextDay = DaysCTE.martes; break;
+            case "Martes" : nextDay = DaysCTE.miercoles; break;
+            case "Miercoles" : nextDay = DaysCTE.Jueves; break;
+            case "Jueves" : nextDay = DaysCTE.Viernes; break;
+            case "Viernes" : nextDay = DaysCTE.Sabado; break;
+            case "Sabado" : nextDay = DaysCTE.Domingo; break;
+            case "Domingo" : nextDay = DaysCTE.lunes; break;
+
+        }
+        return nextDay;
+    }
+
+    private  HorarioYDiaClass getHorarioParaUnDiaDeterminado(String dia){
+        HorarioYDiaClass res = null;
+        for(HorarioYDiaClass hyd: getDiasYHorariosDeAtencion() ){
+            if(hyd.getDia().equals(dia)  ){
+                    res = hyd;
+                    break;
+            }
+        }
+        return res;
     }
 
     public String diaSemana ()
@@ -282,24 +350,25 @@ public  class Usuario {
         Calendar calendar = new GregorianCalendar(timezone);
         int nD=calendar.get(Calendar.DAY_OF_WEEK);
         switch (nD){
-            case 1: letraD = "D";
+            case 1: letraD = DaysCTE.Domingo;
                 break;
-            case 2: letraD = "L";
+            case 2: letraD =  DaysCTE.lunes;
                 break;
-            case 3: letraD = "M";
+            case 3: letraD = DaysCTE.martes;
                 break;
-            case 4: letraD = "X";
+            case 4: letraD = DaysCTE.miercoles;
                 break;
-            case 5: letraD = "J";
+            case 5: letraD = DaysCTE.Jueves;
                 break;
-            case 6: letraD = "V";
+            case 6: letraD = DaysCTE.Viernes;
                 break;
-            case 7: letraD = "S";
+            case 7: letraD = DaysCTE.Sabado;
                 break;
         }
 
         return letraD;
     }
+
 
 
 }

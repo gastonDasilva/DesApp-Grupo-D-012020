@@ -76,14 +76,12 @@ public class ListaDeCompras {
         setProductosAcumulados(new ArrayList<Producto>());
         setMontoAcumulado(0);
     }
-    public String getProductosIDFromCarrito(){
+    public List<Long> getProductosIDFromCarrito(){
         /*Genero un string con todos los productosID que hay en el carrito*/
         List<Producto> productosEnCarrito =getProductosAcumulados();
-       String productosID ="";
-       int i =1;
+       List<Long> productosID = new ArrayList<Long>();
         for(Producto p: productosEnCarrito){
-            String coma = (productosEnCarrito.size() != i)?",":"";
-            productosID= productosID.concat(String.valueOf(p.getId()).concat(coma));
+            productosID.add(p.getId());
         }
         return productosID;
     }
