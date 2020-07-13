@@ -81,7 +81,7 @@ public class InitServiceInMemory {
         productoService.save(producto);
         usuario1.agregarProductoForComercio(producto);
 
-        producto = new Producto("Dulce de leche", "Arcor", 30, 100, "https://supermercado.carrefour.com.ar/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/7/7/7790580504410.jpg", "Comida");
+        producto = new Producto("Dulce de batata", "Arcor", 30, 100, "https://supermercado.carrefour.com.ar/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/7/7/7790580504410.jpg", "Comida");
         productoService.save(producto);
         usuario1.agregarProductoForComercio(producto);
 
@@ -93,8 +93,27 @@ public class InitServiceInMemory {
         productoService.save(producto);
         usuario1.agregarProductoForComercio(producto);
 
-        producto = new Producto("Cafe", "Arlistan", 33, 135, "https://walmartar.vteximg.com.br/arquivos/ids/835830-1000-1000/Cafe-Instantaneo-Arlistan-50-Gr-1-22269.jpg?v=636687343739270000", "Bebida");
+        producto = new Producto("Café", "Arlistan", 33, 135, "https://walmartar.vteximg.com.br/arquivos/ids/835830-1000-1000/Cafe-Instantaneo-Arlistan-50-Gr-1-22269.jpg?v=636687343739270000", "Bebida");
         productoService.save(producto);
+
+        producto = new Producto("Puré de tomate", "Molto", 26, 74, "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/2340038_f.jpg", "Comida");
+        productoService.save(producto);
+
+        producto = new Producto("Galletitas", "Toddy", 20, 85, "https://images-ti-vm1.tiendainglesa.com.uy/medium/P310908-1.jpg?20170830115636,Galletas-Toddy-Chispas-de-Chocolate-75g-en-Tienda-Inglesa", "Comida");
+        productoService.save(producto);
+
+        producto = new Producto("Cerveza", "Patagonia", 25, 117, "https://cdn.shopify.com/s/files/1/1103/5152/products/preview-full-Patagonia_Amber_Lager_1000_x_2048_efb25f80-f87e-49c5-b9d0-8fd0b647a30b_600x.jpg?v=1559755721", "Bebida alcoholica");
+        productoService.save(producto);
+
+        producto = new Producto("Arroz", "Molinos Ala", 40, 68, "https://walmartar.vteximg.com.br/arquivos/ids/835753-1000-1000/Arroz-Blanco-Largo-Fino-Ala-1-Kg-1-14506.jpg?v=636687341787730000", "Comida");
+        productoService.save(producto);
+
+        producto = new Producto("Gaseosa", "Fanta", 28, 126, "https://i5-unileverar.a8e.net.br/gg/gaseosa-fanta-1-5l_172837874_7790895000454.jpg", "Bebida sin alcohol");
+        productoService.save(producto);
+
+        producto = new Producto("Manteca", "Ilolay", 33, 216, "https://d26lpennugtm8s.cloudfront.net/stores/798/865/products/38038584-d285d9fa9ff9b6687d15721105043983-640-0.jpg", "Comida");
+        productoService.save(producto);
+
         usuario1.agregarProductoForComercio(producto);
 
         usuarioService.save(usuario1);

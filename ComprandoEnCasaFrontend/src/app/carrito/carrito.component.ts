@@ -36,10 +36,11 @@ export class CarritoComponent implements OnInit {
     }
 
     public realizarCompra(){
-      console.log(this.modoDeEnvio);
+     console.log(this.modoDeEnvio);
      this.appcomp.comprar(this.modoDeEnvio.toString())
 
       /*this.appcomp.getAgregarCompraEnHistorial();
-      this.route.navigateByUrl('history');*/
+      this.route.navigateByUrl('history');
+      */
     }
 }
