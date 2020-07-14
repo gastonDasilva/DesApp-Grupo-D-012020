@@ -54,7 +54,15 @@ export class ProductoCreateComponent implements OnInit {
     const ws: XLSX.WorkSheet = wb.Sheets[wsname];
     console.log(ws);
     this.data = (XLSX.utils.sheet_to_json(ws,{header:1}));
-    console.log(this.data);
+
+    for (var val of this.data) {
+       var valores = val  // prints values: 10, 20, 30, 40
+       console.log(valores);
+       var productoval : Producto
+      for (var val2 of valores) {
+      console.log(val2);
+      }}
+
   };
   reader.readAsBinaryString(target.files[0]);
   }
