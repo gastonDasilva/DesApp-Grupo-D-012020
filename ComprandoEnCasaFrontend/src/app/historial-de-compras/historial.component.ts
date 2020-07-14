@@ -23,4 +23,9 @@ import { ListaDeCompras } from '../listaDeCompras';
       this.route.navigateByUrl('detalles');
       console.log("los productos de esta compra son: ", this.data.getProductosAcumulados());
     }
+
+    public seguirComprando(){
+         this.route.navigateByUrl('home');
+        }
+
   }

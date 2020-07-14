@@ -2,62 +2,66 @@
 <!-- selector de idiomas-->
 
 
-
+<body>
 <div class="card-body">
-    <form class="custom-form" method="post">
-      <h6>  <img src="/assets/img/jesusBailando.gif" width="140" height="180" alt=""></h6>
-      <!-- <h1 i18n="site login | bienvenido @@loginBienvenido">Bienvenido a ComprandoEnCasa</h1> -->
-      <h1 >{{ 'main.bienvenido' | translate }}  ComprandoEnCasa</h1>
-      <!-- Dropdown -->
-      <div ngbDropdown class="d-inline-block">
-        <input ngbDropdownToggle type="button" class="btn btn-outline-primary" id="dropdownIdioma" value="{{ 'main.language' | translate }}" />
-        <div ngbDropdownMenu aria-labelledby="dropdownIdioma">
-          <input type="button" class="dropdown-item" value="{{ 'main.spanish' | translate }}" (click)="changeLanguageToSpanish()" />
-          <input type="button" class="dropdown-item" value="{{ 'main.english' | translate }}" (click)="changeLanguageToEnglish()" />
-        </div>
+  <form class="custom-form" method="post">
+    <h6>  <img src="/assets/img/jesusBailando.gif" width="140" height="180" alt=""></h6>
+    <!-- <h1 i18n="site login | bienvenido @@loginBienvenido">Bienvenido a ComprandoEnCasa</h1> -->
+    <h1 >{{ 'main.bienvenido' | translate }}  ComprandoEnCasa</h1>
+    <!-- Dropdown -->
+    <div class="dropdown">
+      <button class="btn btn-outline-success dropdown-toggle" id="dropdownIdioma"  type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"> {{ 'main.language' | translate }} </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownIdioma">
+        <button class="btn btn-outline-success dropdown-item"   (click)="changeLanguageToSpanish()" >{{ 'main.spanish' | translate }}</button>
+        <button class="btn btn-outline-success dropdown-item"     (click)="changeLanguageToEnglish()" >{{ 'main.english' | translate }}</button>
       </div>
-      <!-- /Dropdown -->
+    </div>
 
-      <!-- <input
-        type="username"
-        [(ngModel)]="username"
-        name="username"
-        placeholder="Username"
-        required="required"
-      /> -->
-      <input
-        type="username"
-        [(ngModel)]="username"
-        name="username"
-        placeholder="{{ 'main.username_placeholder' | translate }}"
-        required="required"
-      />
+    <!-- /Dropdown -->
+
+    <!-- <input
+      type="username"
+      [(ngModel)]="username"
+      name="username"
+      placeholder="Username"
+      required="required"
+    /> -->
+    <input
+      type="username"
+      [(ngModel)]="username"
+      name="username"
+      placeholder="{{ 'main.username_placeholder' | translate }}"
+      required="required"
+    />
+    <!--
+     <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Password"
+      required="required"
+    />
+    -->
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="{{ 'main.password_placeholder' | translate }}"
+      required="required"
+    />
+
+    <div class="btn-group btn-group-justified ">
       <!--
-       <input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        placeholder="Password"
-        required="required"
-      />
+      <button type="button" class="btn btn-primary" (click)="login()" i18n="site login | login @@loginLogin">Iniciar sesion</button>
+      <button type="button" class="btn btn-primary" (click)="registrar()" i18n="site login | registrarse @@loginRegistrarse">No tenés cuenta? Registrate!</button>
+      <button type="button" class="btn btn-outline-success" (click)="signInWithGoogle()" i18n="site login | cuenta google @@loginLoginWith">Iniciar sesion con Google</button>
       -->
-      <input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        placeholder="{{ 'main.password_placeholder' | translate }}"
-        required="required"
-      />
+      <button type="button" [translate]="'main.iniciarSesion'" class="btn btn-primary" (click)="login()" ></button>
+      <button type="button" [translate]="'main.registrarse'" class="btn btn-primary" (click)="registrar()" ></button>
+      <button type="button" [translate]="'main.conGoogle'" class="btn btn-outline-success" (click)="signInWithGoogle()" ></button>
+    </div>
+  </form>
+</div>
 
-      <div class="btn-group btn-group-justified ">
-          <!--
-          <button type="button" class="btn btn-primary" (click)="login()" i18n="site login | login @@loginLogin">Iniciar sesion</button>
-          <button type="button" class="btn btn-primary" (click)="registrar()" i18n="site login | registrarse @@loginRegistrarse">No tenés cuenta? Registrate!</button>
-          <button type="button" class="btn btn-outline-success" (click)="signInWithGoogle()" i18n="site login | cuenta google @@loginLoginWith">Iniciar sesion con Google</button>
-          -->
-        <button type="button" [translate]="'main.iniciarSesion'" class="btn btn-primary" (click)="login()" ></button>
-        <button type="button" [translate]="'main.registrarse'" class="btn btn-primary" (click)="registrar()" ></button>
-        <button type="button" [translate]="'main.conGoogle'" class="btn btn-outline-success" (click)="signInWithGoogle()" ></button>
-        </div>
-    </form>
-  </div>
+</body>
