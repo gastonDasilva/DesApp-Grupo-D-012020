@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductoCreateComponent } from './producto-create/producto-create.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProductosCargadosComponent } from './productos-cargados/productos-cargados.component';
@@ -59,6 +60,8 @@ export function provideConfig() {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
     SocialLoginModule,
     //NgbModule,
         TranslateModule.forRoot(),

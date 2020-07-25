@@ -16,59 +16,107 @@
     <div class="row">
 
       <div class="main-form" >
-        <form>
-
+        <form [formGroup]="productoForm" (ngSubmit)="onSaveForm()">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <!--
-              <label for="name" i18n="nombre | nombre del producto @@productoNombre">Nombre del producto</label>
-              -->
-              <label for="name" >{{ 'productos.nombre' | translate }}</label>
-              <input [(ngModel)]="producto.nombreProducto" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="{{ 'productos.nombre_placeholder' | translate }}">
+              <label >{{ 'productos.nombre' | translate }}</label>
+              <input  type="text"  class="form-control"  formControlName="nombreProducto"  placeholder="{{ 'productos.nombre_placeholder' | translate }}">
+
+              <div class=" alert-danger" *ngIf="nombreProducto.invalid && (nombreProducto.dirty || nombreProducto.touched)">
+                <div class="container-error-message"  *ngIf="nombreProducto.errors.required">
+                  <small>El nombre del producto es obligatorio.</small>
+                </div>
+                <div class="container-error-message"  *ngIf="nombreProducto.errors.minlength">
+                  <small> El nombre del producto tiene que ser mayor a 2 caracteres.</small>
+                </div>
+              </div>
+
+
             </div>
+
+
             <div class="form-group col-md-6">
               <!--
               <label for="marca" i18n="marca | marca @@productoMarca">Marca</label>
               -->
-              <label for="marca" >{{ 'productos.marca' | translate }}</label>
-              <input [(ngModel)]="producto.marca" type="text" name="marca" class="form-control" id="marca"
+              <label>{{ 'productos.marca' | translate }}</label>
+              <input type="text"  class="form-control" formControlName="marca"
                      placeholder="{{ 'productos.marca_placeholder' | translate }}">
+
+              <div class=" alert-danger" *ngIf="marca.invalid && (marca.dirty || marca.touched)">
+                <div class="container-error-message"  *ngIf="marca.errors.required">
+                  <small>La marca del producto es obligatoria.</small>
+                </div>
+                <div class="container-error-message"  *ngIf="marca.errors.minlength">
+                  <small> La marca del producto tiene que ser mayor a 2 caracteres.</small>
+                </div>
+              </div>
+
             </div>
           </div>
 
           <div class="form-row" >
 
             <div class="form-group col-md-3">
-              <label for="stock" >{{ 'productos.stock' | translate }}</label>
-              <input [(ngModel)]="producto.stock" type="number" name="stock" class="form-control" id="stock" >
+              <label >{{ 'productos.stock' | translate }}</label>
+              <input type="number"  class="form-control"  formControlName="stock">
+              <div class=" alert-danger" *ngIf="stock.invalid && (stock.dirty || stock.touched)">
+                <div class="container-error-message"  *ngIf="stock.errors.required">
+                  <small>Es necesario colocar un Stock.</small>
+                </div>
+              </div>
+
             </div>
 
             <div class="form-group col-md-6">
-              <label for="precio" >{{ 'productos.precio' | translate }}</label>
+              <label>{{ 'productos.precio' | translate }}</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend3">$</span>
                 </div>
 
-                <input [(ngModel)]="producto.precio" type="number" name="email" class="form-control" id="precio" >
+                <input  type="number"  class="form-control" formControlName="precio" >
+
+              </div>
+              <div class=" alert-danger" *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+                <div class="container-error-message"  *ngIf="precio.errors.required">
+                  <small>Es necesario colocar un Stock.</small>
+                </div>
               </div>
             </div>
-
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="imagenURL" >{{ 'productos.imagen' | translate }}</label>
-              <input [(ngModel)]="producto.imagen" type="text" name="imagenURL" class="form-control" id="imagenURL"
+              <label  >{{ 'productos.imagen' | translate }}</label>
+              <input type="text"  class="form-control"  formControlName="imagen"
                      placeholder="{{ 'productos.imagen_placeholder' | translate }}">
+              <div class=" alert-danger" *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)">
+                <div class="container-error-message"  *ngIf="imagen.errors.required">
+                  <small>La Imagen del producto es obligatoria.</small>
+                </div>
+                <div class="container-error-message"  *ngIf="imagen.errors.minlength">
+                  <small> La Imagen del producto tiene que ser mayor a 5 caracteres.</small>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="categoria" >{{ 'productos.categoria' | translate }}</label>
-              <input [(ngModel)]="producto.categoria" type="text" name="categoria" class="form-control" id="categoria"
+              <label >{{ 'productos.categoria' | translate }}</label>
+              <input  type="text"  class="form-control"  formControlName="categoria"
                      placeholder="{{ 'productos.categoria_placeholder' | translate }}">
+
+              <div class=" alert-danger" *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)">
+                <div class="container-error-message"  *ngIf="categoria.errors.required">
+                  <small>La categoria del producto es obligatoria.</small>
+                </div>
+                <div class="container-error-message"  *ngIf="imagen.errors.minlength">
+                  <small> La categoria tiene que ser mayor a 2 caracteres.</small>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -83,7 +131,7 @@
 
           <br>
           <br>
-          <button class="btn btn-outline-success" [translate]="'productos.crear'" (click)="createProducto()" ></button>
+          <button type="submit" class="btn btn-outline-success" [translate]="'productos.crear'" [disabled]="!productoForm.valid"></button>
         </form>
 
         <br>

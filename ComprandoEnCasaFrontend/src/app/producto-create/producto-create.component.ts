@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import * as XLSX from 'xlsx'
 /*traducc*/
 import { TranslateService } from '@ngx-translate/core';
+import{ FormBuilder,FormControl,FormGroup,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-producto-create',
@@ -15,17 +16,63 @@ export class ProductoCreateComponent implements OnInit {
   data: [][];
   producto : Producto;
   alert: Boolean = false;
+  productoForm: FormGroup;
 
   constructor(public router: Router,public appcomp: AppComponent,translate: TranslateService) {
     translate.setDefaultLang('es');
     translate.use('es');
-  this.cleanProduct();
+    this.productoForm = this.createFormGroup();
+  //this.cleanProduct();
   }
 
 
+  createFormGroup(){
+  return new FormGroup({
+    nombreProducto: new FormControl('',[Validators.required,Validators.minLength(2)]),
+    marca: new FormControl('',[Validators.required,Validators.minLength(2)]),
+    stock: new FormControl('',[Validators.required]),
+    precio: new FormControl('',[Validators.required]),
+    imagen: new FormControl('',[Validators.required,Validators.minLength(5)]),
+    categoria: new FormControl('',[Validators.required,Validators.minLength(2)])
+  });
+  }
+  onResetForm(){
+    this.productoForm.reset();
+   }
+
+  onSaveForm(){
+    if(this.productoForm.valid){
+        this.appcomp.createProducto(this.productoForm.value);
+        this.alert = true;
+        this.onResetForm();
+        console.log( 'valid');
+    }else{
+      console.log('not valid');
+    }
+
+  }
   ngOnInit() {
   }
 
+  get nombreProducto(){
+  return this.productoForm.get('nombreProducto');
+  }
+  get marca(){
+    return this.productoForm.get('marca');
+  }
+  get stock(){
+    return this.productoForm.get('stock');
+  }
+  get precio(){
+    return this.productoForm.get('precio');
+  }
+  get imagen(){
+    return this.productoForm.get('imagen');
+  }
+  get categoria(){
+    return this.productoForm.get('categoria');
+  }
+/*
  createProducto(){
     console.log(this.producto);
     this.appcomp.createProducto(this.producto);
@@ -35,7 +82,7 @@ export class ProductoCreateComponent implements OnInit {
 
   cleanProduct(){
    this.producto = {id:0,nombreProducto: "", marca: "", stock: 0,precio: 0,imagen:"",categoria:"",cantidadAComprar:1};
-  }
+  }*/
 
  public volverAlHome(){
        this.router.navigateByUrl('home');
