@@ -25,6 +25,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MainComponent } from './components/main/main.component';
+import { PaginatePipe } from './pipes/paginate.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
 /*modulos para fecha y moneda*/
 //en app.component
 
@@ -53,13 +56,15 @@ export function provideConfig() {
     ProductosCargadosComponent,
     HistorialComponent,
     DetallesComponent,
-    MainComponent
+    MainComponent,
+    PaginatePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatPaginatorModule,
     ReactiveFormsModule,
     CommonModule,
     SocialLoginModule,
@@ -72,7 +77,8 @@ export function provideConfig() {
                 useFactory: HttpLoaderFactory,
                 deps: [ HttpClient ]
               }
-            })
+            }),
+        BrowserAnimationsModule
   ],
   providers: [ {
                     provide: AuthServiceConfig,

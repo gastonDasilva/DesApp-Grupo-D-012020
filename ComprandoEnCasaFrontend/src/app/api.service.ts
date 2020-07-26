@@ -72,10 +72,10 @@ export class ApiService {
    return this.http.put<Producto[]>(this.urlLOcal+"buscarPorCategoriaYAplicarOferta",{params:paramsConsulta, observe: 'response'})
  }
 
- getProductosAPI$(): Observable<HttpResponse<Producto[]>> {
+ getProductosAPI$(): Observable<Producto[]> {
   /*Busco todo los productos.*/
    return this.http.get<Producto[]>(
-      this.urlLOcal+'productos', { observe: 'response' });
+      this.urlLOcal+'productos');
   }
 
 /*  getProductosByConsultaAPI$(consulta:string): Observable<HttpResponse<Producto[]>> {

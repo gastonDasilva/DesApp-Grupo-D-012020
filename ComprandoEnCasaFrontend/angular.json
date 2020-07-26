@@ -9,7 +9,6 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
@@ -33,8 +33,18 @@
             "scripts": []
           },
           "configurations": {
-            "es": {"i18nFile": "src/locale/messages.xlf","i18nLocale": "es","i18nFormat": "xlf","aot": true},
-            "en": {"i18nFile": "src/locale/messages.en.xlf","i18nLocale": "en","i18nFormat": "xlf","aot": true},
+            "es": {
+              "i18nFile": "src/locale/messages.xlf",
+              "i18nLocale": "es",
+              "i18nFormat": "xlf",
+              "aot": true
+            },
+            "en": {
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nLocale": "en",
+              "i18nFormat": "xlf",
+              "aot": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -67,8 +77,12 @@
           }
         },
         "serve": {
-          "es": {"browserTarget": "ComprandoEnCasaFrontend:build:es"},
-          "en": {"browserTarget": "ComprandoEnCasaFrontend:build:en"},
+          "es": {
+            "browserTarget": "ComprandoEnCasaFrontend:build:es"
+          },
+          "en": {
+            "browserTarget": "ComprandoEnCasaFrontend:build:en"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "ComprandoEnCasaFrontend:build"
@@ -77,8 +91,12 @@
             "production": {
               "browserTarget": "ComprandoEnCasaFrontend:build:production"
             },
-            "es": {"browserTarget": "ComprandoEnCasaFrontend:build:es"},
-            "en": {"browserTarget": "ComprandoEnCasaFrontend:build:en"}
+            "es": {
+              "browserTarget": "ComprandoEnCasaFrontend:build:es"
+            },
+            "en": {
+              "browserTarget": "ComprandoEnCasaFrontend:build:en"
+            }
           }
         },
         "extract-i18n": {
@@ -98,8 +116,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
@@ -133,8 +151,12 @@
           "architect": {
             "serve": {
               "configurations": {
-                "es": {"devServerTarget": "test-i18n:serve:es"},
-                "en": {"devServerTarget": "test-i18n:serve:en"}
+                "es": {
+                  "devServerTarget": "test-i18n:serve:es"
+                },
+                "en": {
+                  "devServerTarget": "test-i18n:serve:en"
+                }
               }
             }
           }
@@ -146,5 +168,4 @@
   "cli": {
     "analytics": "c4adf1df-4ed3-4835-9bb9-91cf0fe4802f"
   }
-
 }

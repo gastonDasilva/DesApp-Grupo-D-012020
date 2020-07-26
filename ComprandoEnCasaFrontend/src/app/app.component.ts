@@ -49,7 +49,7 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
     }
 
 
-    public getProductosAPI$() {
+    /*public getProductosAPI$() {
     this.products = [];
       this.api.getProductosAPI$()
       .subscribe(resp => {
@@ -63,7 +63,7 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
 
                          err => console.log(err));
       this.data.products = this.products;
-    }
+    }*/
 
 
     public getHistorialDeComprasAPI$(user: UsuarioData){
