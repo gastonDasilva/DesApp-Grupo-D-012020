@@ -2,6 +2,8 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.PositiveOrZero;
 import org.apache.log4j.Logger;
 
 @Entity
@@ -13,13 +15,18 @@ public class Producto {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
     @Column(name = "nombre")
+    @NotEmpty(message = "El nombre del producto no debe ser vacio")
     private String nombreProducto;
-
+    @NotEmpty(message = "La marca del producto no debe ser vacio")
     private String marca;
+    @PositiveOrZero(message = "El numero ingresado en el stock debe ser igual o mayor que 0")
     private int stock;
+    @PositiveOrZero(message = "El numero ingresado en el precio debe ser igual o mayor que 0")
     private int precio;
     private String imagen;
+    @NotEmpty(message = "La categoria del producto no debe ser vacio")
     private String categoria;
+    @PositiveOrZero(message = "El numero ingresado en la cantidad a comprar debe ser igual o mayor que 0")
     private int cantidadAComprar = 1; /*Atributo que permite elegir al cliente cuanta cantidad de este producto quiere.*/
 
     //@ManyToOne(targetEntity = Categoria.class)

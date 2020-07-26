@@ -4,6 +4,9 @@ package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.DaysCTE;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.Size;
 import java.util.*;
 
 @Entity
@@ -14,6 +17,7 @@ public  class Usuario {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
+    @NotEmpty(message = "El nombre del usuario no debe estar vacio")
     private String nombreUsuario;
     private String email;
     private String password;
@@ -21,10 +25,14 @@ public  class Usuario {
     private Boolean esComercio;
     private int turno;
 
+    //@NotEmpty(message = "La calle del usuario no debe estar vacia")
     protected String Calle ;
+    //@NotEmpty(message = "La localidad del usuario no debe estar vacia")
     protected String localidad ;
     protected String provincia ;
     protected String pais ;
+
+    @PositiveOrZero(message = "El codigo postal debe ser igual o mayor que 0")
     protected int codigoPostal;
 
     private int montoGastado;
@@ -46,6 +54,7 @@ public  class Usuario {
 
     @OneToMany(targetEntity = HorarioYDiaClass.class)
     @JoinColumn(name="hyd_fk",referencedColumnName = "id")
+    @Size(min = 1, message = "debe haber al menos un dia asignado")
     private List<HorarioYDiaClass>  diasYHorariosDeAtencion;
     private float distanciaMaximaEnvio;
 

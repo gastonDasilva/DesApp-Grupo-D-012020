@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 @EnableAutoConfiguration
@@ -37,7 +38,7 @@ public class ListadoController {
 
     @CrossOrigin
     @PostMapping("/api/crearProductosForComercio/{idUSer}")
-    Usuario newProducto(@RequestBody Producto newProducto, @PathVariable Long idUSer ) {
+    Usuario newProducto(@Valid @RequestBody Producto newProducto, @PathVariable Long idUSer ) {
         productoService.save(newProducto);
         return usuarioService.agregarProductoAComercio(newProducto,idUSer);
     }
