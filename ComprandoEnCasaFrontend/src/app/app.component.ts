@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ApiService } from './api.service';
-import { Observable } from 'rxjs';
+import { Observable,throwError } from 'rxjs';
 import { Producto } from './producto';
 import { DataService } from './data.service';
 import { Router, RouterLink } from '@angular/router';
 import { ListaDeCompras } from './listaDeCompras';
 import { UsuarioData } from './usuarioData';
+
+import { retry, catchError } from 'rxjs/operators';
 /*para la traduccion*/
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
@@ -159,19 +161,21 @@ constructor(public router: Router,private http: HttpClient,private api: ApiServi
       this.api.actualizarPerfilUsuario(this.data.getuserData())
           .subscribe(resp => {  const data = resp.body
                                 this.data.setuserData(data);
+                                this.data.actualizarNombreUsuario();
+                                this.data.setUserUpdate(true);
                               },
-                     err => console.log(err));
+                     err => { console.log(err);
+                              this.handleError(err);
+                            });
 
       }
 
 
-     /* public getAgregarCompraEnHistorial(){
-        this.api.realizarCompra(this.data.getuserData())
-            .subscribe(resp => { const data = resp.historialDeCompras
-                                 this.data.setHistorialDeCompras(data);
-                               },
-                       err => console.log(err));
-      }*/
+  handleError(error) {
+     let errorMessage = '';
+      errorMessage = `Error: ${error.error.message}`;
+     window.alert(errorMessage);
+   }
 
 
       public aplicarOfertaEnCategoriaDeBebidas(descuento: number){

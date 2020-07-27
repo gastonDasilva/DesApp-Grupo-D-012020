@@ -13,7 +13,7 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  userUpdate: Boolean = false;
+
 
   constructor(public router: Router,public appcomp: AppComponent,public data: DataService,translate: TranslateService) {
     translate.setDefaultLang('es');
@@ -28,8 +28,8 @@ export class PerfilComponent implements OnInit {
   public actualizarPerfilUsuario(){
    console.log("data:", this.data.getuserData());
    this.appcomp.actualizarPerfilUsuario();
-   this.data.actualizarNombreUsuario();
-   this.userUpdate=true;
+
+   //this.userUpdate=true;
   }
 
 
@@ -41,7 +41,8 @@ export class PerfilComponent implements OnInit {
 
     public closeAlert(){
     /*Este boton es solo para gestionar la aletar que muestra que el usuario fue actualizado*/
-    this.userUpdate = false;
+    //this.userUpdate = false;
+     this.data.setUserUpdate(false);
     }
 
     public volverAlHome(){

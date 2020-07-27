@@ -1,6 +1,6 @@
 <app-header></app-header>
 <body>
-  <div class="container product-form " style="margin-top: 140px;">
+  <div class="container product-form " style="margin-top: 100px;">
     <div class="row">
       <div class="col-10">
         <h1 >Crear Producto</h1>
@@ -112,7 +112,7 @@
                 <div class="container-error-message"  *ngIf="categoria.errors.required">
                   <small>La categoria del producto es obligatoria.</small>
                 </div>
-                <div class="container-error-message"  *ngIf="imagen.errors.minlength">
+                <div class="container-error-message"  *ngIf="categoria.errors.minlength">
                   <small> La categoria tiene que ser mayor a 2 caracteres.</small>
                 </div>
               </div>

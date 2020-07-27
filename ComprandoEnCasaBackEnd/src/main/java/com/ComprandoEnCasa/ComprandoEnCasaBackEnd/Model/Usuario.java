@@ -17,7 +17,7 @@ public  class Usuario {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
-    @NotEmpty(message = "El nombre del usuario no debe estar vacio")
+
     private String nombreUsuario;
     private String email;
     private String password;
@@ -32,7 +32,7 @@ public  class Usuario {
     protected String provincia ;
     protected String pais ;
 
-    @PositiveOrZero(message = "El codigo postal debe ser igual o mayor que 0")
+
     protected int codigoPostal;
 
     private int montoGastado;
@@ -54,7 +54,6 @@ public  class Usuario {
 
     @OneToMany(targetEntity = HorarioYDiaClass.class)
     @JoinColumn(name="hyd_fk",referencedColumnName = "id")
-    @Size(min = 1, message = "debe haber al menos un dia asignado")
     private List<HorarioYDiaClass>  diasYHorariosDeAtencion;
     private float distanciaMaximaEnvio;
 

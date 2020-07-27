@@ -4,9 +4,9 @@ import javax.validation.constraints.NotEmpty;
 
 public class UsuarioLogin {
 
-    @NotEmpty(message = "Se debe ingresar un nombre de usuario")
+
     private String username;
-    @NotEmpty(message = "Se debe ingresar un password")
+
     private String password;
     private String email;
     private  String photoUrl;

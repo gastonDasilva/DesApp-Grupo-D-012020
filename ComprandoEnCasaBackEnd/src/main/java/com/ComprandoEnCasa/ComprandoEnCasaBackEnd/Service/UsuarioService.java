@@ -1,5 +1,6 @@
 package com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Service;
 
+import Exceptions.UserExistException;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Model.*;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Repositories.UsuarioRepository;
 import com.ComprandoEnCasa.ComprandoEnCasaBackEnd.Tools.Builder.UsuarioBuilder;
@@ -44,6 +45,15 @@ public class UsuarioService {
         /*Actualizo los datos del usuario   */
         return usuarioRepository.findById(idUser).map(
                 user -> {
+
+                    /*Verifico que no se haya actualizar el nombre de usuario a uno ya existente.*/
+                    Optional<Usuario> userExist = usuarioRepository.findByNombreUsuario(newuser.getNombreUsuario());
+                    boolean userExistbool =  userExist.isEmpty();
+                    if(!userExistbool){
+                        if( !userExist.get().getNombreUsuario().equals(user.getNombreUsuario()) ){
+                            throw new UserExistException("Ya existe un usuario con ese nombre");
+                        }
+                    }
                     /*por ahora hago que se actualizen estos datos. A futuro se van a actualizar mas cosas*/
                     user.setNombreUsuario(newuser.getNombreUsuario());
                     user.setCalle(newuser.getCalle());

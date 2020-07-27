@@ -20,4 +20,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
     @Query(value = "SELECT DISTINCT BSUsuario.id FROM BSProducto INNER JOIN BSUsuario ON(BSProducto.pd_fk = BSUsuario.id ) WHERE BSProducto.id IN :productos ",nativeQuery = true)
     List<Long>findUserIDsFRomProductsIDs(@Param("productos") List<Long> productosID);
 
+    @Query(value = "SELECT * from BSUsuario where nombre_Usuario like ?1", nativeQuery = true)
+    Optional<Usuario> findByNombreUsuario(String  name);
 }

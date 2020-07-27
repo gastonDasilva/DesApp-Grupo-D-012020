@@ -16,4 +16,8 @@ export class DetallesComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  public seguirComprando(){
+      this.route.navigateByUrl('history');
+   }
 }

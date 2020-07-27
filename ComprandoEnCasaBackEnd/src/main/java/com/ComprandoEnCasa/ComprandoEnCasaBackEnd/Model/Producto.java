@@ -26,7 +26,6 @@ public class Producto {
     private String imagen;
     @NotEmpty(message = "La categoria del producto no debe ser vacio")
     private String categoria;
-    @PositiveOrZero(message = "El numero ingresado en la cantidad a comprar debe ser igual o mayor que 0")
     private int cantidadAComprar = 1; /*Atributo que permite elegir al cliente cuanta cantidad de este producto quiere.*/
 
     //@ManyToOne(targetEntity = Categoria.class)

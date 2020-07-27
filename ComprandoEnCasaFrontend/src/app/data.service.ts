@@ -19,8 +19,13 @@ export class DataService {
  productosEnOferta: Producto[]=[];
  productosAcumulados: Producto[];
  productosCopia: Producto[];
+ userUpdate: Boolean = false;
   constructor() {}
 
+
+    setUserUpdate(bool: Boolean){
+    this.userUpdate=bool;
+    }
     getProductosAcumulados(): Producto[]{
       return this.productosAcumulados;
     }

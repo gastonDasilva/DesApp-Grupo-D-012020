@@ -54,21 +54,21 @@ public class UsuarioController {
 
     @CrossOrigin
     @PutMapping("api/usuario/actualizarUsuario/{id}")
-    public Usuario updateUsuarioData(@Valid @RequestBody Usuario usuario, @PathVariable Long id) {
+    public Usuario updateUsuarioData(@RequestBody Usuario usuario, @PathVariable Long id) {
         /*Actualizo los datos del usuario.*/
         return usuarioService.updateUsuario(usuario,id);
     }
 
     @CrossOrigin
     @PostMapping("api/login")
-    UsuarioSimpleLogin loginUser(@Valid @RequestBody UsuarioLogin user){
+    UsuarioSimpleLogin loginUser(@RequestBody UsuarioLogin user){
         //usuarioService.save(user);
         return usuarioService.loginUsuario(user);
     }
 
     @CrossOrigin
     @PostMapping("api/register")
-    UsuarioSimpleRegister registerUser(@Valid @RequestBody UsuarioRegister user){
+    UsuarioSimpleRegister registerUser( @RequestBody UsuarioRegister user){
         return usuarioService.registrarUsuario(user);
     }
 
